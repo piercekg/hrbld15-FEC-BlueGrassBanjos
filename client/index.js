@@ -1,5 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+class App extends React.Component {
+  constructor(props) {
+    super(props)
 
-ReactDOM.render(<div>Hello world!</div>, document.getElementById(app));
+    this.state = {
+
+    }
+  }
+
+  render() {
+    return (
+      <div>Hello World!!!!</div>
+    )
+  }
+}
+
+// ReactDOM.render(< App/>, document.getElementById('app'));
+ReactDOM.render("Hello everyone", document.getElementById('app'));
