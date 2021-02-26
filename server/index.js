@@ -12,7 +12,7 @@ const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
 // RELATED PRODUCTS REQUESTS
 app.get('/products/:product_id/related', (req, res) => {
-  retrieveRelatedProducts(req.params.id, (err, data) => {
+  retrieveRelatedProducts(req.params.product_id, (err, data) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
