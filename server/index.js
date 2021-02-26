@@ -12,7 +12,7 @@ const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
 // RELATED PRODUCTS REQUESTS
 const getRelatedProducts = (productId, callback) => {
-  axios.get(server + `/products/${productId}/related`)
+  axios.get(`${server}/products/${productId}/related`)
     .then((data) => {
       callback(null, data);
     })
