@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
-const API = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
+const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
 // PRODUCTS REQUESTS
 
