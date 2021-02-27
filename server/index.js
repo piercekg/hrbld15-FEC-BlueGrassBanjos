@@ -25,19 +25,19 @@ app.get('/products/:product_id/related', (req, res) => {
 
 const retrieveRelatedProducts = (productId, callback) => {
   axios.get(`${server}/products/${productId}/related`, {headers: {Authorization: `${config.TOKEN}`}})
-    .then((ids) => {
-      return Promise.all(ids.data.map(retrieveOneProduct))
-      .then((data) => {
-        var products = [];
-        data.forEach(product => {
-          products.push(product.data);
-        });
-        callback(null, products);
+  .then((ids) => {
+    return Promise.all(ids.data.map(retrieveOneProduct))
+    .then((data) => {
+      var products = [];
+      data.forEach(product => {
+        products.push(product.data);
+      });
+      callback(null, products);
       })
     })
-    .catch((err) => {
-      callback(err, null);
-    })
+  .catch((err) => {
+    callback(err, null);
+  })
 };
 
 const retrieveOneProduct = (productId) => {
