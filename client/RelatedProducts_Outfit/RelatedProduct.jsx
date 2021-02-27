@@ -2,7 +2,9 @@ import React from 'react';
 
 const RelatedProduct = (props) => (
   <div>
-    <p>{props.product.category}<br></br>{props.product.name}<br></br>{props.product.default_price}</p>
+    <p className="relatedProductCategory">{props.product.category}</p>
+    <p className="relatedProductName">{props.product.name}</p>
+    <p className="relatedProductPrice">{props.product.default_price}</p>
   </div>
 );
 
