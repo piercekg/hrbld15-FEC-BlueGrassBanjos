@@ -5,6 +5,15 @@ const server = 'http://localhost:3000';
 // Requests go here
 
 // PRODUCTS REQUESTS
+const getProductInfo = (productId, callback) => {
+  axios.get(`${server}/products/${productId}`)
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    });
+};
 
 // RELATED PRODUCTS REQUESTS
 const getRelatedProducts = (productId, callback) => {
@@ -14,8 +23,8 @@ const getRelatedProducts = (productId, callback) => {
     })
     .catch((err) => {
       callback(err, null);
-    })
-}
+    });
+};
 
 // REVIEWS REQUESTS
 

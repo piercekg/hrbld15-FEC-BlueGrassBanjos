@@ -9,6 +9,28 @@ app.use(express.static(path.join(__dirname, '/../client/dist')));
 const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
 // PRODUCTS REQUESTS
+app.get('/products/:product_id', (req, res) => {
+  retrieveProduct(req.params.product_id, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log('got it!')
+      res.status(200).send(data);
+    }
+  })
+});
+
+const retrieveProduct = (productId, callback) => {
+  axios.get(`${server}/products/${productId}`)
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    })
+};
+
 
 // RELATED PRODUCTS REQUESTS
 app.get('/products/:product_id/related', (req, res) => {
