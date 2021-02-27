@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const axios = require('axios');
+const config = require('../config_example.js')
 
 const app = express();
 
@@ -23,13 +24,24 @@ app.get('/products/:product_id/related', (req, res) => {
 });
 
 const retrieveRelatedProducts = (productId, callback) => {
-  axios.get(`${server}/products/${productId}/related`)
-    .then((data) => {
-      callback(null, data);
+  axios.get(`${server}/products/${productId}/related`, {headers: {Authorization: `${config.TOKEN}`}})
+    .then((ids) => {
+      return Promise.all(ids.data.map(retrieveOneProduct))
+      .then((data) => {
+        var products = [];
+        data.forEach(product => {
+          products.push(product.data);
+        });
+        callback(null, products);
+      })
     })
     .catch((err) => {
       callback(err, null);
     })
+};
+
+const retrieveOneProduct = (productId) => {
+  return axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
 };
 
 // REVIEWS REQUESTS

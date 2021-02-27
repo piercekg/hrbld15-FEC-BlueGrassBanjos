@@ -24,3 +24,7 @@ const getRelatedProducts = (productId, callback) => {
 // CART REQUESTS
 
 // INTERACTIONS REQUESTS
+
+export {
+  getRelatedProducts
+};
