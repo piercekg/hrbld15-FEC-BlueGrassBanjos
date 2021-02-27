@@ -16,6 +16,6 @@ describe('Initial Tests', () => {
   test('Find "Hello World"', () => {
     const wrapper = shallow(<App />).dive();
 
-    expect(wrapper.find("div.hello").text()).toContain('Hello World!!!!');
+    expect(wrapper.find('div.hello').text()).toContain('Hello World!!!!');
   });
 });
