@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Reviews extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 
     };

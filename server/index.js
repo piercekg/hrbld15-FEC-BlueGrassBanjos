@@ -8,11 +8,6 @@ app.use(express.static(path.join(__dirname, '/../client/dist')));
 // PRODUCTS REQUESTS
 
 // REVIEWS REQUESTS
-//https://app-hrsei-api.herokuapp.com/api/fec2/:CAMPUS_CODE/
-
-app.get('/test', function (req, res) {
-  res.send('GET request to the homepage')
-})
 
 // QUESTIONS AND ANSWERS REQUESTS
 
