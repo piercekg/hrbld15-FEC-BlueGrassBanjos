@@ -5,10 +5,13 @@
   "main": "./server/index.js",
   "scripts": {
     "react-dev": "webpack --mode development --watch",
+<<<<<<< HEAD
     "server-dev": "npx nodemon ./server/index.js",
-    "start": "nodemon ./server/index.js localhost 3000",
     "watch": "nodemon --watch src server.js",
     "test": "jest --env=jsdom"
+=======
+    "start": "nodemon ./server/index.js localhost 3000",
+>>>>>>> create_ratingsandreviews_component
   },
   "repository": {
     "type": "git",
@@ -24,7 +27,6 @@
     "axios": "^0.21.1",
     "babel-jest": "^26.6.3",
     "body-parser": "^1.19.0",
-    "bootstrap": "^4.6.0",
     "express": "^4.15.0",
     "jquery": "^3.1.1",
     "react": "^16.4",
