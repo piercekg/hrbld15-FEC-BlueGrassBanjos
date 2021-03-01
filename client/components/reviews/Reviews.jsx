@@ -1,4 +1,5 @@
 import React from 'react';
+import FiveStars from './FiveStars';
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -10,7 +11,10 @@ class Reviews extends React.Component {
 
   render() {
     return (
-      <div>Reviews</div>
+      <div>
+        RATINGS & REVIEWS
+        <FiveStars />
+      </div>
     );
   }
 }
