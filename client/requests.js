@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 const axios = require('axios');
 
 const server = 'http://localhost:3000';
-=======
->>>>>>> create_ratingsandreviews_component
 
 // Requests go here
 
