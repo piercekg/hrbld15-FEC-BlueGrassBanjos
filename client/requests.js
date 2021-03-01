@@ -14,8 +14,8 @@ const getRelatedProducts = (productId, callback) => {
     })
     .catch((err) => {
       callback(err, null);
-    })
-}
+    });
+};
 
 // REVIEWS REQUESTS
 
