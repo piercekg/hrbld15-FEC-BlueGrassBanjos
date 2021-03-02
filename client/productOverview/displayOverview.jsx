@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 
 const requests = require('../requests.js');
@@ -41,7 +42,6 @@ class Overview extends React.Component {
     this.prod = this.state;
     this.style = this.prod.style;
     this.prod = this.prod.product;
-    console.log(this.style);
     return (
       <div>
         <h1>{this.prod.name}</h1>
