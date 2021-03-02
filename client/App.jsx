@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.handleProductChange(18078);
+    this.handleProductChange(18445);
     this.retrieveOutfitItems();
     //this.handleRelatedProducts(18201);
   }

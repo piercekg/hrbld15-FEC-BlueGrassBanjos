@@ -1,58 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1614462000545" clover="3.2.0">
-  <project timestamp="1614462000545" name="All files">
-    <metrics statements="29" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="19" coveredmethods="5" elements="48" coveredelements="19" complexity="0" loc="29" ncloc="29" packages="2" files="6" classes="6"/>
+<coverage generated="1614650595931" clover="3.2.0">
+  <project timestamp="1614650595931" name="All files">
+    <metrics statements="73" coveredstatements="26" conditionals="10" coveredconditionals="0" methods="39" coveredmethods="7" elements="122" coveredelements="33" complexity="0" loc="73" ncloc="73" packages="2" files="11" classes="11"/>
     <package name="client">
-      <metrics statements="22" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="5"/>
+      <metrics statements="37" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="20" coveredmethods="7"/>
       <file name="App.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/App.jsx">
-        <metrics statements="11" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="4"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
+        <metrics statements="26" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="6"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="51" count="4" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="87" count="4" type="stmt"/>
       </file>
       <file name="exampleData.js" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/exampleData.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
       <file name="requests.js" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/requests.js">
         <metrics statements="10" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
       </file>
     </package>
     <package name="client.RelatedProducts_Outfit">
-      <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="ComparisonModal.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/ComparisonModal.jsx">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="3" type="stmt"/>
+      <metrics statements="36" coveredstatements="7" conditionals="10" coveredconditionals="0" methods="19" coveredmethods="0"/>
+      <file name="ClearOutfit.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/ClearOutfit.jsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="CompareFeature.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/CompareFeature.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="8" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
       </file>
-      <file name="RelatedProduct.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/RelatedProduct.jsx">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="3" type="stmt"/>
+      <file name="ComparisonModal.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/ComparisonModal.jsx">
+        <metrics statements="11" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="OutfitItem.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/OutfitItem.jsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="OutfitItemsList.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/OutfitItemsList.jsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="RelatedProduct.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/RelatedProduct.jsx">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
       </file>
       <file name="RelatedProductsList.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/RelatedProductsList.jsx">
         <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="SelectedProduct.jsx" path="/home/kevin/HackReactor/SEI/FEC/hrbld15-FEC-BlueGrassBanjos/client/RelatedProducts_Outfit/SelectedProduct.jsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
       </file>
     </package>
   </project>

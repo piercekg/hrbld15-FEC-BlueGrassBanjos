@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for client/RelatedProducts_Outfit/RelatedProductsList.jsx</title>
+    <title>Code coverage report for client/RelatedProducts_Outfit/SelectedProduct.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">client/RelatedProducts_Outfit</a> RelatedProductsList.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">client/RelatedProducts_Outfit</a> SelectedProduct.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -67,9 +67,7 @@
 <a name='L8'></a><a href='#L8'>8</a>
 <a name='L9'></a><a href='#L9'>9</a>
 <a name='L10'></a><a href='#L10'>10</a>
-<a name='L11'></a><a href='#L11'>11</a>
-<a name='L12'></a><a href='#L12'>12</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L11'></a><a href='#L11'>11</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -80,17 +78,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import RelatedProduct from './RelatedProduct.jsx';
 &nbsp;
-const RelatedProductsList = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; (
+const SelectedProduct = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; (
 <span class="cstat-no" title="statement not covered" >  &lt;div&gt;</span>
-    {props.relatedProducts.map(<span class="fstat-no" title="function not covered" >pr</span>oduct =&gt; {
-<span class="cstat-no" title="statement not covered" >      return (&lt;RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/&gt;)</span>
-    })}
+    &lt;p className="selectedProductCategory"&gt;{props.product.category}&lt;/p&gt;
+    &lt;p className="selectedProductName" onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >props.onClick(props.product)}</span>&gt;{props.product.name}&lt;/p&gt;
+    &lt;p className="selectedProductPrice"&gt;{props.product.default_price}&lt;/p&gt;
   &lt;/div&gt;
 );
 &nbsp;
-export default RelatedProductsList;</pre></td></tr></table></pre>
+export default SelectedProduct;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
