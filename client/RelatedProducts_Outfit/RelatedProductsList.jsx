@@ -3,8 +3,8 @@ import RelatedProduct from './RelatedProduct.jsx';
 
 const RelatedProductsList = (props) => (
   <div>
-    {props.products.map(product => {
-      return (<RelatedProduct product={product} key={product.id}/>)
+    {props.relatedProducts.map(product => {
+      return (<RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>)
     })}
   </div>
 );

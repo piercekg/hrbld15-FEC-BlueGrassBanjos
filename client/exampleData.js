@@ -8,7 +8,13 @@ const products = [
     "category": "Sweatpants",
     "default_price": "56.00",
     "created_at": "2021-02-23T05:08:00.520Z",
-    "updated_at": "2021-02-23T05:08:00.520Z"
+    "updated_at": "2021-02-23T05:08:00.520Z",
+    "features": [
+      {
+        "feature": "whatever",
+        "value": "something"
+      }
+    ]
   },
   {
     "id": 18078,
@@ -19,7 +25,13 @@ const products = [
     "category": "Jackets",
     "default_price": "140.00",
     "created_at": "2021-02-23T05:08:00.350Z",
-    "updated_at": "2021-02-23T05:08:00.350Z"
+    "updated_at": "2021-02-23T05:08:00.350Z",
+    "features": [
+      {
+        "feature": "whatever",
+        "value": "something"
+      }
+    ]
   },
   {
     "id": 18445,
@@ -30,7 +42,13 @@ const products = [
     "category": "Boots",
     "default_price": "606.00",
     "created_at": "2021-02-23T05:08:00.520Z",
-    "updated_at": "2021-02-23T05:08:00.520Z"
+    "updated_at": "2021-02-23T05:08:00.520Z",
+    "features": [
+      {
+        "feature": "whatever",
+        "value": "something"
+      }
+    ]
   }
 ];
 
