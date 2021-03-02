@@ -15,6 +15,8 @@ const ComparisonModal = (props) => {
 
   return (<div>
     <div className="comapre-table">
+      <strong>Comparing</strong>
+      <button type="button" className="compareAction" onClick={() => props.onClick()}>X icon</button>
       <div className="compare-header compare-row">
         <div className="compare-data">{props.selectedProduct.name}</div>
         <div className="compare-data">Features:</div>

@@ -27,6 +27,15 @@ const getRelatedProducts = (productId, callback) => {
 }
 
 // REVIEWS REQUESTS
+const getProductReviews = (productId, callback) => {
+  axios.get(`${server}/reviews?product_id=${productId}`)
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    })
+}
 
 // QUESTIONS AND ANSWERS REQUESTS
 
@@ -36,5 +45,6 @@ const getRelatedProducts = (productId, callback) => {
 
 export {
   getRelatedProducts,
-  getSelectedProduct
+  getSelectedProduct,
+  getProductReviews
 };
