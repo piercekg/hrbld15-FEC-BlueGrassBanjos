@@ -4,6 +4,8 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 
+import QandA from './components/QandA/QandA';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="hello">Hello World!!!!</div>
+        <QandA />
       </Router>
     );
   }
