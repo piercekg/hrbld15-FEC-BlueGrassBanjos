@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/benkennedy98/hrbld15-FEC-BlueGrassBanjos#readme",
   "dependencies": {
+    "all": "0.0.0",
     "axios": "^0.21.1",
     "babel-jest": "^26.6.3",
     "body-parser": "^1.19.0",
@@ -28,7 +29,8 @@
     "jquery": "^3.1.1",
     "react": "^16.4",
     "react-dom": "^16.4",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
