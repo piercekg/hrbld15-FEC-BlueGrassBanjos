@@ -20,6 +20,15 @@ const getRelatedProducts = (productId, callback) => {
 // REVIEWS REQUESTS
 
 // QUESTIONS AND ANSWERS REQUESTS
+const getCurrentProductQuestions = (currentProductId, callback) => {
+  axios.get(`${server}/qa/questions`, { params: { product_id: `${currentProductId}` } })
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    });
+};
 
 // CART REQUESTS
 
