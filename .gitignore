@@ -1,3 +1,7 @@
 node_modules
 config.js
+<<<<<<< HEAD
 coverage
+=======
+app.js
+>>>>>>> b17a6810ac23b6ae8bdf850738a5fed2858ca547
