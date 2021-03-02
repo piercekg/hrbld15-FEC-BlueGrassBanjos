@@ -29,7 +29,7 @@ class QandA extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="QandA">
         <div>Questions and Answers</div>
         <QuestionSearch />
         <QuestionsList />
