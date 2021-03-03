@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import {
   // eslint-disable-next-line no-unused-vars
@@ -12,7 +13,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-
+      reviewsData: {},
     };
   }
 
@@ -21,7 +22,9 @@ class App extends React.Component {
       if (err) {
         console.log(err);
       } else {
-        console.log(data);
+        this.setState({
+          reviewsData: data.data,
+        });
       }
     });
   }
@@ -30,7 +33,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="hello">Hello World!!!!</div>
-        <ReviewsComponent />
+        <ReviewsComponent reviewsData={this.state.reviewsData} />
       </Router>
     );
   }

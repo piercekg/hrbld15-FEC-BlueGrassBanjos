@@ -37,7 +37,6 @@ const retrieveRelatedProducts = (productId, callback) => {
 app.get('/products/:product_id/reviews', (req, res) => {
   retrieveReviews(req.params.product_id, (err, data) => {
     if (err) {
-      console.log(err);
       res.sendStatus(500);
     } else {
       res.status(200).send(data);
@@ -46,15 +45,13 @@ app.get('/products/:product_id/reviews', (req, res) => {
 });
 
 const retrieveReviews = (productId, callback) => {
-  console.log(`${server}/reviews/?product_id=${productId}`);
-  axios.get(`${server}/reviews/${productId}`, {header: {Authorization: `${config.TOKEN}`}})
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((err) => {
-      console.log(err);
-      callback(err, null);
-    })
+axios.get(' https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product_id=18201', {headers: {'Authorization': `${config.TOKEN}`}})
+.then ((res) => {
+  callback(null, res.data);
+})
+.catch ((res) => {
+  callback(res, null)
+})
 };
 
 // QUESTIONS AND ANSWERS REQUESTS
