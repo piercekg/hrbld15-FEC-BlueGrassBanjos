@@ -27,7 +27,17 @@ const requests = {
   }
 
   // REVIEWS REQUESTS
-
+  /*
+  getProductReviews(productId, callback) {
+    axios.get(`${server}/reviews?product_id=${productId}`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      })
+  }
+  */
   // QUESTIONS AND ANSWERS REQUESTS
 
   // CART REQUESTS
