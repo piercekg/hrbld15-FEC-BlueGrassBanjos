@@ -12,17 +12,17 @@ const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
 // PRODUCTS REQUESTS
 app.get('/products/:product_id', (req, res) => {
-  retrieveSelectedProduct(req.params.product_id, (err, data) => {
+  retrieveProduct(req.params.product_id, (err, data) => {
     if (err) {
-      console.log(err);
-      res.sendStatus(500);
+      console.log(err.message);
+      res.status(500).send(err);
     } else {
       res.status(200).send(data);
     }
-  });
+  })
 });
 
-const retrieveSelectedProduct = (productId, callback) => {
+const retrieveProduct = (productId, callback) => {
   axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
   .then((product) => {
     return retireveRelatedProductReviews([productId], [product.data])
@@ -33,6 +33,27 @@ const retrieveSelectedProduct = (productId, callback) => {
   .catch((err) => {
     callback(err, null);
   })
+};
+
+app.get('/products/:product_id/styles', (req, res) => {
+  retrieveStyle(req.params.product_id, (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.send(err);
+    } else {
+      res.status(200).send(data.data);
+    }
+  })
+});
+
+const retrieveStyle = (productId, callback) => {
+  axios.get(`${server}/products/${productId}/styles`, {headers: {Authorization: `${config.TOKEN}`}})
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    })
 };
 
 // RELATED PRODUCTS REQUESTS
