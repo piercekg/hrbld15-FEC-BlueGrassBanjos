@@ -3,7 +3,7 @@ import products from '../exampleData.js';
 import RelatedProductsList from './RelatedProductsList';
 import OutfitItemsList from './OutfitItemsList'
 import SelectedProduct from './SelectedProduct'
-import { getRelatedProducts, getSelectedProduct, getProductReviews } from '../requests.js';
+import requests from '../requests.js';
 import {
   // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,
@@ -46,7 +46,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   handleProductChange(productId) {
-    getSelectedProduct(productId, (err, data) => {
+    requests.getSelectedProduct(productId, (err, data) => {
       var product = this.averageRating([data.data]);
       this.updateSelectedProduct(product[0]);
       this.handleRelatedProducts(productId);
@@ -54,7 +54,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   handleRelatedProducts(productId) {
-    getRelatedProducts(productId, (err, data) => {
+    requests.getRelatedProducts(productId, (err, data) => {
       var products = this.averageRating(data.data);
       this.updateProducts(products);
     });

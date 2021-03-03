@@ -3,48 +3,38 @@ const axios = require('axios');
 const server = 'http://localhost:3000';
 
 // Requests go here
-
-// PRODUCTS REQUESTS
-const getSelectedProduct = (productId, callback) => {
-  axios.get(`${server}/products/${productId}`)
-  .then((data) => {
-    callback(null, data);
-  })
-  .catch((err) => {
-    callback(err, null);
-  })
-}
-
-// RELATED PRODUCTS REQUESTS
-const getRelatedProducts = (productId, callback) => {
-  axios.get(`${server}/products/${productId}/related`)
+const requests = {
+  // PRODUCTS REQUESTS
+  getSelectedProduct(productId, callback) {
+    axios.get(`${server}/products/${productId}`)
     .then((data) => {
       callback(null, data);
     })
     .catch((err) => {
       callback(err, null);
     })
-}
+  },
 
-// REVIEWS REQUESTS
-const getProductReviews = (productId, callback) => {
-  axios.get(`${server}/reviews?product_id=${productId}`)
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((err) => {
-      callback(err, null);
-    })
-}
+  // RELATED PRODUCTS REQUESTS
+  getRelatedProducts(productId, callback) {
+    axios.get(`${server}/products/${productId}/related`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      })
+  }
 
-// QUESTIONS AND ANSWERS REQUESTS
+  // REVIEWS REQUESTS
 
-// CART REQUESTS
+  // QUESTIONS AND ANSWERS REQUESTS
 
-// INTERACTIONS REQUESTS
+  // CART REQUESTS
 
-export {
-  getRelatedProducts,
-  getSelectedProduct,
-  getProductReviews
+  // INTERACTIONS REQUESTS
 };
+
+
+
+export default requests;
