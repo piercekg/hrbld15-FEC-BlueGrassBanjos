@@ -28,7 +28,11 @@ const retrieveProduct = (productId, callback) => {
     return retireveRelatedProductReviews([productId], [product.data])
   })
   .then((result) => {
-    callback(null, result[0]);
+    return retireveRelatedProductStyles([productId], result)
+  })
+  .then((completeResult) => {
+    console.log(completeResult[0]);
+    callback(null, completeResult[0]);
   })
   .catch((err) => {
     callback(err, null);
@@ -81,7 +85,10 @@ const retrieveRelatedProducts = (productId, callback) => {
       return retireveRelatedProductReviews(uniqueIds, products)
       })
       .then((result) => {
-        callback(null, result);
+        return retireveRelatedProductStyles(uniqueIds, result)
+      })
+      .then((completeResult) => {
+        callback(null, completeResult);
       })
     })
   .catch((err) => {
@@ -106,20 +113,54 @@ const retireveRelatedProductReviews = (productIds, products) => {
 
 const retrieveOneProductsReviews = (productId) => {
   return axios.get(`${server}/reviews?product_id=${productId}`, {headers: {Authorization: `${config.TOKEN}`}});
-}
+};
+
+const retireveRelatedProductStyles = (productIds, products) => {
+  return Promise.all(productIds.map(retrieveOneProductsStyles))
+  .then((data) => {
+    var styles = [];
+    data.forEach(product => {
+      styles.push(product.data);
+    })
+    return buildRelatedProducts(products, styles);
+  })
+};
+
+const retrieveOneProductsStyles = (productId) => {
+  return axios.get(`${server}/products/${productId}/styles`, {headers: {Authorization: `${config.TOKEN}`}});
+};
 
 const buildRelatedProducts = (products, reviews) => {
   var completeProducts = [];
   products.forEach(product => {
     reviews.forEach(review => {
       if (product.id === Number(review.product)) {
-        var completeProduct = Object.assign(product, review);
+        product.reviews = review.results;
+        completeProducts.push(product);
+      }
+      if (product.id === Number(review.product_id)) {
+        product.styles = review.results;
+        completeProducts.push(product);
+      }
+    });
+  });
+  return completeProducts;
+};
+
+/*
+const addStyles = (products, styles) => {
+  var completeProducts = [];
+  products.forEach(product => {
+    styles.forEach(style => {
+      if (product.id === Number(style.product)) {
+        var completeProduct = Object.assign(product, style);
         completeProducts.push(completeProduct);
       }
     });
   });
   return completeProducts;
 };
+*/
 
 // REVIEWS REQUESTS
 

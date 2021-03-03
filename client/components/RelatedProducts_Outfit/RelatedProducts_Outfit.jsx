@@ -23,7 +23,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   componentDidMount() {
-    this.handleProductChange(18082);
+    this.handleProductChange(18201);
     this.retrieveOutfitItems();
   }
 
@@ -63,10 +63,10 @@ class RelatedProducts_Outfit extends React.Component {
   averageRating(products) {
     products.forEach(product => {
       var sum = 0;
-      product.results.forEach(review => {
+      product.reviews.forEach(review => {
         sum += review.rating;
       })
-      product.averageRating = sum / product.results.length;
+      product.averageRating = sum / product.reviews.length;
     })
     return products;
   }
