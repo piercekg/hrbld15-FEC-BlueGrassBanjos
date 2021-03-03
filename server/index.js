@@ -20,17 +20,7 @@ app.get('/products/:product_id', (req, res) => {
     }
   });
 });
-/*
-const retrieveSelectedProduct = (productId, callback) => {
-  axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
-  .then((product) => {
-    callback(null, product.data);
-  })
-  .catch((err) => {
-    callback(err, null);
-  })
-};
-*/
+
 const retrieveSelectedProduct = (productId, callback) => {
   axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
   .then((product) => {
