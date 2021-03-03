@@ -10,3 +10,7 @@ const CompareFeature = (props) => (
 );
 
 export default CompareFeature;
+
+/*
+
+*/
