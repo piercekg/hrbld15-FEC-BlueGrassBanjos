@@ -47,7 +47,7 @@ app.get('/products/:product_id/reviews', (req, res) => {
 
 const retrieveReviews = (productId, callback) => {
   console.log(`${server}/reviews/?product_id=${productId}`);
-  axios.get(`${server}/reviews/${productId}`, {header: { Authorization: config.TOKEN}})
+  axios.get(`${server}/reviews/${productId}`, {header: {Authorization: `${config.TOKEN}`}})
     .then((data) => {
       callback(null, data);
     })
