@@ -5,8 +5,6 @@ const server = 'http://localhost:3000';
 const requests = {
 
   // PRODUCTS REQUESTS
-<<<<<<< HEAD
-=======
   getProductInfo(productId, callback) {
     axios.get(`${server}/products/${productId}`)
       .then((data) => {
@@ -26,7 +24,6 @@ const requests = {
         callback(err, null);
       });
   },
->>>>>>> main
 
   // RELATED PRODUCTS REQUESTS
   getRelatedProducts(productId, callback) {
