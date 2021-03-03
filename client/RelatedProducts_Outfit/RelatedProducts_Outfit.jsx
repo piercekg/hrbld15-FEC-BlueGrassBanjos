@@ -13,8 +13,8 @@ class RelatedProducts_Outfit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedProduct: products[0],
-      relatedProducts: products,
+      selectedProduct: {},
+      relatedProducts: [],
       outfit: []
     };
     this.handleSaveItem = this.handleSaveItem.bind(this);
@@ -23,7 +23,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   componentDidMount() {
-    this.handleProductChange(18445);
+    this.handleProductChange(18082);
     this.retrieveOutfitItems();
   }
 
@@ -47,8 +47,9 @@ class RelatedProducts_Outfit extends React.Component {
 
   handleProductChange(productId) {
     getSelectedProduct(productId, (err, data) => {
-      this.updateSelectedProduct(data.data);
-      this.handleRelatedProducts(data.data.id);
+      var product = this.averageRating([data.data]);
+      this.updateSelectedProduct(product[0]);
+      this.handleRelatedProducts(productId);
     })
   }
 

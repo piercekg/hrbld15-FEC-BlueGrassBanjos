@@ -3,7 +3,7 @@ import OutfitItem from './OutfitItem.jsx';
 
 const OutfitItemsList = (props) => (
   <div>
-    <div className="outfitItem" onClick={() => props.addItem(props.selectedProduct)}>+ icon: Add to Outfit</div>
+    <div className="outfitItem" onClick={() => props.addItem(props.selectedProduct)}>+ icon +: Add to Outfit</div>
     {props.products.map(product => {
       return (<OutfitItem product={product} key={product.id} removeItem={props.removeItem}/>)
     })}

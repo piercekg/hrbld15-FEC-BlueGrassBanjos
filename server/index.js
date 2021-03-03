@@ -20,11 +20,24 @@ app.get('/products/:product_id', (req, res) => {
     }
   });
 });
-
+/*
 const retrieveSelectedProduct = (productId, callback) => {
   axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
   .then((product) => {
     callback(null, product.data);
+  })
+  .catch((err) => {
+    callback(err, null);
+  })
+};
+*/
+const retrieveSelectedProduct = (productId, callback) => {
+  axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
+  .then((product) => {
+    return retireveRelatedProductReviews([productId], [product.data])
+  })
+  .then((result) => {
+    callback(null, result[0]);
   })
   .catch((err) => {
     callback(err, null);
@@ -46,13 +59,14 @@ app.get('/products/:product_id/related', (req, res) => {
 const retrieveRelatedProducts = (productId, callback) => {
   axios.get(`${server}/products/${productId}/related`, {headers: {Authorization: `${config.TOKEN}`}})
   .then((ids) => {
-    return Promise.all(ids.data.map(retrieveOneProduct))
+    var uniqueIds = [...new Set(ids.data)];
+    return Promise.all(uniqueIds.map(retrieveOneProduct))
     .then((data) => {
       var products = [];
       data.forEach(product => {
         products.push(product.data);
       });
-      return retireveRelatedProductReviews(ids.data, products)
+      return retireveRelatedProductReviews(uniqueIds, products)
       })
       .then((result) => {
         callback(null, result);
