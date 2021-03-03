@@ -10,8 +10,8 @@ const ComparisonModal = (props) => {
   props.product.features.forEach(feature => {
     compareFeatures[feature.feature] = feature.value;
   });
-  var combinedFeatures = Object.assign(selectedFeatures, compareFeatures);
-  combinedFeatures = Object.keys(combinedFeatures);
+  var combinedFeatures = Object.keys(selectedFeatures).concat(Object.keys(compareFeatures));
+  var uniqueCombinedFeatures = [...new Set(combinedFeatures)];
 
   return (<div>
     <div className="comapre-table">
@@ -22,7 +22,7 @@ const ComparisonModal = (props) => {
         <div className="compare-data">Features:</div>
         <div className="compare-data">{props.product.name}</div>
       </div>
-        {combinedFeatures.map(feature => {
+        {uniqueCombinedFeatures.map(feature => {
           return (<CompareFeature feature={feature} selectedFeatures={selectedFeatures} compareFeatures={compareFeatures} key={feature}/>)
         })}
     </div>

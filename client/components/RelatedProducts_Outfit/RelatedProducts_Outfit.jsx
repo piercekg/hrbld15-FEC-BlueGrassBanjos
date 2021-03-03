@@ -1,9 +1,9 @@
 import React from 'react';
-import products from '../exampleData.js';
+import products from '../../exampleData.js';
 import RelatedProductsList from './RelatedProductsList';
 import OutfitItemsList from './OutfitItemsList'
 import SelectedProduct from './SelectedProduct'
-import requests from '../requests.js';
+import requests from '../../requests.js';
 import {
   // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,

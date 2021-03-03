@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 import React from 'react';
-import RelatedProducts_Outfit from './RelatedProducts_Outfit/RelatedProducts_Outfit'
+import RelatedProducts_Outfit from './components/RelatedProducts_Outfit/RelatedProducts_Outfit'
 import {
   // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,
