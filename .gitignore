@@ -1,3 +1,5 @@
 node_modules
 config.js
 config_example.js
+coverage
+/dist/app.js

@@ -2,17 +2,27 @@ const axios = require('axios');
 
 const server = 'http://localhost:3000';
 
-// Requests go here
 const requests = {
+
   // PRODUCTS REQUESTS
-  getSelectedProduct(productId, callback) {
+  getProductInfo(productId, callback) {
     axios.get(`${server}/products/${productId}`)
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((err) => {
-      callback(err, null);
-    })
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  getProductStyles(productId, callback) {
+    axios.get(`${server}/products/${productId}/styles`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
   },
 
   // RELATED PRODUCTS REQUESTS
@@ -23,18 +33,26 @@ const requests = {
       })
       .catch((err) => {
         callback(err, null);
-      })
-  }
+      });
+  },
 
   // REVIEWS REQUESTS
 
   // QUESTIONS AND ANSWERS REQUESTS
+  getCurrentProductQuestions(currentProductId, callback) {
+    axios.get(`${server}/qa/questions`, { params: { product_id: `${currentProductId}` } })
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
 
   // CART REQUESTS
 
   // INTERACTIONS REQUESTS
+
 };
-
-
 
 export default requests;

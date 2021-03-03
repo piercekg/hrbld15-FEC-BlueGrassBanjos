@@ -46,7 +46,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   handleProductChange(productId) {
-    requests.getSelectedProduct(productId, (err, data) => {
+    requests.getProductInfo(productId, (err, data) => {
       var product = this.averageRating([data.data]);
       this.updateSelectedProduct(product[0]);
       this.handleRelatedProducts(productId);
