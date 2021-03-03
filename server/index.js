@@ -100,26 +100,7 @@ const buildRelatedProducts = (products, reviews) => {
 };
 
 // REVIEWS REQUESTS
-app.get(`/reviews`, (req, res) => {
-  retrieveProductReviews(req.query.product_id, (err, data) => {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      res.status(200).send(data.data);
-    }
-  });
-});
 
-const retrieveProductReviews = (productId, callback) => {
-  axios.get(`${server}/reviews?product_id=${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
-  .then((reviews) => {
-    callback(null, reviews);
-  })
-  .catch((err) => {
-    callback(err, null);
-  })
-};
 // QUESTIONS AND ANSWERS REQUESTS
 
 // CART REQUESTS
