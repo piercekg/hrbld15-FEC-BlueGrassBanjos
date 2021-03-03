@@ -5,6 +5,25 @@ const server = 'http://localhost:3000';
 // Requests go here
 
 // PRODUCTS REQUESTS
+const getProductInfo = (productId, callback) => {
+  axios.get(`${server}/products/${productId}`)
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    });
+};
+
+const getProductStyles = (productId, callback) => {
+  axios.get(`${server}/products/${productId}/styles`)
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    });
+};
 
 // RELATED PRODUCTS REQUESTS
 const getRelatedProducts = (productId, callback) => {
@@ -33,3 +52,9 @@ const getCurrentProductQuestions = (currentProductId, callback) => {
 // CART REQUESTS
 
 // INTERACTIONS REQUESTS
+
+export {
+  getProductInfo,
+  getProductStyles,
+  getRelatedProducts,
+};
