@@ -1,11 +1,7 @@
 const path = require('path');
 const express = require('express');
 const axios = require('axios');
-<<<<<<< HEAD
-const config = require('../config.js');
-=======
 const config = require('../config.js')
->>>>>>> 9f01d7ca40a9b089ed51a758e8f773345c3fb493
 
 const app = express();
 
