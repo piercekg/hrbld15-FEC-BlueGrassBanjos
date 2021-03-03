@@ -1,22 +1,17 @@
 import React from 'react';
-import FiveStars from './FiveStars';
+import ReviewsButtons from './ReviewsButtons';
+import ReviewsList from './ReviewsList';
+import SortBy from './SortBy';
 
-class Reviews extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        RATINGS & REVIEWS
-        <FiveStars />
-      </div>
-    );
-  }
+function Reviews() {
+  return (
+    <div>
+      Reviews
+      <SortBy />
+      <ReviewsList />
+      <ReviewsButtons />
+    </div>
+  );
 }
 
 export default Reviews;

@@ -1,9 +1,14 @@
 import React from 'react';
+import Star from './Star';
 
 function FiveStars() {
   return (
     <div>
-      0.0 &#9734;&#9734;&#9734;&#9734;&#9734;
+      <Star />
+      <Star />
+      <Star />
+      <Star />
+      <Star />
     </div>
   );
 }
