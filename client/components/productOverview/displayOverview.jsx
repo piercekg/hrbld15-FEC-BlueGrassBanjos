@@ -2,7 +2,7 @@
 import React from 'react';
 import Gallery from './imagesGallery';
 
-const requests = require('../requests.js');
+const requests = require('../../requests.js');
 
 class Overview extends React.Component {
   constructor(props) {
