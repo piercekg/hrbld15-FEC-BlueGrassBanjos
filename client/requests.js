@@ -2,59 +2,57 @@ const axios = require('axios');
 
 const server = 'http://localhost:3000';
 
-// Requests go here
+const requests = {
 
-// PRODUCTS REQUESTS
-const getProductInfo = (productId, callback) => {
-  axios.get(`${server}/products/${productId}`)
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((err) => {
-      callback(err, null);
-    });
+  // PRODUCTS REQUESTS
+  getProductInfo(productId, callback) {
+    axios.get(`${server}/products/${productId}`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  getProductStyles(productId, callback) {
+    axios.get(`${server}/products/${productId}/styles`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  // RELATED PRODUCTS REQUESTS
+  getRelatedProducts(productId, callback) {
+    axios.get(`${server}/products/${productId}/related`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  // REVIEWS REQUESTS
+
+  // QUESTIONS AND ANSWERS REQUESTS
+  getCurrentProductQuestions(currentProductId, callback) {
+    axios.get(`${server}/qa/questions`, { params: { product_id: `${currentProductId}` } })
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  // CART REQUESTS
+
+  // INTERACTIONS REQUESTS
+
 };
 
-const getProductStyles = (productId, callback) => {
-  axios.get(`${server}/products/${productId}/styles`)
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((err) => {
-      callback(err, null);
-    });
-};
-
-// RELATED PRODUCTS REQUESTS
-const getRelatedProducts = (productId, callback) => {
-  axios.get(`${server}/products/${productId}/related`)
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((err) => {
-      callback(err, null);
-    });
-};
-
-// REVIEWS REQUESTS
-
-// QUESTIONS AND ANSWERS REQUESTS
-const getCurrentProductQuestions = (currentProductId, callback) => {
-  axios.get(`${server}/qa/questions`, { params: { product_id: `${currentProductId}` } })
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((err) => {
-      callback(err, null);
-    });
-};
-
-// CART REQUESTS
-
-// INTERACTIONS REQUESTS
-
-export {
-  getProductInfo,
-  getProductStyles,
-  getRelatedProducts,
-};
+export default requests;
