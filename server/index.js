@@ -1,37 +1,63 @@
 const path = require('path');
 const express = require('express');
 const axios = require('axios');
-const config = require('../config_example.js')
+const config = require('../config.js')
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
+app.use(express.json());
 
 const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
 // PRODUCTS REQUESTS
 app.get('/products/:product_id', (req, res) => {
-  retrieveSelectedProduct(req.params.product_id, (err, data) => {
+  retrieveProduct(req.params.product_id, (err, data) => {
     if (err) {
-      console.log(err);
-      res.sendStatus(500);
+      console.log(err.message);
+      res.status(500).send(err);
     } else {
       res.status(200).send(data);
     }
-  });
+  })
 });
 
-const retrieveSelectedProduct = (productId, callback) => {
+const retrieveProduct = (productId, callback) => {
   axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
   .then((product) => {
     return retireveRelatedProductReviews([productId], [product.data])
   })
   .then((result) => {
-    callback(null, result[0]);
+    return retireveRelatedProductStyles([productId], result)
+  })
+  .then((completeResult) => {
+    console.log(completeResult[0]);
+    callback(null, completeResult[0]);
   })
   .catch((err) => {
     callback(err, null);
   })
+};
+
+app.get('/products/:product_id/styles', (req, res) => {
+  retrieveStyle(req.params.product_id, (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.send(err);
+    } else {
+      res.status(200).send(data.data);
+    }
+  })
+});
+
+const retrieveStyle = (productId, callback) => {
+  axios.get(`${server}/products/${productId}/styles`, {headers: {Authorization: `${config.TOKEN}`}})
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    })
 };
 
 // RELATED PRODUCTS REQUESTS
@@ -59,7 +85,10 @@ const retrieveRelatedProducts = (productId, callback) => {
       return retireveRelatedProductReviews(uniqueIds, products)
       })
       .then((result) => {
-        callback(null, result);
+        return retireveRelatedProductStyles(uniqueIds, result)
+      })
+      .then((completeResult) => {
+        callback(null, completeResult);
       })
     })
   .catch((err) => {
@@ -84,24 +113,79 @@ const retireveRelatedProductReviews = (productIds, products) => {
 
 const retrieveOneProductsReviews = (productId) => {
   return axios.get(`${server}/reviews?product_id=${productId}`, {headers: {Authorization: `${config.TOKEN}`}});
-}
+};
+
+const retireveRelatedProductStyles = (productIds, products) => {
+  return Promise.all(productIds.map(retrieveOneProductsStyles))
+  .then((data) => {
+    var styles = [];
+    data.forEach(product => {
+      styles.push(product.data);
+    })
+    return buildRelatedProducts(products, styles);
+  })
+};
+
+const retrieveOneProductsStyles = (productId) => {
+  return axios.get(`${server}/products/${productId}/styles`, {headers: {Authorization: `${config.TOKEN}`}});
+};
 
 const buildRelatedProducts = (products, reviews) => {
   var completeProducts = [];
   products.forEach(product => {
     reviews.forEach(review => {
       if (product.id === Number(review.product)) {
-        var completeProduct = Object.assign(product, review);
-        completeProducts.push(completeProduct);
+        product.reviews = review.results;
+        completeProducts.push(product);
+      }
+      if (product.id === Number(review.product_id)) {
+        product.styles = review.results;
+        completeProducts.push(product);
       }
     });
   });
   return completeProducts;
 };
 
+/*
+const addStyles = (products, styles) => {
+  var completeProducts = [];
+  products.forEach(product => {
+    styles.forEach(style => {
+      if (product.id === Number(style.product)) {
+        var completeProduct = Object.assign(product, style);
+        completeProducts.push(completeProduct);
+      }
+    });
+  });
+  return completeProducts;
+};
+*/
+
 // REVIEWS REQUESTS
 
 // QUESTIONS AND ANSWERS REQUESTS
+
+app.get('/qa/questions', (req, res) => {
+  retrieveProductQuestions(req.query.product_id, (err, response) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.status(200).send(response.data);
+    }
+  })
+});
+
+const retrieveProductQuestions = (productId, callback) => {
+  // console.log(productId);
+  axios.get(`${server}/qa/questions?product_id=${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
+  .then((questions) => {
+    callback(null, questions);
+  }).catch((err) => {
+    console.log(err, null);
+  })
+};
 
 // CART REQUESTS
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import products from '../exampleData.js';
+import products from '../../exampleData.js';
 import RelatedProductsList from './RelatedProductsList';
 import OutfitItemsList from './OutfitItemsList'
 import SelectedProduct from './SelectedProduct'
-import requests from '../requests.js';
+import requests from '../../requests.js';
 import {
   // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,
@@ -23,7 +23,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   componentDidMount() {
-    this.handleProductChange(18082);
+    this.handleProductChange(18201);
     this.retrieveOutfitItems();
   }
 
@@ -46,7 +46,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   handleProductChange(productId) {
-    requests.getSelectedProduct(productId, (err, data) => {
+    requests.getProductInfo(productId, (err, data) => {
       var product = this.averageRating([data.data]);
       this.updateSelectedProduct(product[0]);
       this.handleRelatedProducts(productId);
@@ -63,10 +63,10 @@ class RelatedProducts_Outfit extends React.Component {
   averageRating(products) {
     products.forEach(product => {
       var sum = 0;
-      product.results.forEach(review => {
+      product.reviews.forEach(review => {
         sum += review.rating;
       })
-      product.averageRating = sum / product.results.length;
+      product.averageRating = sum / product.reviews.length;
     })
     return products;
   }
