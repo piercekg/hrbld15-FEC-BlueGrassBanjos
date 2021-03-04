@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 
-class RelatedProducts_Outfit extends React.Component {
+class RelatedProducts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ class RelatedProducts_Outfit extends React.Component {
   }
 
   componentDidMount() {
-    this.handleProductChange(18082);
+    this.handleProductChange(18080);
     this.retrieveOutfitItems();
   }
 
@@ -63,10 +63,10 @@ class RelatedProducts_Outfit extends React.Component {
   averageRating(products) {
     products.forEach(product => {
       var sum = 0;
-      product.results.forEach(review => {
+      product.reviews.forEach(review => {
         sum += review.rating;
       })
-      product.averageRating = sum / product.results.length;
+      product.averageRating = sum / product.reviews.length;
     })
     return products;
   }
@@ -109,4 +109,4 @@ class RelatedProducts_Outfit extends React.Component {
   }
 }
 
-export default RelatedProducts_Outfit;
+export default RelatedProducts;

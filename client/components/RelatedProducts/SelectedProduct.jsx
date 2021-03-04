@@ -6,7 +6,7 @@ const SelectedProduct = (props) => (
     <p className="selectedProductName">{props.product.name}</p>
     <p className="selectedProductPrice">${props.product.default_price}</p>
     <div className="selectedProductRating">{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</div>
-    <div className="selectedProductReviews">{props.product.results ? `${props.product.results.length} reviews` : null}</div>
+    <div className="selectedProductReviews">{props.product.reviews ? `${props.product.reviews.length} reviews` : null}</div>
   </div>
 );
 
