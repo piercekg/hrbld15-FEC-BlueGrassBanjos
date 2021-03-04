@@ -59,6 +59,8 @@
 }
 /*--------Cards--------*/
 .relatedProductCard {
+  display: flex;
+  flex-direction: column;
   border-style: solid outset;
-  border-radius: 10%;
+  border-radius: 8%;
 }

@@ -2,13 +2,14 @@
 /* eslint-disable no-unused-vars */
 
 import React from 'react';
-import RelatedProducts_Outfit from './components/RelatedProducts_Outfit/RelatedProducts_Outfit'
+
 import {
   // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import Overview from './productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
+import RelatedProducts from './components/RelatedProducts/RelatedProducts'
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class App extends React.Component {
       <Router>
         <div className="hello">Hello World!!!!</div>
         {/* <Overview product={prod.product} /> */}
-        {<RelatedProducts_Outfit/>}
+        {<RelatedProducts/>}
         <QandA />
       </Router>
     );
