@@ -19,13 +19,16 @@ const OutfitItem = (props) => {
 
   return (
   <div className="relatedProductCard">
-    <button type="button" onClick={() => props.removeItem(props.product.id)}>X icon</button>
-    <img src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
-    <p className="relatedProductCategory">{props.product.category}</p>
-    <p className="relatedProductName" onClick={() => props.onClick(props.product.id)}>{props.product.name}</p>
-    <p className="relatedProductPrice">${props.product.default_price}</p>
-    <div className="relatedProductRating">{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</div>
-    <div className="relatedProductReviews">{props.product.reviews.length ? `${props.product.reviews.length} reviews` : null}</div>
+    <button type="button" className="relatedProductAction" onClick={() => props.removeItem(props.product.id)}>X icon</button>
+    <img className="relatedProductImage" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
+    <div className="relatedProductInfo">
+      <p className="relatedProductCategory">{props.product.category}</p>
+      <p className="relatedProductName">{props.product.name}</p>
+      <p className="relatedProductPrice">${props.product.default_price}</p>
+      <div className="relatedProductRating">{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</div>
+      <div className="relatedProductReviews">{props.product.reviews.length ? `${props.product.reviews.length} reviews` : null}</div>
+    </div>
+
   </div>
 )};
 

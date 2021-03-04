@@ -38,12 +38,15 @@ class RelatedProduct extends React.Component {
     return (
       <div className="relatedProductCard">
         <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>*star icon*</button>
-        <img src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
-        <p className="relatedProductCategory">{this.product.category}</p>
-        <p className="relatedProductName">{this.product.name}</p>
-        <p className="relatedProductPrice">${this.product.default_price}</p>
-        <div className="relatedProductRating">{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</div>
-        <div className="relatedProductReviews">{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</div>
+        <img className="relatedProductImage" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
+        <div className="relatedProductInfo">
+          <p className="relatedProductCategory">{this.product.category}</p>
+          <p className="relatedProductName">{this.product.name}</p>
+          <p className="relatedProductPrice">${this.product.default_price}</p>
+          <div className="relatedProductRating">{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</div>
+          <div className="relatedProductReviews">{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</div>
+        </div>
+
         <div>
           {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
         </div>
