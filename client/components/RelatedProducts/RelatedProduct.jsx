@@ -36,8 +36,9 @@ class RelatedProduct extends React.Component {
     var dfStyle = this.defaultStyle(this.product);
 
     return (
+      <React.Fragment>
       <div className="relatedProductCard">
-        <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>*star icon*</button>
+        <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
         <img className="relatedProductImage" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
         <div className="relatedProductInfo">
           <p className="relatedProductCategory">{this.product.category}</p>
@@ -46,11 +47,11 @@ class RelatedProduct extends React.Component {
           <div className="relatedProductRating">{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</div>
           <div className="relatedProductReviews">{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</div>
         </div>
-
-        <div>
-          {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
-        </div>
       </div>
+      <div>
+        {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
+      </div>
+      </React.Fragment>
     )
   }
 

@@ -19,7 +19,7 @@ const OutfitItem = (props) => {
 
   return (
   <div className="relatedProductCard">
-    <button type="button" className="relatedProductAction" onClick={() => props.removeItem(props.product.id)}>X icon</button>
+    <button type="button" className="relatedProductAction" onClick={() => props.removeItem(props.product.id)}>✖️</button>
     <img className="relatedProductImage" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
     <div className="relatedProductInfo">
       <p className="relatedProductCategory">{props.product.category}</p>
