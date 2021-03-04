@@ -80,7 +80,8 @@ const retrieveRelatedProducts = (productId, callback) => {
 
 // QUESTIONS AND ANSWERS REQUESTS
 
-app.get('/qa/questions', (req, res) => {
+  // Questions
+app.get('/qa/questions/', (req, res) => {
   retrieveProductQuestions(req.query.product_id, (err, response) => {
     if (err) {
       console.log(err);
@@ -92,12 +93,33 @@ app.get('/qa/questions', (req, res) => {
 });
 
 const retrieveProductQuestions = (productId, callback) => {
-  // console.log(productId);
   axios.get(`${server}/qa/questions?product_id=${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
   .then((questions) => {
     callback(null, questions);
   }).catch((err) => {
     console.log(err, null);
+  })
+};
+
+  // Answers
+app.get('/qa/questions/:question_id/answers', (req, res) => {
+  console.log(req.params);
+  retrieveProductAnswers(req.params.question_id, (err, response) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.status(200).send(response.data);
+    }
+  })
+});
+
+const retrieveProductAnswers = (questionId, callback) => {
+  axios.get(`${server}/qa/questions/${questionId}/answers`, {headers: {Authorization: `${config.TOKEN}`}})
+  .then((question) => {
+    callback(null, question);
+  }).catch((err) => {
+    console.log(err, null)
   })
 };
 
