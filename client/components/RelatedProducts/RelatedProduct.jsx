@@ -18,12 +18,32 @@ class RelatedProduct extends React.Component {
     });
   }
 
+  defaultImage(product) {
+    var image;
+    if (this.product.styles.length < 2) {
+      image = this.product.styles[0].photos[0].thumbnail_url;
+      return image;
+    } else {
+      this.product.styles.forEach(style => {
+        if (style['default?']) {
+          image = style.photos[0].thumbnail_url;
+          return image;
+        }
+      })
+      image = this.product.styles[0].photos[0].thumbnail_url;
+      return image;
+    }
+  }
+
   render () {
+
+    var image = this.defaultImage(this.product);
 
     return (
       <div className="relatedProductCard">
         <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>*star icon*</button>
-        <img src={`${this.product.styles[0].photos[0].thumbnail_url}`} ></img>
+        {console.log(this.product)}
+        <img src={`${image}`} ></img>
         <p className="relatedProductCategory">{this.product.category}</p>
         <p className="relatedProductName">{this.product.name}</p>
         <p className="relatedProductPrice">${this.product.default_price}</p>
@@ -39,3 +59,7 @@ class RelatedProduct extends React.Component {
 };
 
 export default RelatedProduct;
+
+/*
+this.product.styles[0].photos[0].thumbnail_url
+*/

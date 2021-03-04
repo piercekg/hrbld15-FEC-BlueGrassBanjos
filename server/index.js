@@ -25,10 +25,10 @@ app.get('/products/:product_id', (req, res) => {
 const retrieveProduct = (productId, callback) => {
   axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
   .then((product) => {
-    return retireveRelatedProductReviews([productId], [product.data])
+    return retrieveRelatedProductReviews([productId], [product.data])
   })
   .then((result) => {
-    return retireveRelatedProductStyles([productId], result)
+    return retrieveRelatedProductStyles([productId], result)
   })
   .then((completeResult) => {
     callback(null, completeResult[0]);
@@ -81,10 +81,10 @@ const retrieveRelatedProducts = (productId, callback) => {
       data.forEach(product => {
         products.push(product.data);
       });
-      return retireveRelatedProductReviews(uniqueIds, products)
+      return retrieveRelatedProductReviews(uniqueIds, products)
       })
       .then((result) => {
-        return retireveRelatedProductStyles(uniqueIds, result)
+        return retrieveRelatedProductStyles(uniqueIds, result)
       })
       .then((completeResult) => {
         callback(null, completeResult);
@@ -99,7 +99,7 @@ const retrieveOneProduct = (productId) => {
   return axios.get(`${server}/products/${productId}`, {headers: {Authorization: `${config.TOKEN}`}})
 };
 
-const retireveRelatedProductReviews = (productIds, products) => {
+const retrieveRelatedProductReviews = (productIds, products) => {
   return Promise.all(productIds.map(retrieveOneProductsReviews))
   .then((data) => {
     var reviews = [];
@@ -114,7 +114,7 @@ const retrieveOneProductsReviews = (productId) => {
   return axios.get(`${server}/reviews?product_id=${productId}`, {headers: {Authorization: `${config.TOKEN}`}});
 };
 
-const retireveRelatedProductStyles = (productIds, products) => {
+const retrieveRelatedProductStyles = (productIds, products) => {
   return Promise.all(productIds.map(retrieveOneProductsStyles))
   .then((data) => {
     var styles = [];
