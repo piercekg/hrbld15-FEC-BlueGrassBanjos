@@ -89,10 +89,23 @@
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
 .relatedProductList {
+  overflow: hidden;
+}
+
+.carousel {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   gap: 3rem;
 }
+
+.carousel-transition {
+  transition: transform 0.7s ease-in-out;
+}
+
+.scroll-button {
+  z-index: 3;
+}
+
 /*--------Cards--------*/
 .relatedProductCard {
   display: grid;
@@ -106,6 +119,7 @@
   grid-column-end: span 5;
   grid-row-start: 1;
   grid-row-end: span 2;
+
 }
 
 .relatedProductAction {
@@ -126,4 +140,12 @@
   grid-row-start: 3;
   grid-row-end: span 3;
   background-color: coral;
+}
+
+.addProductCard {
+  grid-column-start: 1;
+  grid-column-end: span 5;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+  text-align: center;
 }
