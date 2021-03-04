@@ -1,28 +1,26 @@
 import React from 'react';
 
-const defaultImage = (product) => {
-  var image;
+const defaultStyle = (product) => {
+  var defaultStyle = product.styles[0];;
   if (product.styles.length < 2) {
-    image = product.styles[0].photos[0].thumbnail_url;
-    return image;
+    defaultStyle = product.styles[0];
   } else {
     product.styles.forEach(style => {
       if (style['default?']) {
-        image = style.photos[0].thumbnail_url;
-        return image;
+        defaultStyle = style;
       }
-    })
-    image = product.styles[0].photos[0].thumbnail_url;
-    return image;
+    });
   }
+  return defaultStyle;
 };
 
 const OutfitItem = (props) => {
-  var image = defaultImage(props.product);
+  var dfStyle = defaultStyle(props.product);
+
   return (
   <div className="relatedProductCard">
     <button type="button" onClick={() => props.removeItem(props.product.id)}>X icon</button>
-    <img src={`${image}`} ></img>
+    <img src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
     <p className="relatedProductCategory">{props.product.category}</p>
     <p className="relatedProductName" onClick={() => props.onClick(props.product.id)}>{props.product.name}</p>
     <p className="relatedProductPrice">${props.product.default_price}</p>

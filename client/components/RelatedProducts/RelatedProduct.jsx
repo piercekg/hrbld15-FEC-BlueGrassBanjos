@@ -18,32 +18,27 @@ class RelatedProduct extends React.Component {
     });
   }
 
-  defaultImage(product) {
-    var image;
+  defaultStyle(product) {
+    var defaultStyle = this.product.styles[0];;
     if (this.product.styles.length < 2) {
-      image = this.product.styles[0].photos[0].thumbnail_url;
-      return image;
+      defaultStyle = this.product.styles[0];
     } else {
       this.product.styles.forEach(style => {
         if (style['default?']) {
-          image = style.photos[0].thumbnail_url;
-          return image;
+          defaultStyle = style;
         }
-      })
-      image = this.product.styles[0].photos[0].thumbnail_url;
-      return image;
+      });
     }
+    return defaultStyle;
   }
 
   render () {
-
-    var image = this.defaultImage(this.product);
+    var dfStyle = this.defaultStyle(this.product);
 
     return (
       <div className="relatedProductCard">
         <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>*star icon*</button>
-        {console.log(this.product)}
-        <img src={`${image}`} ></img>
+        <img src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
         <p className="relatedProductCategory">{this.product.category}</p>
         <p className="relatedProductName">{this.product.name}</p>
         <p className="relatedProductPrice">${this.product.default_price}</p>
