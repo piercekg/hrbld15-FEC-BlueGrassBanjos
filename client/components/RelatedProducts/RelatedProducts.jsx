@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 
-class RelatedProducts_Outfit extends React.Component {
+class RelatedProducts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -109,4 +109,4 @@ class RelatedProducts_Outfit extends React.Component {
   }
 }
 
-export default RelatedProducts_Outfit;
+export default RelatedProducts;

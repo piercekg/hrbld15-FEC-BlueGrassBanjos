@@ -31,7 +31,6 @@ const retrieveProduct = (productId, callback) => {
     return retireveRelatedProductStyles([productId], result)
   })
   .then((completeResult) => {
-    console.log(completeResult[0]);
     callback(null, completeResult[0]);
   })
   .catch((err) => {
@@ -146,21 +145,6 @@ const buildRelatedProducts = (products, reviews) => {
   });
   return completeProducts;
 };
-
-/*
-const addStyles = (products, styles) => {
-  var completeProducts = [];
-  products.forEach(product => {
-    styles.forEach(style => {
-      if (product.id === Number(style.product)) {
-        var completeProduct = Object.assign(product, style);
-        completeProducts.push(completeProduct);
-      }
-    });
-  });
-  return completeProducts;
-};
-*/
 
 // REVIEWS REQUESTS
 
