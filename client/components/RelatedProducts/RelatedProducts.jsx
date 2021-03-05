@@ -3,7 +3,7 @@ import products from '../../exampleData.js';
 import RelatedProductsList from './RelatedProductsList';
 import OutfitItemsList from './OutfitItemsList'
 import SelectedProduct from './SelectedProduct'
-import Carousel from './Carousel.js'
+import Carousel from './Carousel.js';
 import requests from '../../requests.js';
 import {
   // eslint-disable-next-line no-unused-vars
@@ -26,6 +26,9 @@ class RelatedProducts extends React.Component {
   componentDidMount() {
     this.handleProductChange(18080);
     this.retrieveOutfitItems();
+  }
+
+  componentDidUpdate() {
     Carousel.init();
   }
 

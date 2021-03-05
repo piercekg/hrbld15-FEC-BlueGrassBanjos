@@ -1,6 +1,7 @@
 import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
 
+
 class RelatedProduct extends React.Component {
   constructor(props) {
     super(props);
@@ -11,6 +12,8 @@ class RelatedProduct extends React.Component {
     this.selectedProduct = props.selectedProduct
     this.handleClick = this.handleClick.bind(this);
   }
+
+
 
   handleClick() {
     this.setState({

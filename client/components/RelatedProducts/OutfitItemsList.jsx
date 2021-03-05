@@ -2,9 +2,9 @@ import React from 'react';
 import OutfitItem from './OutfitItem.jsx';
 
 const OutfitItemsList = (props) => (
-  <div className="relatedProductList">
-    <div className="carousel carousel-transition">
-    <div className="relatedProductCard" onClick={() => props.addItem(props.selectedProduct)}>
+  <div className="outfitProductList">
+    <div className="outfit-carousel outfit-carousel-transition">
+    <div className="outfitProductCard" onClick={() => props.addItem(props.selectedProduct)}>
       <div className="addProductCard">＋<br></br>Add to Outfit</div>
     </div>
     {props.products.map(product => {
