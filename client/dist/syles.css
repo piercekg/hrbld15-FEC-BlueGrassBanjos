@@ -89,63 +89,6 @@
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
 .relatedProductList {
-  overflow: hidden;
-}
-
-.carousel {
   display: flex;
   flex-flow: row nowrap;
-  gap: 3rem;
-}
-
-.carousel-transition {
-  transition: transform 0.7s ease-in-out;
-}
-
-.scroll-button {
-  z-index: 3;
-}
-
-/*--------Cards--------*/
-.relatedProductCard {
-  display: grid;
-  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
-  grid-template-rows: [row1-start] 40px [row1-end] 200px [third-line] auto [last-line];
-  border-style: solid;
-}
-
-.relatedProductImage {
-  grid-column-start: 1;
-  grid-column-end: span 5;
-  grid-row-start: 1;
-  grid-row-end: span 2;
-
-}
-
-.relatedProductAction {
-  z-index: 1;
-  grid-column-start: 5;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.relatedProductInfo {
-  z-index: 1;
-  grid-column-start: 1;
-  grid-column-end: span 5;
-  grid-row-start: 3;
-  grid-row-end: span 3;
-  background-color: coral;
-}
-
-.addProductCard {
-  grid-column-start: 1;
-  grid-column-end: span 5;
-  grid-row-start: 2;
-  grid-row-end: span 3;
-  text-align: center;
 }

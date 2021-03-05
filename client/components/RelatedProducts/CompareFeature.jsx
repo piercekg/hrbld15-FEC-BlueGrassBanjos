@@ -6,7 +6,6 @@ const CompareFeature = (props) => (
     <div className="compare-data col-center">{props.feature}</div>
     <div className="compare-data col-right">{props.compareFeatures[props.feature] !== undefined ? (props.compareFeatures[props.feature] !== null ? props.compareFeatures[props.feature] : '✔️') : null}</div>
   </div>
-
 );
 
 export default CompareFeature;

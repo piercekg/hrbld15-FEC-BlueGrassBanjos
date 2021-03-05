@@ -1,14 +1,18 @@
 import React from 'react';
 import RelatedProduct from './RelatedProduct.jsx';
+import { Carousel } from 'react-bootstrap';
 
 const RelatedProductsList = (props) => (
   <div className="relatedProductList">
-    <div className="carousel carousel-transition">
+    <Carousel>
+
     {props.relatedProducts.map(product => {
-      return (<RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>)
+      return (
+        <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+      );
     })}
-    </div>
-    <button className="scroll-button">Scroll</button>
+
+    </Carousel>
   </div>
 );
 

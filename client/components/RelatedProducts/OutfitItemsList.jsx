@@ -1,18 +1,21 @@
 import React from 'react';
+import { Card, Carousel } from 'react-bootstrap';
 import OutfitItem from './OutfitItem.jsx';
 
 const OutfitItemsList = (props) => (
   <div className="outfitProductList">
-    <div className="outfit-carousel outfit-carousel-transition">
-    <div className="outfitProductCard" onClick={() => props.addItem(props.selectedProduct)}>
-      <div className="addProductCard">＋<br></br>Add to Outfit</div>
-    </div>
-    {props.products.map(product => {
-      return (<OutfitItem product={product} key={product.id} removeItem={props.removeItem}/>)
-    })}
+    <Card onClick={() => props.addItem(props.selectedProduct)}>
+      <Card.Body>
+        <Card.Text>＋<br></br>Add to Outfit</Card.Text>
+      </Card.Body>
+    </Card>
+    <Carousel>
+      {props.products.map(product => {
+        return (<OutfitItem product={product} key={product.id} removeItem={props.removeItem}/>);
+      })}
+    </Carousel>
     {/*<button type="button" onClick={() => props.clearOutfit()}>Clear Outfit</button>*/}
   </div>
-    </div>
 
 );
 
