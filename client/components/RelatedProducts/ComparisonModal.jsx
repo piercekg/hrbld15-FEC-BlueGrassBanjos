@@ -13,14 +13,17 @@ const ComparisonModal = (props) => {
   var combinedFeatures = Object.keys(selectedFeatures).concat(Object.keys(compareFeatures));
   var uniqueCombinedFeatures = [...new Set(combinedFeatures)];
 
-  return (<div>
-    <div className="comapre-table">
-      <strong>Comparing</strong>
-      <button type="button" className="compareAction" onClick={() => props.onClick()}>X icon</button>
+  return (
+  <div className="compare-modal">
+    <div className="comapare-table">
       <div className="compare-header compare-row">
-        <div className="compare-data">{props.selectedProduct.name}</div>
-        <div className="compare-data">Features:</div>
-        <div className="compare-data">{props.product.name}</div>
+        <div className="compare-data">Comparing</div>
+        <button type="button" className="compareAction" onClick={() => props.onClick()}>✖️</button>
+      </div>
+      <div className="compare-header compare-row">
+        <div className="compare-data col-left">{props.selectedProduct.name}</div>
+        <div className="compare-data col-center"></div>
+        <div className="compare-data col-right">{props.product.name}</div>
       </div>
         {uniqueCombinedFeatures.map(feature => {
           return (<CompareFeature feature={feature} selectedFeatures={selectedFeatures} compareFeatures={compareFeatures} key={feature}/>)

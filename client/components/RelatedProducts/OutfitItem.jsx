@@ -1,34 +1,38 @@
 import React from 'react';
+import { Card, Carousel } from 'react-bootstrap';
 
-const defaultImage = (product) => {
-  var image;
+const defaultStyle = (product) => {
+  var defaultStyle = product.styles[0];;
   if (product.styles.length < 2) {
-    image = product.styles[0].photos[0].thumbnail_url;
-    return image;
+    defaultStyle = product.styles[0];
   } else {
     product.styles.forEach(style => {
       if (style['default?']) {
-        image = style.photos[0].thumbnail_url;
-        return image;
+        defaultStyle = style;
       }
-    })
-    image = product.styles[0].photos[0].thumbnail_url;
-    return image;
+    });
   }
+  return defaultStyle;
 };
 
 const OutfitItem = (props) => {
-  var image = defaultImage(props.product);
+  var dfStyle = defaultStyle(props.product);
+
   return (
-  <div className="relatedProductCard">
-    <button type="button" onClick={() => props.removeItem(props.product.id)}>X icon</button>
-    <img src={`${image}`} ></img>
-    <p className="relatedProductCategory">{props.product.category}</p>
-    <p className="relatedProductName" onClick={() => props.onClick(props.product.id)}>{props.product.name}</p>
-    <p className="relatedProductPrice">${props.product.default_price}</p>
-    <div className="relatedProductRating">{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</div>
-    <div className="relatedProductReviews">{props.product.reviews.length ? `${props.product.reviews.length} reviews` : null}</div>
-  </div>
-)};
+    <Carousel.Item>
+      <Card style={{ width: '18rem' }}>
+        <button type="button" className="relatedProductAction" onClick={() => props.removeItem(props.product.id)}>✖️</button>
+        <Card.Img variant="top" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+        <Card.Body>
+          <Card.Text>{props.product.category}</Card.Text>
+          <Card.Text>{props.product.name}</Card.Text>
+          <Card.Text>${props.product.default_price}</Card.Text>
+          <Card.Text>{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</Card.Text>
+          <Card.Text>{props.product.reviews.length ? `${props.product.reviews.length} reviews` : null}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Carousel.Item>
+  );
+};
 
 export default OutfitItem;

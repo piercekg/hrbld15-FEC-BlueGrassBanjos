@@ -1,5 +1,6 @@
 import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
+import { Card, Carousel } from 'react-bootstrap';
 
 class RelatedProduct extends React.Component {
   constructor(props) {
@@ -18,44 +19,42 @@ class RelatedProduct extends React.Component {
     });
   }
 
-  defaultImage(product) {
-    var image;
+  defaultStyle(product) {
+    var defaultStyle = this.product.styles[0];;
     if (this.product.styles.length < 2) {
-      image = this.product.styles[0].photos[0].thumbnail_url;
-      return image;
+      defaultStyle = this.product.styles[0];
     } else {
       this.product.styles.forEach(style => {
         if (style['default?']) {
-          image = style.photos[0].thumbnail_url;
-          return image;
+          defaultStyle = style;
         }
-      })
-      image = this.product.styles[0].photos[0].thumbnail_url;
-      return image;
+      });
     }
+    return defaultStyle;
   }
 
   render () {
-
-    var image = this.defaultImage(this.product);
+    var dfStyle = this.defaultStyle(this.product);
 
     return (
-      <div className="relatedProductCard">
-        <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>*star icon*</button>
-        {console.log(this.product)}
-        <img src={`${image}`} ></img>
-        <p className="relatedProductCategory">{this.product.category}</p>
-        <p className="relatedProductName">{this.product.name}</p>
-        <p className="relatedProductPrice">${this.product.default_price}</p>
-        <div className="relatedProductRating">{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</div>
-        <div className="relatedProductReviews">{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</div>
+      <Carousel.Item>
+        <Card style={{ width: '18rem' }}>
+          <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
+          <Card.Img variant="top" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+          <Card.Body>
+            <Card.Text>{this.product.category}</Card.Text>
+            <Card.Text>{this.product.name}</Card.Text>
+            <Card.Text>${this.product.default_price}</Card.Text>
+            <Card.Text>{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</Card.Text>
+            <Card.Text>{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</Card.Text>
+          </Card.Body>
+        </Card>
         <div>
           {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
         </div>
-      </div>
-    )
+      </Carousel.Item>
+    );
   }
-
 };
 
 export default RelatedProduct;
