@@ -42,7 +42,6 @@ class App extends React.Component {
       <Router>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        {/* <Overview product={prod.product} /> */}
         <RelatedProducts />
         <QandA />
         <ReviewsComponent reviewsData={this.state.reviewsData} />

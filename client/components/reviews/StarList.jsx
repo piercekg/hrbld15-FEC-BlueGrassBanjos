@@ -10,10 +10,8 @@ function StarList({ reviewsData }) {
   let three = 0;
   let two = 0;
   let one = 0;
-  console.log(reviewsData.results);
   if (reviewsData.results !== undefined) {
     for (let i = 0; i < reviewsData.results.length; i++) {
-      console.log(reviewsData.results[i].rating);
       if (reviewsData.results[i].rating === 5) {
         five += 1;
       } else if (reviewsData.results[i].rating === 4) {
