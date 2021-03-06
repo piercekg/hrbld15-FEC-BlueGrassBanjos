@@ -2,7 +2,7 @@ import React from 'react';
 
 function Recomendation() {
   return (
-    <div>Recomendation</div>
+    <div>100% of reviews recomend this product</div>
   );
 }
 

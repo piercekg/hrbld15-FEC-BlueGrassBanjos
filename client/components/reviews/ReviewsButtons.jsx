@@ -1,8 +1,12 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
 
 function ReviewsButtons() {
   return (
-    <div>ReviewsButtons</div>
+    <div>
+      <button>MORE REVIEWS</button>
+      <button>ADD A REVIEW +</button>
+    </div>
   );
 }
 

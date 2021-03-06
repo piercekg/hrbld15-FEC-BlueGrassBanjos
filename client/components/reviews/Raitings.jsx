@@ -1,18 +1,17 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import FiveStars from './FiveStars';
 import BigNumber from './BigNumber';
 import Recomendation from './Recomendation';
 import StarList from './StarList';
 import Sliders from './Sliders';
 
-function Raitings() {
+function Raitings(props) {
   return (
     <div>
-      Raitings
-      <BigNumber />
-      <FiveStars />
+      <BigNumber reviewsData={props.reviewsData} />
       <Recomendation />
-      <StarList />
+      <StarList reviewsData={props.reviewsData} />
       <Sliders />
     </div>
   );

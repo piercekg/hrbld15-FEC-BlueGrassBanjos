@@ -1,14 +1,15 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import ReviewsButtons from './ReviewsButtons';
 import ReviewsList from './ReviewsList';
 import SortBy from './SortBy';
 
-function Reviews() {
+function Reviews(props) {
   return (
     <div>
-      Reviews
-      <SortBy />
-      <ReviewsList />
+      <SortBy reviewsData={props.reviewsData} />
+      <ReviewsList reviewsData={props.reviewsData} />
       <ReviewsButtons />
     </div>
   );
