@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import Raitings from './Raitings';
 import Reviews from './Reviews';
@@ -13,8 +15,8 @@ class ReviewsComponent extends React.Component {
     return (
       <div>
         RATINGS & REVIEWS
-        <Raitings />
-        <Reviews />
+        <Raitings reviewsData={this.props.reviewsData} />
+        <Reviews reviewsData={this.props.reviewsData} />
       </div>
     );
   }

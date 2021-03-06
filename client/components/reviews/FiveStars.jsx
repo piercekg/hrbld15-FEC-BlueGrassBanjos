@@ -1,14 +1,9 @@
 import React from 'react';
-import Star from './Star';
 
 function FiveStars() {
   return (
     <div>
-      <Star />
-      <Star />
-      <Star />
-      <Star />
-      <Star />
+      &#9733;&#9733;&#9733;&#9733;&#9733;
     </div>
   );
 }
