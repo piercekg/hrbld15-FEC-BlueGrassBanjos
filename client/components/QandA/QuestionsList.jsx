@@ -5,11 +5,11 @@
 import React, { useState } from 'react';
 import QuestionBox from './QuestionBox';
 
-function QuestionsList({ fullList, visible }) {
+function QuestionsList({ fullList, visible, productName }) {
   return (
     <div>
       {visible.map((question) => (
-        <QuestionBox key={question.question_id} question={question} />
+        <QuestionBox key={question.question_id} question={question} productName={productName} />
       ))}
     </div>
   );

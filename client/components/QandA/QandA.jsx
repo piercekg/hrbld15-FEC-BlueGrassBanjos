@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
@@ -16,6 +17,7 @@ class QandA extends React.Component {
     super(props);
     this.state = {
       currentProduct: 18201,
+      currentProductName: 'Toy',
       productQuestions: [],
       questionAnswers: [],
       visible: [],
@@ -45,7 +47,7 @@ class QandA extends React.Component {
       <div className="QandA">
         <div>Questions and Answers</div>
         <QuestionSearch />
-        <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} />
+        <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
         <ButtonBox />
       </div>
     );

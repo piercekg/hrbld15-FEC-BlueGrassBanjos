@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const axios = require('axios');
 
 const server = 'http://localhost:3000';
@@ -50,12 +51,22 @@ const requests = {
   },
 
   getCurrentProductAnswers(questionId, callback) {
-    axios.get(`${server}/qa/questions/:question_id/answers`, { params: { product_id: `${questionId}` } })
+    axios.get(`${server}/qa/questions/:question_id/answers`, { params: { question_id: `${questionId}` } })
       .then((data) => {
         callback(null, data);
       })
       .catch((err) => {
         callback(err, null);
+      });
+  },
+
+  postNewAnswer(answerData, callback) {
+    axios.post(`${server}/qa/questions/answers`, answerData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
       });
   },
 

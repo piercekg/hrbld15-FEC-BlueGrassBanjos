@@ -103,8 +103,8 @@ const retrieveProductQuestions = (productId, callback) => {
 
   // Answers
 app.get('/qa/questions/:question_id/answers', (req, res) => {
-  console.log(req.params);
-  retrieveProductAnswers(req.params.question_id, (err, response) => {
+  // console.log(req.query);
+  retrieveProductAnswers(req.query.question_id, (err, response) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
@@ -119,10 +119,20 @@ const retrieveProductAnswers = (questionId, callback) => {
   .then((question) => {
     callback(null, question);
   }).catch((err) => {
+    console.log('ERROR AT RETRIEVEPRODUCTANSWERS');
     console.log(err, null)
   })
 };
 
+app.use(express.urlencoded({ extended: true}));
+app.post('/qa/questions/answers', (req, res) => {
+  res.status(200);
+  console.log(req.body);
+  res.end()
+})
+
+
+app.use(express.json());
 // CART REQUESTS
 
 // INTERACTIONS REQUESTS
