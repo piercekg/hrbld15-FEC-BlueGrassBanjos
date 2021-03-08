@@ -5,14 +5,14 @@ import { CardDeck, CardGroup, Carousel } from 'react-bootstrap';
 const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
     return (
-      <div className="relatedProductList">
-        <CardDeck className="relatedProductDeck">
+      <div id="myCarousel" className="carousel slide" data-ride="carousel">
+        <div className="carousel-inner row w-100 mx-auto">
           {props.relatedProducts.map(product => {
             return (
               <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
             );
           })}
-        </CardDeck>
+        </div>
       </div>
     )
   } else {
