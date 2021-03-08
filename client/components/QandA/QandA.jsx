@@ -23,7 +23,6 @@ class QandA extends React.Component {
       currentProduct: 18201,
       currentProductName: 'Toy',
       productQuestions: [],
-      questionAnswers: [],
       visible: [],
       addQuestion: false,
     };
@@ -51,6 +50,15 @@ class QandA extends React.Component {
     });
   }
 
+  addMoreQuestions() {
+    const newLength = this.state.visible.length + 2;
+    const newQuestions = this.state.productQuestions.slice(0, newLength);
+
+    this.setState({
+      visible: newQuestions,
+    });
+  }
+
   render() {
     return (
       <div className="QandA">
@@ -58,7 +66,7 @@ class QandA extends React.Component {
         <QuestionSearch />
         {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} /> : null}
         <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
-        <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} />
+        <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} addMoreQuestions={this.addMoreQuestions.bind(this)} />
       </div>
     );
   }

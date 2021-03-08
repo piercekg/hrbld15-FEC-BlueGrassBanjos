@@ -61,9 +61,11 @@ class QuestionBox extends React.Component {
   incrimentHelpful() {
     this.setState({
       helpful: this.state.helpful + 1,
+    }, () => {
+      requests.updateQuestionHelpful({ question_id: this.state.question.question_id, helpful: this.state.helpful }, () => {
+        console.log('Helpful Updated');
+      });
     });
-
-    // Change to PUT request later
   }
 
   render() {

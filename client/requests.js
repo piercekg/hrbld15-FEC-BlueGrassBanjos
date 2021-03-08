@@ -80,6 +80,36 @@ const requests = {
       });
   },
 
+  updateQuestionHelpful(updateData, callback) {
+    axios.put(`${server}/qa/questions/:question_id/helpful`, updateData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
+  updateAnswerHelpful(updateData, callback) {
+    axios.put(`${server}/qa/answers`, updateData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
+  reportAnswer(updateData, callback) {
+    axios.put(`${server}/qa/answers/report`, updateData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
   // CART REQUESTS
 
   // INTERACTIONS REQUESTS

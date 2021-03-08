@@ -3,10 +3,10 @@
 
 import React, { useState } from 'react';
 
-function ButtonBox({ toggleAskQuestion }) {
+function ButtonBox({ toggleAskQuestion, addMoreQuestions }) {
   return (
     <div>
-      <div>More Questions</div>
+      <button type="button" onClick={addMoreQuestions}>More Questions</button>
       <button type="button" onClick={toggleAskQuestion}>Add A Question</button>
     </div>
   );

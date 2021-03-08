@@ -107,11 +107,20 @@ app.post('/qa/questions/', (req, res) => {
   res.status(200);
   console.log(req.body);
   res.end()
+
+  // CONNECT TO SERVER
+})
+
+app.put('/qa/questions/:question_id/helpful', (req, res) => {
+  res.status(200);
+  console.log(req.body);
+  res.end()
+
+  // CONNECT TO SERVER
 })
 
   // Answers
 app.get('/qa/questions/:question_id/answers', (req, res) => {
-  // console.log(req.query);
   retrieveProductAnswers(req.query.question_id, (err, response) => {
     if (err) {
       console.log(err);
@@ -132,13 +141,29 @@ const retrieveProductAnswers = (questionId, callback) => {
   })
 };
 
-
 app.post('/qa/questions/answers', (req, res) => {
   res.status(200);
   console.log(req.body);
   res.end()
+
+  // CONNECT TO SERVER
 })
 
+app.put('/qa/answers', (req, res) => {
+  res.status(200);
+  console.log(req.body);
+  res.end()
+
+  // CONNECT TO SERVER
+})
+
+app.put('/qa/answers/report', (req, res) => {
+  res.status(200);
+  console.log(req.body);
+  res.end();
+
+  // CONNECT TO SERVER
+})
 
 app.use(express.json());
 

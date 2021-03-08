@@ -1,15 +1,30 @@
+/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
 import React, { useState } from 'react';
+import requests from '../../requests';
 
 function AnswerButtons({ answerInfo }) {
-  const [helpful, setHelpful] = useState(answerInfo.helpfulness);
+  const [helpCount, setHelpCount] = useState(answerInfo.helpfulness);
 
   function incrementHelpful() {
-    setHelpful((prevHelpful) => prevHelpful + 1);
+    setHelpCount((prevHelpCount) => prevHelpCount + 1);
+
+    const updateData = { answer_id: answerInfo.answer_id, helpful: helpCount + 1 };
+
+    requests.updateAnswerHelpful(updateData, () => {
+      console.log('Helpful Updated');
+    });
+  }
+
+  function onReport() {
+    const updateData = { answer_id: answerInfo.answer_id, reported: true };
+    requests.reportAnswer(updateData, () => {
+      console.log('Answer Reported');
+    });
   }
 
   return (
@@ -22,10 +37,10 @@ function AnswerButtons({ answerInfo }) {
       </span>
       <span onClick={incrementHelpful}>
         Helpful? (
-        {helpful}
+        {helpCount}
         )
       </span>
-      <span>Report</span>
+      <span onClick={onReport}>Report</span>
     </div>
   );
 }
