@@ -1,5 +1,7 @@
 import React from 'react';
 import RelatedProduct from './RelatedProduct.jsx';
+import Carousel from 'react-multi-carousel';
+
 
 const RelatedProductsList = (props) => (
   <div className="relatedProductList">
