@@ -38,18 +38,18 @@ class RelatedProduct extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="carousel-item col-md-4">
-          <div className="card">
+        <div>
+          <Card style={{ width: '18rem', height: '34rem' }} className="product-card">
             <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
-            <img className="card-img-top img-fluid" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
-            <div className="card-body">
-              <p className="card-text">{this.product.category}</p>
-              <p className="card-text">{this.product.name}</p>
-              <p className="card-text">${this.product.default_price}</p>
-              <p className="card-text">{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</p>
-              <p className="card-text">{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</p>
-            </div>
-          </div>
+            <Card.Img variant="top" style={{ width: '18rem', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+            <Card.Body>
+              <Card.Text>{this.product.category}</Card.Text>
+              <Card.Text>{this.product.name}</Card.Text>
+              <Card.Text>${this.product.default_price}</Card.Text>
+              <Card.Text>{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</Card.Text>
+              <Card.Text>{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</Card.Text>
+            </Card.Body>
+          </Card>
         </div>
         <div>
           {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
