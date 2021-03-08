@@ -1,6 +1,8 @@
 import React from 'react';
 import RelatedProduct from './RelatedProduct.jsx';
-import { CardDeck, CardGroup, Carousel } from 'react-bootstrap';
+import { CardDeck } from 'react-bootstrap';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
