@@ -2,9 +2,12 @@
 import React from 'react';
 
 function ReviewsButtons() {
+  function displayMore() {
+    alert('diplay more clicked');
+  }
   return (
     <div>
-      <button>MORE REVIEWS</button>
+      <button onClick={displayMore}>MORE REVIEWS</button>
       <button>ADD A REVIEW +</button>
     </div>
   );

@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
@@ -9,6 +11,11 @@ class ReviewsComponent extends React.Component {
     super(props);
     this.state = {
     };
+    this.report = this.report.bind(this);
+  }
+
+  report() {
+    console.log('report');
   }
 
   render() {
@@ -16,7 +23,7 @@ class ReviewsComponent extends React.Component {
       <div>
         RATINGS & REVIEWS
         <Raitings reviewsData={this.props.reviewsData} />
-        <Reviews reviewsData={this.props.reviewsData} />
+        <Reviews reviewsData={this.props.reviewsData} report={this.report} />
       </div>
     );
   }
