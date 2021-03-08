@@ -1,9 +1,20 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import $ from 'jquery';
 
-function QuestionSearch() {
+function QuestionSearch({ searchQuestions }) {
   return (
-    <div>Questions Search</div>
+    <form>
+      <input
+        type="text"
+        id="search_bar"
+        placeholder="Search For A Question"
+        onChange={() => {
+          searchQuestions($('#search_bar').val());
+        }}
+      />
+    </form>
   );
 }
 

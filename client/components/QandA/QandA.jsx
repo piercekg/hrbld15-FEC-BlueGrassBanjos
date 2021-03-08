@@ -59,11 +59,34 @@ class QandA extends React.Component {
     });
   }
 
+  searchQuestions(text) {
+    const newQuestionsList = [];
+    const questions = this.state.productQuestions;
+    const textArr = text.split(' ');
+
+    questions.forEach((question) => {
+      const questionText = question.question_body;
+      textArr.forEach((word) => {
+        if (questionText.includes(word) && newQuestionsList.indexOf(questionText) === -1) {
+          newQuestionsList.push(question);
+        }
+      });
+    });
+
+    helpers.sortQuestions(newQuestionsList, (sortedList) => {
+      const newVisible = sortedList.slice(0, 2);
+      this.setState({
+        fullList: sortedList,
+        visible: newVisible,
+      });
+    });
+  }
+
   render() {
     return (
       <div className="QandA">
         <div>Questions and Answers</div>
-        <QuestionSearch />
+        <QuestionSearch searchQuestions={this.searchQuestions.bind(this)} />
         {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} /> : null}
         <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
         <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} addMoreQuestions={this.addMoreQuestions.bind(this)} />
