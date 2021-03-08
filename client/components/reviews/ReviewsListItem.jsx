@@ -4,7 +4,6 @@ import React from 'react';
 import FiveStars from './FiveStars';
 
 function ReviewsListItem(props) {
-  console.log(props.review);
   const title = props.review.body.split('.')[0];
   const date = new Date(props.review.date).toDateString();
   const bigNumber = props.review.rating;
