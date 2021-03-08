@@ -6,13 +6,13 @@ const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
     return (
       <div className="relatedProductList">
-        <CardGroup className="relatedProductDeck">
+        <CardDeck className="relatedProductDeck">
           {props.relatedProducts.map(product => {
             return (
               <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
             );
           })}
-        </CardGroup>
+        </CardDeck>
       </div>
     )
   } else {

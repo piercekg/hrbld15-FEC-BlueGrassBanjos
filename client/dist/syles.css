@@ -106,14 +106,11 @@
   display: flex;
   flex-flow: row nowrap;
   overflow: scroll;
-  justify-content: space-between;
+
 }
 
 .product-card {
   border-style: solid;
+  width: 100%;
   margin: 20px;
-}
-
-.product-card-image {
-  object-fit: contain;
 }
