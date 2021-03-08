@@ -80,6 +80,8 @@ const retrieveRelatedProducts = (productId, callback) => {
 
 // QUESTIONS AND ANSWERS REQUESTS
 
+app.use(express.urlencoded({ extended: true}));
+
   // Questions
 app.get('/qa/questions/', (req, res) => {
   retrieveProductQuestions(req.query.product_id, (err, response) => {
@@ -100,6 +102,12 @@ const retrieveProductQuestions = (productId, callback) => {
     console.log(err, null);
   })
 };
+
+app.post('/qa/questions/', (req, res) => {
+  res.status(200);
+  console.log(req.body);
+  res.end()
+})
 
   // Answers
 app.get('/qa/questions/:question_id/answers', (req, res) => {
@@ -124,7 +132,7 @@ const retrieveProductAnswers = (questionId, callback) => {
   })
 };
 
-app.use(express.urlencoded({ extended: true}));
+
 app.post('/qa/questions/answers', (req, res) => {
   res.status(200);
   console.log(req.body);
@@ -133,6 +141,7 @@ app.post('/qa/questions/answers', (req, res) => {
 
 
 app.use(express.json());
+
 // CART REQUESTS
 
 // INTERACTIONS REQUESTS

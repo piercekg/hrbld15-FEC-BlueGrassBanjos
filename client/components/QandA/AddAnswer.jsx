@@ -27,7 +27,6 @@ class AddAnswer extends React.Component {
     formData.username = $('#answer_username').val();
     formData.email = $('#answer_email').val();
 
-    $('#answer_question_id').text('');
     $('#answer_text').text('');
     $('#answer_username').text('');
     $('#answer_email').text('');

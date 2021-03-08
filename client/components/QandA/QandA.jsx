@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable class-methods-use-this */
 /* eslint-disable max-len */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-console */
@@ -8,6 +11,7 @@ import React from 'react';
 import QuestionSearch from './QuestionSearch';
 import QuestionsList from './QuestionsList';
 import ButtonBox from './ButtonBox';
+import AskQuestion from './AskQuestion';
 
 import requests from '../../requests';
 import helpers from './helpers';
@@ -21,6 +25,7 @@ class QandA extends React.Component {
       productQuestions: [],
       questionAnswers: [],
       visible: [],
+      addQuestion: false,
     };
   }
 
@@ -38,8 +43,12 @@ class QandA extends React.Component {
         });
       }
     });
+  }
 
-    // requests.getCurrentProductAnswers();
+  toggleAskQuestion() {
+    this.setState({
+      addQuestion: !this.state.addQuestion,
+    });
   }
 
   render() {
@@ -47,8 +56,9 @@ class QandA extends React.Component {
       <div className="QandA">
         <div>Questions and Answers</div>
         <QuestionSearch />
+        {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} /> : null}
         <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
-        <ButtonBox />
+        <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} />
       </div>
     );
   }

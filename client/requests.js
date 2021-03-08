@@ -70,6 +70,16 @@ const requests = {
       });
   },
 
+  postNewQuestion(questionData, callback) {
+    axios.post(`${server}/qa/questions`, questionData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
   // CART REQUESTS
 
   // INTERACTIONS REQUESTS
