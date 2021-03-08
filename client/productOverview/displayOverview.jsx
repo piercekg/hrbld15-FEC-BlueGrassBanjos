@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unused-state */
 import React from 'react';
-
-const requests = require('../requests.js');
+import Requests from '../requests';
 
 class Overview extends React.Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class Overview extends React.Component {
   }
 
   getProduct(props) {
-    requests.default.getProductInfo(props.product, (err, data) => {
+    Requests.getProductInfo(props.product, (err, data) => {
       if (err) {
         console.log(err);
       } else {
@@ -27,7 +26,7 @@ class Overview extends React.Component {
   }
 
   getStyles(props) {
-    requests.default.getProductStyles(props.product, (err, data) => {
+    Requests.getProductStyles(props.product, (err, data) => {
       if (err) {
         console.log(err);
       } else {

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
@@ -12,8 +13,7 @@ import Overview from './productOverview/displayOverview';
 import ReviewsComponent from './components/reviews/ReviewsComponent';
 import QandA from './components/QandA/QandA';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
-
-const Requests = require('./requests.js');
+import Requests from './requests';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Requests.default.getReviews(18201, (err, data) => {
+    Requests.getReviews(18201, (err, data) => {
       if (err) {
         console.log(err);
       } else {
@@ -48,6 +48,6 @@ class App extends React.Component {
       </Router>
     );
   }
-};
+}
 
 export default App;
