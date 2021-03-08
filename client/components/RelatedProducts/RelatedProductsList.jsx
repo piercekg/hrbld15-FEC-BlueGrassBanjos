@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RelatedProduct from './RelatedProduct.jsx';
 import { CardDeck, CardGroup, Carousel } from 'react-bootstrap';
 
 const RelatedProductsList = (props) => {
+  const [index, setIndex] = useState(0);
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
   if (props.relatedProducts.length > 0) {
     return (
       <div className="relatedProductList">
-        <CardDeck className="relatedProductDeck">
+        <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
           {props.relatedProducts.map(product => {
             return (
-              <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+              <Carousel.Item key={product.id}>
+                <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+              </Carousel.Item>
             );
           })}
-        </CardDeck>
+        </Carousel>
       </div>
     )
   } else {

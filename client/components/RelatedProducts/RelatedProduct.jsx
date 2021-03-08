@@ -38,9 +38,9 @@ class RelatedProduct extends React.Component {
 
     return (
       <React.Fragment>
-        <Card style={{ width: '18rem' }} className="product-card">
+        <Card style={{ width: '12rem' }} className="product-card">
           <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
-          <Card.Img variant="top" style={{ width: '18rem', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+          <Card.Img variant="top" style={{ width: '12rem', height: '16rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
           <Card.Body>
             <Card.Text>{this.product.category}</Card.Text>
             <Card.Text>{this.product.name}</Card.Text>

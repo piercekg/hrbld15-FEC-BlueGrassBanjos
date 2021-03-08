@@ -89,7 +89,8 @@
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
 .relatedProductList {
-
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .carousel {
@@ -105,12 +106,13 @@
 .relatedProductDeck {
   display: flex;
   flex-flow: row nowrap;
-  overflow: scroll;
+  overflow: auto;
 
 }
 
 .product-card {
+  display: flex;
+  flex-flow: column nowrap;
   border-style: solid;
-  width: 100%;
   margin: 20px;
 }
