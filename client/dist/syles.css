@@ -18,7 +18,7 @@
   flex: 1 1 auto;
   position:fixed;
   background: white;
-  width: 40%;
+  width: 50%;
   height: auto;
   top:50%;
   left:50%;
@@ -45,7 +45,7 @@
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .compare-row:nth-of-type(even) {
@@ -89,6 +89,31 @@
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
 .relatedProductList {
+
+}
+
+.carousel {
   display: flex;
   flex-flow: row nowrap;
+}
+
+.carousel-item {
+  display: flex;
+  width: 100%;
+}
+
+.relatedProductDeck {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: scroll;
+  justify-content: space-between;
+}
+
+.product-card {
+  border-style: solid;
+  margin: 20px;
+}
+
+.product-card-image {
+  object-fit: contain;
 }
