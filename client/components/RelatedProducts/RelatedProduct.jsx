@@ -15,7 +15,7 @@ class RelatedProduct extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     Carousel.init();
   }
 

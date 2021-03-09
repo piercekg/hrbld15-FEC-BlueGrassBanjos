@@ -8,6 +8,7 @@ const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
     var place = 0;
     return (
+      <React.Fragment>
         <div className="d-flex flex-nowrap carousel-outer">
           <div id="carousel" className="d-flex flex-row carousel-transition">
             {props.relatedProducts.map(product => {
@@ -17,8 +18,9 @@ const RelatedProductsList = (props) => {
               );
             })}
           </div>
-          <button type="button" className="scroll-button"></button>
         </div>
+        <button type="button" className="scroll-button">Scroll!</button>
+      </React.Fragment>
     )
   } else {
     return null;

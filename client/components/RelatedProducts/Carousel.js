@@ -8,6 +8,7 @@ const Carousel = {
   current: 1,
 
   init: function() {
+    console.log('Carousel init')
     // set CSS order of each item initially
     document.querySelectorAll(".carousel-item").forEach(function(element, index) {
       element.style.order = index + 1;
@@ -24,7 +25,7 @@ const Carousel = {
     });
 
     // after each item slides in, slider container fires transitionend event
-    document.querySelector(".carousel").addEventListener('transitionend', () => {
+    document.querySelector("#carousel").addEventListener('transitionend', () => {
       this.changeOrder();
     });
   },
@@ -52,15 +53,15 @@ const Carousel = {
 
     // translate back to 0 from -100%
     // we don't need transitionend to fire for this translation, so remove transition CSS
-    document.querySelector(".carousel").classList.remove('carousel-transition');
-    document.querySelector(".carousel").style.transform = 'translateX(0)';
+    document.querySelector("#carousel").classList.remove('carousel-transition');
+    document.querySelector("#carousel").style.transform = 'translateX(0)';
   },
 
   gotoNext: function() {
     // translate from 0 to -100%
     // we need transitionend to fire for this translation, so add transition CSS
-    document.querySelector(".carousel").classList.add('carousel-transition');
-    document.querySelector(".carousel").style.transform = 'translateX(-100%)';
+    document.querySelector("#carousel").classList.add('carousel-transition');
+    document.querySelector("#carousel").style.transform = 'translateX(-100%)';
   }
 };
 
