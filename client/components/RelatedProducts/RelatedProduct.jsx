@@ -1,6 +1,7 @@
 import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
 import { Card } from 'react-bootstrap';
+import StarRating from './StarRating'
 
 class RelatedProduct extends React.Component {
   constructor(props) {
@@ -37,17 +38,17 @@ class RelatedProduct extends React.Component {
     var dfStyle = this.defaultStyle(this.product);
     return (
       <React.Fragment>
-        <Card style={{ width: '18rem', height: '33rem' }} className="product-card carousel-item">
+        <Card style={{ width: '18rem', height: '30rem' }} className="product-card carousel-item">
           <div className="img-overlay">
             <button type="button" className="btn btn-default brn-xs" onClick={() => this.handleClick()}>⭐</button>
           </div>
-          <Card.Img variant="top" style={{ width: 'auto', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+          <Card.Img variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
           <Card.Body>
             <Card.Text className="text-uppercase"><small>{this.product.category}</small></Card.Text>
             <Card.Text><strong>{this.product.name}</strong><br></br>{`${this.product.slogan}`}</Card.Text>
             <Card.Text><small>${this.product.default_price}</small></Card.Text>
-            <Card.Text>{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</Card.Text>
-            <Card.Text>{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</Card.Text>
+            <StarRating rating={this.product.averageRating ? this.product.averageRating : null}/>
+            <Card.Text><small>{this.product.reviews.length ? `${this.product.reviews.length} reviews` : '0 reviews'}</small></Card.Text>
           </Card.Body>
         </Card>
         <div>
@@ -62,4 +63,6 @@ export default RelatedProduct;
 
 /*
 this.product.styles[0].photos[0].thumbnail_url
+
+            <Card.Text>{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</Card.Text>
 */

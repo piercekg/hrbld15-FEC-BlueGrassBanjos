@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Carousel } from 'react-bootstrap';
+import StarRating from './StarRating';
 
 const defaultStyle = (product) => {
   var defaultStyle = product.styles[0];;
@@ -20,17 +21,17 @@ const OutfitItem = (props) => {
 
   return (
     <React.Fragment>
-      <Card style={{ width: '18rem', height: '33rem'}} className="product-card">
+      <Card style={{ width: '18rem', height: '30rem'}} className="product-card carousel-item">
       <div className="img-overlay">
         <button type="button" className="btn btn-default brn-xs" onClick={() => props.removeItem(props.product.id)}>❌</button>
       </div>
-        <Card.Img variant="top" style={{ width: 'auto', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+        <Card.Img variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
         <Card.Body>
           <Card.Text className="text-uppercase"><small>{props.product.category}</small></Card.Text>
           <Card.Text><strong>{props.product.name}</strong><br></br>{`${props.product.slogan}`}</Card.Text>
           <Card.Text><small>${props.product.default_price}</small></Card.Text>
-          <Card.Text>{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</Card.Text>
-          <Card.Text>{props.product.reviews.length ? `${props.product.reviews.length} reviews` : null}</Card.Text>
+          <StarRating rating={props.product.averageRating}/>
+          <Card.Text><small>{props.product.reviews.length ? `${props.product.reviews.length} reviews` : '0 reviews'}</small></Card.Text>
         </Card.Body>
       </Card>
     </React.Fragment>
@@ -38,3 +39,7 @@ const OutfitItem = (props) => {
 };
 
 export default OutfitItem;
+
+/*
+          <Card.Text>{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</Card.Text>
+*/
