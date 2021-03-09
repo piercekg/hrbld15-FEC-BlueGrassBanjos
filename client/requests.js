@@ -38,6 +38,15 @@ const requests = {
   },
 
   // REVIEWS REQUESTS
+  getReviews(productId, callback) {
+    axios.get(`${server}/products/${productId}/reviews`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
 
   // QUESTIONS AND ANSWERS REQUESTS
   getCurrentProductQuestions(currentProductId, callback) {
