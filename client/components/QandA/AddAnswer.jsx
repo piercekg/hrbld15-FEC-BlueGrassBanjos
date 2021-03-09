@@ -6,6 +6,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState } from 'react';
+import ReactDom from 'react-dom';
 import $ from 'jquery';
 
 import requests from '../../requests';
@@ -39,7 +40,7 @@ class AddAnswer extends React.Component {
   }
 
   render() {
-    return (
+    return ReactDom.createPortal(
       <form>
         <h3>
           {this.state.productName}
@@ -55,7 +56,8 @@ class AddAnswer extends React.Component {
           <input type="email" name="email" id="answer_email" placeholder="Enter Email" required />
         </div>
         <button type="button" onClick={this.onSubmit.bind(this)}>Submit</button>
-      </form>
+      </form>,
+      document.getElementById('modal'),
     );
   }
 }

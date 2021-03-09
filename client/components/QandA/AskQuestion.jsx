@@ -4,6 +4,7 @@
 /* eslint-disable react/destructuring-assignment */
 
 import React from 'react';
+import reactDom from 'react-dom';
 import $ from 'jquery';
 import requests from '../../requests';
 
@@ -33,7 +34,7 @@ class AskQuestion extends React.Component {
   }
 
   render() {
-    return (
+    return reactDom.createPortal(
       <form>
         <h3>{this.state.productName}</h3>
         <div>
@@ -46,7 +47,8 @@ class AskQuestion extends React.Component {
           <input type="email" name="email" id="question_email" placeholder="Enter Email" required />
         </div>
         <button type="button" onClick={this.onSubmit.bind(this)}>Submit</button>
-      </form>
+      </form>,
+      document.getElementById('modal'),
     );
   }
 }

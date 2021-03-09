@@ -88,6 +88,7 @@ class QandA extends React.Component {
         <div>Questions and Answers</div>
         <QuestionSearch searchQuestions={this.searchQuestions.bind(this)} />
         {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} /> : null}
+        <div id="modal" />
         <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
         <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} addMoreQuestions={this.addMoreQuestions.bind(this)} />
       </div>
