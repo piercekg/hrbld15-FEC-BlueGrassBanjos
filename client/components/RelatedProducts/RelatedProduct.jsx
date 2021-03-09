@@ -35,11 +35,10 @@ class RelatedProduct extends React.Component {
 
   render () {
     var dfStyle = this.defaultStyle(this.product);
-    console.log(this.place)
     return (
-      <div>
+      <React.Fragment>
         <Card style={{ width: '18rem', height: '33rem' }} className="product-card carousel-item">
-        <div className="img-overlay">
+          <div className="img-overlay">
             <button type="button" className="btn btn-default brn-xs" onClick={() => this.handleClick()}>⭐</button>
           </div>
           <Card.Img variant="top" style={{ width: 'auto', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
@@ -54,7 +53,7 @@ class RelatedProduct extends React.Component {
         <div>
           {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 };
