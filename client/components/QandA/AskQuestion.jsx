@@ -18,10 +18,10 @@ class AskQuestion extends React.Component {
 
   onSubmit() {
     const formData = {};
-    formData.product_id = this.state.productId;
-    formData.answer = $('#question_text').val();
-    formData.username = $('#question_username').val();
+    formData.body = $('#question_text').val();
+    formData.name = $('#question_username').val();
     formData.email = $('#question_email').val();
+    formData.product_id = this.state.productId;
 
     $('#question_text').text('');
     $('#question_username').text('');
