@@ -8,13 +8,18 @@ const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
     var place = 0;
     return (
-      <CardDeck className="related-products-list">
-        {props.relatedProducts.map(product => {
-          return (
-              <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
-          );
-        })}
-      </CardDeck>
+      <React.Fragment>
+
+          <CardDeck className="related-products-list">
+            {props.relatedProducts.map(product => {
+              place += 1;
+              return (
+                <RelatedProduct place={place} product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+              );
+            })}
+          </CardDeck>
+
+      </React.Fragment>
     )
   } else {
     return null;

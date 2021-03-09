@@ -94,8 +94,7 @@
 }
 
 .related-products-list {
-  display: flex;
-  flex-flow: row nowrap;
+
   overflow: auto;
 }
 
