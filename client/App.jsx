@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
@@ -5,12 +6,12 @@
 import React from 'react';
 
 import {
-  // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import Overview from './productOverview/displayOverview';
 import ReviewsComponent from './components/reviews/ReviewsComponent';
 import QandA from './components/QandA/QandA';
+import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
 
 class App extends React.Component {
