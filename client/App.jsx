@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import Overview from './productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
-import RelatedProducts from './components/RelatedProducts/RelatedProducts'
+import RelatedProducts from './components/RelatedProducts/RelatedProducts';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,11 +25,11 @@ class App extends React.Component {
       <Router>
         <div className="hello">Hello World!!!!</div>
         {/* <Overview product={prod.product} /> */}
-        {<RelatedProducts/>}
+        {/* {<RelatedProducts/>} */}
         <QandA />
       </Router>
     );
   }
-};
+}
 
 export default App;
