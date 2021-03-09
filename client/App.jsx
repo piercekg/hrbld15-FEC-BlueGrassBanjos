@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import Overview from './productOverview/displayOverview';
-import ReviewsComponent from './components/reviews/ReviewsComponent';
+// import ReviewsComponent from './components/reviews/ReviewsComponent';
 import QandA from './components/QandA/QandA';
 import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
@@ -24,15 +24,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Requests.default.getReviews(18201, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        this.setState({
-          reviewsData: data.data,
-        });
-      }
-    });
+    // Requests.default.getReviews(18201, (err, data) => {
+    //   if (err) {
+    //     console.log(err);
+    //   } else {
+    //     this.setState({
+    //       reviewsData: data.data,
+    //     });
+    //   }
+    // });
   }
 
   render() {
@@ -40,10 +40,10 @@ class App extends React.Component {
     return (
       <Router>
         <div className="hello">Hello World!!!!</div>
-        <Overview product={prod.product} />
-        <RelatedProducts />
+        {/* <Overview product={prod.product} />
+        <RelatedProducts /> */}
         <QandA />
-        <ReviewsComponent reviewsData={this.state.reviewsData} />
+        {/* <ReviewsComponent reviewsData={this.state.reviewsData} /> */}
       </Router>
     );
   }
