@@ -9,6 +9,7 @@ class RelatedProduct extends React.Component {
       clicked: false
     };
     this.product = props.product;
+    this.col =  props.col;
     this.selectedProduct = props.selectedProduct
     this.handleClick = this.handleClick.bind(this);
   }
@@ -37,7 +38,7 @@ class RelatedProduct extends React.Component {
     var dfStyle = this.defaultStyle(this.product);
 
     return (
-      <React.Fragment>
+      <div className={`col-${this.col}`}>
         <Card style={{ width: '18rem' }} className="product-card">
           <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
           <Card.Img variant="top" style={{ width: '18rem', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
@@ -53,7 +54,7 @@ class RelatedProduct extends React.Component {
         <div>
           {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 };

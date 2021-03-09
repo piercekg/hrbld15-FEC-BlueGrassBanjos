@@ -5,12 +5,14 @@ import { Container, Row, Col, CardDeck, CardGroup, Carousel } from 'react-bootst
 const RelatedProductsList = (props) => {
 
   if (props.relatedProducts.length > 0) {
+    var col = 0;
     return (
         <div className="d-flex flex-nowrap">
           <div className="d-flex flex-row">
             {props.relatedProducts.map(product => {
+              col += 1;
               return (
-                <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+                <RelatedProduct col={col} product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
               );
             })}
           </div>
