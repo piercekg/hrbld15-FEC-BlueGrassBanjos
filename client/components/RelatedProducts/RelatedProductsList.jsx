@@ -8,19 +8,13 @@ const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
     var place = 0;
     return (
-      <React.Fragment>
-        <div className="d-flex flex-nowrap carousel-outer">
-          <div id="carousel" className="d-flex flex-row carousel-transition">
-            {props.relatedProducts.map(product => {
-              place += 1;
-              return (
-                <RelatedProduct place={place} product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
-              );
-            })}
-          </div>
-        </div>
-        <button type="button" className="scroll-button">Scroll!</button>
-      </React.Fragment>
+      <CardDeck className="related-products-list">
+        {props.relatedProducts.map(product => {
+          return (
+              <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+          );
+        })}
+      </CardDeck>
     )
   } else {
     return null;

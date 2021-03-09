@@ -93,24 +93,6 @@
   flex-flow: row nowrap;
 }
 
-.carousel-outer {
-  overflow: hidden;
-}
-
-#carousel {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.carousel-transition {
-  transition: transform 0.7s ease-in-out;
-}
-
-.carousel-item {
-  width: 100%;
-  flex-shrink: 0
-}
-
 .related-products-list {
   display: flex;
   flex-flow: row nowrap;

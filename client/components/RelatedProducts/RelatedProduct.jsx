@@ -1,7 +1,6 @@
 import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
 import { Col, Card } from 'react-bootstrap';
-import Carousel from './Carousel.js';
 
 class RelatedProduct extends React.Component {
   constructor(props) {
@@ -13,10 +12,6 @@ class RelatedProduct extends React.Component {
     this.place = props.place;
     this.selectedProduct = props.selectedProduct
     this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    Carousel.init();
   }
 
   handleClick() {
@@ -43,8 +38,8 @@ class RelatedProduct extends React.Component {
     var dfStyle = this.defaultStyle(this.product);
     console.log(this.place)
     return (
-      <div>
-        <Card style={{ width: '18rem' }} className="product-card carousel-item" data-position={`${this.place}`}>
+      <React.Fragment>
+        <Card style={{ width: '18rem' }} className="product-card">
           <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
           <Card.Img variant="top" style={{ width: '18rem', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
           <Card.Body>
@@ -58,7 +53,7 @@ class RelatedProduct extends React.Component {
         <div>
           {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 };
