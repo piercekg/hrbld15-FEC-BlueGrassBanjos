@@ -23,7 +23,7 @@ const OutfitItem = (props) => {
     <React.Fragment>
       <Card style={{ width: '18rem', height: '30rem'}} className="product-card carousel-item">
       <div className="img-overlay">
-        <button type="button" className="btn btn-default brn-xs" onClick={() => props.removeItem(props.product.id)}>❌</button>
+        <button type="button" className="btn btn-default btn-xs" onClick={() => props.removeItem(props.product.id)}>❌</button>
       </div>
         <Card.Img variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
         <Card.Body>
