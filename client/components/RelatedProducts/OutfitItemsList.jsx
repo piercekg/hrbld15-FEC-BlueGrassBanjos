@@ -3,24 +3,22 @@ import { Card, CardDeck, Carousel } from 'react-bootstrap';
 import OutfitItem from './OutfitItem.jsx';
 
 const OutfitItemsList = (props) => (
-  <div className="relatedProductList">
-    <CardDeck className="relatedProductDeck">
-      <Card style={{ width: '12rem' }} className="product-card" onClick={() => props.addItem(props.selectedProduct)}>
+  <div className="d-flex flex-nowrap">
+    <div className="d-flex flex-row">
+      <Card style={{ width: '18rem' }} className="product-card" onClick={() => props.addItem(props.selectedProduct)}>
         <Card.Body>
           <Card.Text>＋<br></br>Add to Outfit</Card.Text>
         </Card.Body>
       </Card>
-      <Carousel>
+      <div className="d-flex flex-row">
       {props.products.map(product => {
           return (
-          <Carousel.Item key={product.id}>
             <OutfitItem product={product} key={product.id} removeItem={props.removeItem}/>
-          </Carousel.Item>
           );
         })}
-      </Carousel>
+      </div>
 
-    </CardDeck>
+    </div>
     {/*<button type="button" onClick={() => props.clearOutfit()}>Clear Outfit</button>*/}
   </div>
 

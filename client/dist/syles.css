@@ -103,11 +103,10 @@
   width: 100%;
 }
 
-.relatedProductDeck {
+.related-products-list {
   display: flex;
   flex-flow: row nowrap;
   overflow: auto;
-
 }
 
 .product-card {
@@ -116,3 +115,4 @@
   border-style: solid;
   margin: 20px;
 }
+
