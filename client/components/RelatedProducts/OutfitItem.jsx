@@ -20,13 +20,15 @@ const OutfitItem = (props) => {
 
   return (
     <React.Fragment>
-      <Card style={{ width: '18rem' }} className="product-card">
-        <button type="button" className="relatedProductAction" onClick={() => props.removeItem(props.product.id)}>✖️</button>
-        <Card.Img variant="top" style={{ width: '18rem', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+      <Card style={{ width: '18rem', height: '33rem'}} className="product-card">
+      <div className="img-overlay">
+        <button type="button" className="btn btn-default brn-xs" onClick={() => props.removeItem(props.product.id)}>❌</button>
+      </div>
+        <Card.Img variant="top" style={{ width: 'auto', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
         <Card.Body>
-          <Card.Text>{props.product.category}</Card.Text>
-          <Card.Text>{props.product.name}</Card.Text>
-          <Card.Text>${props.product.default_price}</Card.Text>
+          <Card.Text className="text-uppercase"><small>{props.product.category}</small></Card.Text>
+          <Card.Text><strong>{props.product.name}</strong><br></br>{`${props.product.slogan}`}</Card.Text>
+          <Card.Text><small>${props.product.default_price}</small></Card.Text>
           <Card.Text>{props.product.averageRating ? `*# of stars*: ${props.product.averageRating}` : null}</Card.Text>
           <Card.Text>{props.product.reviews.length ? `${props.product.reviews.length} reviews` : null}</Card.Text>
         </Card.Body>

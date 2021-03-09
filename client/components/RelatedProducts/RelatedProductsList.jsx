@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
 import RelatedProduct from './RelatedProduct.jsx';
-import { Container, Row, Col, CardDeck, CardGroup } from 'react-bootstrap';
-
 
 const RelatedProductsList = (props) => {
 
   if (props.relatedProducts.length > 0) {
-    var place = 0;
     return (
       <React.Fragment>
         <div className="d-flex flex-nowrap carousel-outer">
-          <div id="carousel" className="d-flex flex-row carousel-transition">
+          <div className="d-flex flex-row carousel">
             {props.relatedProducts.map(product => {
-              place += 1;
               return (
-                <RelatedProduct place={place} product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+                <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
               );
             })}
           </div>
         </div>
-        <button type="button" className="scroll-button">Scroll!</button>
       </React.Fragment>
     )
   } else {

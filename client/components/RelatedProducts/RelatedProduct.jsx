@@ -1,7 +1,6 @@
 import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
-import { Col, Card } from 'react-bootstrap';
-import Carousel from './Carousel.js';
+import { Card } from 'react-bootstrap';
 
 class RelatedProduct extends React.Component {
   constructor(props) {
@@ -10,13 +9,8 @@ class RelatedProduct extends React.Component {
       clicked: false
     };
     this.product = props.product;
-    this.place = props.place;
     this.selectedProduct = props.selectedProduct
     this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    Carousel.init();
   }
 
   handleClick() {
@@ -44,13 +38,15 @@ class RelatedProduct extends React.Component {
     console.log(this.place)
     return (
       <div>
-        <Card style={{ width: '18rem' }} className="product-card carousel-item" data-position={`${this.place}`}>
-          <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
-          <Card.Img variant="top" style={{ width: '18rem', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+        <Card style={{ width: '18rem', height: '33rem' }} className="product-card carousel-item">
+        <div className="img-overlay">
+            <button type="button" className="btn btn-default brn-xs" onClick={() => this.handleClick()}>⭐</button>
+          </div>
+          <Card.Img variant="top" style={{ width: 'auto', height: '22rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
           <Card.Body>
-            <Card.Text>{this.product.category}</Card.Text>
-            <Card.Text>{this.product.name}</Card.Text>
-            <Card.Text>${this.product.default_price}</Card.Text>
+            <Card.Text className="text-uppercase"><small>{this.product.category}</small></Card.Text>
+            <Card.Text><strong>{this.product.name}</strong><br></br>{`${this.product.slogan}`}</Card.Text>
+            <Card.Text><small>${this.product.default_price}</small></Card.Text>
             <Card.Text>{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</Card.Text>
             <Card.Text>{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</Card.Text>
           </Card.Body>

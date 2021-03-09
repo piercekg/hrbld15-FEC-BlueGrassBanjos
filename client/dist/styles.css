@@ -97,14 +97,10 @@
   overflow: hidden;
 }
 
-#carousel {
+.carousel {
   display: flex;
   flex-flow: row nowrap;
   overflow: auto;
-}
-
-.carousel-transition {
-  transition: transform 0.7s ease-in-out;
 }
 
 .carousel-item {
@@ -122,6 +118,31 @@
   display: flex;
   flex-flow: column nowrap;
   border-style: solid;
+  border-width: 2px;
+  border-color: black;
   margin: 20px;
 }
 
+.card-text {
+  margin-bottom: 0;
+}
+
+.save-button {
+  padding-top: 50%;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 85%;
+  right: 0;
+  text-align: center;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 0;
+}

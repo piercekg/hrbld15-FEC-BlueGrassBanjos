@@ -5,9 +5,11 @@ import OutfitItem from './OutfitItem.jsx';
 const OutfitItemsList = (props) => (
   <div className="d-flex flex-nowrap">
     <div className="d-flex flex-row">
-      <Card style={{ width: '18rem' }} className="product-card" onClick={() => props.addItem(props.selectedProduct)}>
+      <Card style={{ width: '18rem', height: '33rem' }} className="product-card" onClick={() => props.addItem(props.selectedProduct)}>
         <Card.Body>
-          <Card.Text>＋<br></br>Add to Outfit</Card.Text>
+          <h2>
+            <Card.Text className="text-center save-button">＋<br></br>Add to Outfit</Card.Text>
+          </h2>
         </Card.Body>
       </Card>
       <div className="d-flex flex-row">
