@@ -147,6 +147,25 @@ const buildRelatedProducts = (products, reviews) => {
 };
 
 // REVIEWS REQUESTS
+app.get('/products/:product_id/reviews', (req, res) => {
+  retrieveReviews(req.params.product_id, (err, data) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.status(200).send(data);
+    }
+  })
+});
+
+const retrieveReviews = (productId, callback) => {
+axios.get(' https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product_id=18201', {headers: {'Authorization': `${config.TOKEN}`}})
+.then ((res) => {
+  callback(null, res.data);
+})
+.catch ((res) => {
+  callback(res, null)
+})
+};
 
 // QUESTIONS AND ANSWERS REQUESTS
 

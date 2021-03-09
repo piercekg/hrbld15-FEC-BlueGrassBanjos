@@ -15,7 +15,7 @@ class Overview extends React.Component {
   }
 
   getProduct(props) {
-    requests.getProductInfo(props.product, (err, data) => {
+    requests.default.getProductInfo(props.product, (err, data) => {
       if (err) {
         console.log(err);
       } else {
@@ -27,7 +27,7 @@ class Overview extends React.Component {
   }
 
   getStyles(props) {
-    requests.getProductStyles(props.product, (err, data) => {
+    requests.default.getProductStyles(props.product, (err, data) => {
       if (err) {
         console.log(err);
       } else {
