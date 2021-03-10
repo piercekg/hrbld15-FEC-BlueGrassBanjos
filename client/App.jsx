@@ -41,7 +41,7 @@ class App extends React.Component {
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
         {<RelatedProducts />}
-        <QandA />
+        {/*<QandA />*/}
         {<ReviewsComponent reviewsData={this.state.reviewsData} />}
       </Router>
     );
