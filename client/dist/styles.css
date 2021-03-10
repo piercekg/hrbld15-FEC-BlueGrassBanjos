@@ -89,13 +89,13 @@
 
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
-.relatedProductList {
-  display: flex;
-  flex-flow: row nowrap;
+.list-name {
+  margin: 0;
+  padding: 2rem 0 0 3rem;
 }
 
-<<<<<<< HEAD:client/dist/styles.css
 .carousel-outer {
+  padding-left: 2rem;
   overflow: hidden;
 }
 
@@ -164,7 +164,7 @@
   /* adjust 'height' to position overlay content vertically */
   height: 0;
 }
-
+/*
 .star-ratings-css {
   unicode-bidi: bidi-override;
   color: #c5c5c5;
@@ -192,8 +192,7 @@
     z-index: 0;
 
 }
-=======
-
+*/
 
 /*-----------------------Questions and Answers---------------------------------- */
 
@@ -247,4 +246,3 @@
   margin-left: 0;
 }
 
->>>>>>> fe0c5131ab2e972a954780cca6b0d4829804228d:client/dist/syles.css

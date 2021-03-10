@@ -98,9 +98,9 @@ class RelatedProducts extends React.Component {
   render() {
     return (
       <Router>
-        <h2>Related Products:</h2>
+        <p className="text-uppercase list-name">Related Products</p>
         {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem}/>}
-        <h2>Your Outfit:</h2>
+        <p className="text-uppercase list-name">Your Outfit</p>
         {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} clearOutfit={this.clearOutfit}/>}
       </Router>
     );
