@@ -2,9 +2,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
-
 import React from 'react';
-
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
@@ -13,6 +11,7 @@ import Overview from './productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
 import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
+import ReviewsComponent from './components/reviews/ReviewsComponent'
 
 class App extends React.Component {
   constructor(props) {
@@ -40,10 +39,10 @@ class App extends React.Component {
     return (
       <Router>
         <div className="hello">Hello World!!!!</div>
-        {/* <Overview product={prod.product} />
-        <RelatedProducts /> */}
+        <Overview product={prod.product} />
+        {<RelatedProducts />}
         <QandA />
-        {/* <ReviewsComponent reviewsData={this.state.reviewsData} /> */}
+        {<ReviewsComponent reviewsData={this.state.reviewsData} />}
       </Router>
     );
   }
