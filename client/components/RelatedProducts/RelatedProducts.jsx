@@ -23,7 +23,7 @@ class RelatedProducts extends React.Component {
   }
 
   componentDidMount() {
-    this.handleProductChange(18080);
+    this.handleProductChange(18445);
     this.retrieveOutfitItems();
   }
 
@@ -98,11 +98,9 @@ class RelatedProducts extends React.Component {
   render() {
     return (
       <Router>
-        <h2>Selected Product:</h2>
-        {<SelectedProduct product={this.state.selectedProduct}/>}
         <h2>Related Products:</h2>
         {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem}/>}
-        <h2>Your Outfit Items:</h2>
+        <h2>Your Outfit:</h2>
         {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} clearOutfit={this.clearOutfit}/>}
       </Router>
     );
@@ -110,3 +108,8 @@ class RelatedProducts extends React.Component {
 }
 
 export default RelatedProducts;
+
+/*
+<h2>Selected Product:</h2>
+{<SelectedProduct product={this.state.selectedProduct}/>}
+*/

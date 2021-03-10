@@ -2,18 +2,20 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
-
 import React from 'react';
-
 import {
-  // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import Overview from './productOverview/displayOverview';
-import ReviewsComponent from './components/reviews/ReviewsComponent';
+// import ReviewsComponent from './components/reviews/ReviewsComponent';
 import QandA from './components/QandA/QandA';
-import RelatedProducts from './components/RelatedProducts/RelatedProducts';
 import Requests from './requests';
+import RelatedProducts from './components/RelatedProducts/RelatedProducts';
+<<<<<<< HEAD
+import Requests from './requests';
+=======
+import ReviewsComponent from './components/reviews/ReviewsComponent'
+>>>>>>> 50a369861d50746a87262e88116db72d48131d39
 
 class App extends React.Component {
   constructor(props) {
@@ -25,6 +27,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     Requests.getReviews(18201, (err, data) => {
       if (err) {
         console.log(err);
@@ -34,6 +37,17 @@ class App extends React.Component {
         });
       }
     });
+=======
+    // Requests.default.getReviews(18201, (err, data) => {
+    //   if (err) {
+    //     console.log(err);
+    //   } else {
+    //     this.setState({
+    //       reviewsData: data.data,
+    //     });
+    //   }
+    // });
+>>>>>>> 50a369861d50746a87262e88116db72d48131d39
   }
 
   render() {
@@ -42,9 +56,9 @@ class App extends React.Component {
       <Router>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        <RelatedProducts />
+        {<RelatedProducts />}
         <QandA />
-        <ReviewsComponent reviewsData={this.state.reviewsData} />
+        {<ReviewsComponent reviewsData={this.state.reviewsData} />}
       </Router>
     );
   }
