@@ -16,9 +16,9 @@ const ComparisonModal = (props) => {
   return (
   <div className="compare-modal">
     <div className="comapare-table">
-      <div className="compare-header compare-row">
-        <div className="compare-data">Comparing</div>
-        <button type="button" className="compareAction" onClick={() => props.onClick()}>✖️</button>
+      <div className="compare-row">
+        <div className="compare-data">COMPARING</div>
+        <button type="button" className="btn btn-default btn-xs" onClick={() => props.onClick()}>✖️</button>
       </div>
       <div className="compare-header compare-row">
         <div className="compare-data col-left">{props.selectedProduct.name}</div>
