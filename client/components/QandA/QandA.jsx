@@ -84,10 +84,10 @@ class QandA extends React.Component {
 
   render() {
     return (
-      <div className="QandA">
-        <div>Questions and Answers</div>
+      <div className="container">
+        <h3>Questions and Answers</h3>
         <QuestionSearch searchQuestions={this.searchQuestions.bind(this)} />
-        {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} /> : null}
+        {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} toggleAskQuestion={this.toggleAskQuestion.bind(this)} /> : null}
         <div id="modal" />
         <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
         <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} addMoreQuestions={this.addMoreQuestions.bind(this)} />

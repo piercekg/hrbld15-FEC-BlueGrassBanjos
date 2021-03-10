@@ -10,14 +10,17 @@ import requests from '../../requests';
 function AnswerButtons({ answerInfo }) {
   const [helpCount, setHelpCount] = useState(answerInfo.helpfulness);
 
+  let markedAsHelpful = false;
   function incrementHelpful() {
-    setHelpCount((prevHelpCount) => prevHelpCount + 1);
+    if (markedAsHelpful === false) {
+      setHelpCount((prevHelpCount) => prevHelpCount + 1);
+      markedAsHelpful = true;
+      const updateData = { answer_id: answerInfo.answer_id, helpful: helpCount + 1 };
 
-    const updateData = { answer_id: answerInfo.answer_id, helpful: helpCount + 1 };
-
-    requests.updateAnswerHelpful(updateData, () => {
-      console.log('Helpful Updated');
-    });
+      requests.updateAnswerHelpful(updateData, () => {
+        console.log('Helpful Updated');
+      });
+    }
   }
 
   function onReport() {
@@ -28,19 +31,22 @@ function AnswerButtons({ answerInfo }) {
   }
 
   return (
-    <div>
-      <span>
+    <div className="row">
+      <span className="col by-info">
         By
+        {' '}
         {answerInfo.answerer_name}
-        ,
-        {answerInfo.date}
+        {' '}
+        {answerInfo.date.slice(0, 10)}
       </span>
-      <span onClick={incrementHelpful}>
+      <span className="col answer-helpful" onClick={incrementHelpful}>
         Helpful? (
         {helpCount}
         )
+        &nbsp;&nbsp;
+        |
       </span>
-      <span onClick={onReport}>Report</span>
+      <span className="col answer-report" onClick={onReport}>Report</span>
     </div>
   );
 }

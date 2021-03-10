@@ -9,9 +9,10 @@ function Question({
   question, incrimentHelpful, helpful, toggleAddAnswer,
 }) {
   return (
-    <div>
-      <div>{question.question_body}</div>
-      <QuestionButtons incrimentHelpful={incrimentHelpful} helpful={helpful} toggleAddAnswer={toggleAddAnswer} />
+    <div className="row pb-3">
+      <span className="col-1 Q">Q: </span>
+      <div className="col question-body">{question.question_body}</div>
+      <QuestionButtons className="col" incrimentHelpful={incrimentHelpful} helpful={helpful} toggleAddAnswer={toggleAddAnswer} question={question} />
     </div>
   );
 }

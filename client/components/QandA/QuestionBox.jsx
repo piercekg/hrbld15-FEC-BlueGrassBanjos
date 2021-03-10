@@ -70,11 +70,13 @@ class QuestionBox extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="b-2">
         {this.state.addAnswer ? <AddAnswer productName={this.state.productName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
+
         <Question question={this.state.question} incrimentHelpful={this.incrimentHelpful.bind(this)} helpful={this.state.helpful} toggleAddAnswer={this.toggleAddAnswer.bind(this)} />
+
         <AnswerBox answers={this.state.visible} />
-        <button type="button" onClick={this.addMoreAnswers.bind(this)}>Add More Answers</button>
+        <button type="button" className="btn btn-sm pb-4" onClick={this.addMoreAnswers.bind(this)}>Add More Answers</button>
       </div>
     );
   }

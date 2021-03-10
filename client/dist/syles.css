@@ -92,3 +92,58 @@
   display: flex;
   flex-flow: row nowrap;
 }
+
+
+
+/*-----------------------Questions and Answers---------------------------------- */
+
+.search-box {
+  border: 2px solid black;
+  border-right: 0px;
+  margin-right: 0px;
+}
+
+.search-icon {
+  border: 2px solid black;
+  border-left: 0px;
+  margin-left: 0px;
+  height: 60px;
+  width: 60px;
+}
+
+.question-buttons {
+  font-size: smaller;
+}
+
+.question-body {
+  font-size: large;
+  font-weight: bold;
+}
+
+.Q {
+  font-size: large;
+  font-weight: bold;
+}
+
+.A {
+  font-size: large;
+  font-weight: bold;
+}
+
+.by-info {
+  font-size: x-small;
+  white-space: nowrap;
+}
+
+.answer-helpful {
+  font-size: x-small;
+  white-space: nowrap;
+}
+
+.answer-report {
+  font-size: x-small;
+  white-space: nowrap;
+  padding-left: 0;
+  margin-left: 0;
+}
+

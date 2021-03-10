@@ -11,6 +11,26 @@ import $ from 'jquery';
 
 import requests from '../../requests';
 
+const MODAL_STYLES = {
+  position: 'fixed',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: '#FFF',
+  padding: '50px',
+  zIndex: 1000,
+};
+
+const OVERLAY_STYLES = {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: 'rgba(0, 0, 0, .7)',
+  zIndex: 1000,
+};
+
 class AddAnswer extends React.Component {
   constructor(props) {
     super(props);
@@ -39,24 +59,35 @@ class AddAnswer extends React.Component {
     this.props.toggleAddAnswer();
   }
 
+  onClose() {
+    this.props.toggleAddAnswer();
+  }
+
   render() {
     return ReactDom.createPortal(
-      <form>
-        <h3>
-          {this.state.productName}
-        </h3>
-        <div>{this.state.questionBody}</div>
-        <div>
-          <textarea name="answer" id="answer_text" placeholder="Your Answer Here" required />
+      <div style={OVERLAY_STYLES}>
+        <div style={MODAL_STYLES} className="col-6">
+          <form>
+            <h3>
+              {this.state.productName}
+            </h3>
+            <div>{this.state.questionBody}</div>
+            <div>
+              <textarea name="answer" className="col" id="answer_text" placeholder="Your Answer Here" required />
+            </div>
+            <div>
+              <input type="text" name="userName" className="col" id="answer_username" placeholder="Enter Username" required />
+            </div>
+            <div>
+              <input type="email" name="email" className="col" id="answer_email" placeholder="Enter Email" required />
+            </div>
+            <div className="row">
+              <button type="button" className="btn btn-secondary m-1 mt-2" onClick={this.onSubmit.bind(this)}>Submit</button>
+              <button type="button" className="btn btn-secondary m-1 mt-2" onClick={this.onClose.bind(this)}>Close</button>
+            </div>
+          </form>
         </div>
-        <div>
-          <input type="text" name="userName" id="answer_username" placeholder="Enter Username" required />
-        </div>
-        <div>
-          <input type="email" name="email" id="answer_email" placeholder="Enter Email" required />
-        </div>
-        <button type="button" onClick={this.onSubmit.bind(this)}>Submit</button>
-      </form>,
+      </div>,
       document.getElementById('modal'),
     );
   }

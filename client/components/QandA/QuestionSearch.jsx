@@ -3,17 +3,24 @@
 import React, { useState } from 'react';
 import $ from 'jquery';
 
+import searchIcon from '../IconsandImages/searchIcon.png';
+// const searchIcon = require('../IconsandImages/searchIcon.png');
+
+// import ball from '../IconsandImages/ball.jpg';
+
 function QuestionSearch({ searchQuestions }) {
   return (
-    <form>
+    <form className="row">
       <input
         type="text"
+        className="col-10 search-box"
         id="search_bar"
-        placeholder="Search For A Question"
+        placeholder="HAVE A QUESTION? SEARCH FOR AN ANSWER..."
         onChange={() => {
           searchQuestions($('#search_bar').val());
         }}
       />
+      <img src={searchIcon} alt="Icon" className="col-2 search-icon" />
     </form>
   );
 }

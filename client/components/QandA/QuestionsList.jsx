@@ -7,7 +7,7 @@ import QuestionBox from './QuestionBox';
 
 function QuestionsList({ fullList, visible, productName }) {
   return (
-    <div>
+    <div className="mt-3">
       {visible.map((question) => (
         <QuestionBox key={question.question_id} question={question} productName={productName} />
       ))}
