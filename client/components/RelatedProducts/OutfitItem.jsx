@@ -25,7 +25,7 @@ const OutfitItem = (props) => {
       <div className="img-overlay">
         <button type="button" className="btn btn-default btn-xs" onClick={() => props.removeItem(props.product.id)}>❌</button>
       </div>
-        <Card.Img variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+        <Card.Img className="text-justify card-img" variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
         <Card.Body>
           <Card.Text className="text-uppercase"><small>{props.product.category}</small></Card.Text>
           <Card.Text><strong>{props.product.name}</strong><br></br>{`${props.product.slogan}`}</Card.Text>

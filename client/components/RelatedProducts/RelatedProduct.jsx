@@ -42,7 +42,7 @@ class RelatedProduct extends React.Component {
           <div className="img-overlay">
             <button type="button" className="btn btn-default btn-xs" onClick={() => this.handleClick()}>⭐</button>
           </div>
-          <Card.Img variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+          <Card.Img className="text-justify card-img" variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
           <Card.Body>
             <Card.Text className="text-uppercase"><small>{this.product.category}</small></Card.Text>
             <Card.Text><strong>{this.product.name}</strong><br></br>{`${this.product.slogan}`}</Card.Text>
