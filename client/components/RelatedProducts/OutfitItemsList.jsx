@@ -4,7 +4,7 @@ import OutfitItem from './OutfitItem.jsx';
 
 const OutfitItemsList = (props) => (
   <div className="d-flex flex-nowrap carousel-outer">
-      <Card style={{ width: '18rem', height: '30rem' }} className="product-card carousel-item add-to-outfit" onClick={() => props.addItem(props.selectedProduct)}>
+      <Card style={{ width: '18rem', height: '29rem' }} className="product-card carousel-item add-to-outfit" onClick={() => props.addItem(props.selectedProduct)}>
         <Card.Body>
           <h2>
             <Card.Text className="text-center save-text">＋<br></br>Add to Outfit</Card.Text>

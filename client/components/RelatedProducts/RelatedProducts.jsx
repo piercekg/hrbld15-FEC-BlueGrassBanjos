@@ -23,7 +23,7 @@ class RelatedProducts extends React.Component {
   }
 
   componentDidMount() {
-    this.handleProductChange(18112);
+    this.handleProductChange(18445);
     this.retrieveOutfitItems();
   }
 

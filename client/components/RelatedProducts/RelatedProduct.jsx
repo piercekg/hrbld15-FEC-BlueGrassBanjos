@@ -38,7 +38,7 @@ class RelatedProduct extends React.Component {
     var dfStyle = this.defaultStyle(this.product);
     return (
       <React.Fragment>
-        <Card style={{ width: '18rem', height: '30rem' }} className="product-card carousel-item">
+        <Card style={{ width: '18rem', height: '29rem' }} className="product-card carousel-item">
           <div className="img-overlay">
             <button type="button" className="btn btn-default btn-xs" onClick={() => this.handleClick()}>⭐</button>
           </div>
