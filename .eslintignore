@@ -2,3 +2,4 @@
 /.babelrc
 /server/index.js
 /webpack.config.js
+exampleData.js

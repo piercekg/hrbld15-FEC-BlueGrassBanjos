@@ -1,13 +1,15 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+
 import React, { useState } from 'react';
 import Answer from './Answer';
 
-function AnswersBox() {
+function AnswersBox({ answers }) {
   return (
     <div>
-      <Answer />
-      <Answer />
-      <div>Load More Answers</div>
+      {answers.map((answer) => (
+        <Answer key={answer.answer_id} answer={answer} />
+      ))}
     </div>
   );
 }
