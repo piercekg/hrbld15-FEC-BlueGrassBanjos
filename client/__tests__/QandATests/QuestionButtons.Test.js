@@ -13,7 +13,7 @@ import QuestionButtons from '../../components/QandA/QuestionButtons';
 configure({ adapter: new Adapter() });
 
 describe('Check for Components', () => {
-  test('Find QandA component', () => {
+  test('Find QuestionButtons component', () => {
     const wrapper = shallow(<QuestionButtons />);
 
     expect(wrapper.exists()).toBe(true);
