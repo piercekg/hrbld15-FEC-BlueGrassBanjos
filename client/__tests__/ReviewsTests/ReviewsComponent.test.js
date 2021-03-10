@@ -2,17 +2,20 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+
 import {
   configure, shallow, mount, render,
-} from '../../node_modules/enzyme';
-import Adapter from '../../node_modules/enzyme-adapter-react-16';
-import App from '../App';
+} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+import QandA from '../../components/QandA/QandA';
 
 configure({ adapter: new Adapter() });
 
-describe('Initial Tests', () => {
-  test('Find "Hello World"', () => {
-    const wrapper = shallow(<App />).dive();
-    expect(wrapper.find('div.hello').text()).toContain('Hello World!!!!');
+describe('Check for Component', () => {
+  test('Find QandA component', () => {
+    const wrapper = shallow(<QandA />);
+
+    expect(wrapper.exists()).toBe(true);
   });
 });

@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import Raitings from './Raitings';
+import Ratings from './Ratings';
 import Reviews from './Reviews';
 
 class ReviewsComponent extends React.Component {
@@ -20,10 +20,16 @@ class ReviewsComponent extends React.Component {
 
   render() {
     return (
-      <div>
-        RATINGS & REVIEWS
-        <Raitings reviewsData={this.props.reviewsData} />
-        <Reviews reviewsData={this.props.reviewsData} report={this.report} />
+      <div className="rnrComponent">
+        <div className="rnrTitle">RATINGS & REVIEWS</div>
+        <div className="inline">
+          <div className="ratingsDiv">
+            <Ratings reviewsData={this.props.reviewsData} />
+          </div>
+          <div className="reviewsDiv">
+            <Reviews reviewsData={this.props.reviewsData} report={this.report} />
+          </div>
+        </div>
       </div>
     );
   }
