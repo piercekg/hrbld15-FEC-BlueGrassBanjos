@@ -92,3 +92,67 @@
   display: flex;
   flex-flow: row nowrap;
 }
+
+/*--------------------- Reviews -------------------------*/
+/* .rnrComponent {
+  display: inline-flex;
+}
+.rnr {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.bigNumDiv {
+  display: inline-flex;
+  margin-bottom: 5%;
+}
+.bigNumber {
+  margin: 0%;
+  margin-right: 10px;
+}
+.ratings {
+  margin-right: 20px;
+}
+
+.ratingsDiv {
+  width: 30%;
+  margin: 5%;
+}
+.reviewsDiv {
+  width: 75%;
+  margin: 5%;
+}
+.listItemFirstLine {
+  display: inline;
+}
+.usernameAndDate {
+  text-align: right;
+}
+.lIFS {
+  width: fit-content;
+} */
+
+.rnrComponent {
+  margin-left: 19%;
+  margin-right: 19%
+}
+.rnrTitle {
+  margin-bottom: 3%;
+  margin-top: 6%;
+}
+.inline {
+  display: inline-flex;
+}
+.ratingsDiv {
+  width: 30%;
+  margin-right: 5%;
+}
+.reviewsDiv {
+  width: 70%;
+}
+.bigNumber {
+  font-size: 300%;
+  font-weight: bold;
+}
+.bigNumDiv {
+  display: inline-flex;
+}

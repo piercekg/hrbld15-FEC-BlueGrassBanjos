@@ -6,10 +6,10 @@ import Recomendation from './Recomendation';
 import StarList from './StarList';
 import Sliders from './Sliders';
 
-function Raitings(props) {
+function Ratings(props) {
   return (
-    <div>
-      <BigNumber reviewsData={props.reviewsData} />
+    <div className="ratings">
+      <BigNumber reviewsData={props.reviewsData} className="BigNumberComponent" />
       <Recomendation />
       <StarList reviewsData={props.reviewsData} />
       <Sliders />
@@ -17,4 +17,4 @@ function Raitings(props) {
   );
 }
 
-export default Raitings;
+export default Ratings;

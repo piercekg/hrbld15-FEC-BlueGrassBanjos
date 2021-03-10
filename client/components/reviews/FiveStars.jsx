@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
@@ -9,12 +10,14 @@ function FiveStars(props) {
     starNumber = props.bigNumber;
   }
   return (
-    <div>
+    <div className="bigNumDiv">
       <SRC
         name="SRC1"
         value={starNumber}
         starCount={5}
         editing={false}
+        starColor={'black'} /* color of selected icons, default `#ffb400` */
+        emptyStarColor={'lightgrey'}
       />
     </div>
   );
