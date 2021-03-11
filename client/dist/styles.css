@@ -94,7 +94,6 @@
   flex-flow: row nowrap;
 }
 
-<<<<<<< HEAD:client/dist/styles.css
 .carousel-outer {
   overflow: hidden;
 }
@@ -192,7 +191,6 @@
     z-index: 0;
 
 }
-=======
 
 
 /*-----------------------Questions and Answers---------------------------------- */
@@ -247,4 +245,41 @@
   margin-left: 0;
 }
 
->>>>>>> fe0c5131ab2e972a954780cca6b0d4829804228d:client/dist/syles.css
+/*--------------------- Reviews -------------------------*/
+.rnrComponent {
+  margin-left: 19%;
+  margin-right: 19%
+}
+.rnrTitle {
+  margin-bottom: 3%;
+  margin-top: 6%;
+}
+.inline {
+  display: inline-flex;
+}
+.ratingsDiv {
+  width: 30%;
+  margin-right: 5%;
+}
+.reviewsDiv {
+  width: 70%;
+}
+.bigNumber {
+  font-size: 300%;
+  font-weight: bold;
+}
+.bigNumDiv {
+  display: inline-flex;
+}
+.helpfullAndReport {
+  font-size: x-small;
+}
+.yesButton {
+  font-size: x-small;
+}
+.reportButton {
+  font-size: x-small;
+}
+.listItemFirstLine {
+  display: inline-flex;
+}

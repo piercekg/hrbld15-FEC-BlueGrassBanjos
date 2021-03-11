@@ -1,8 +1,8 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-import axios from 'axios';
 import React from 'react';
 import FiveStars from './FiveStars';
+import Requests from '../../requests';
 
 function ReviewsListItem(props) {
   const title = props.review.body.split('.')[0];
@@ -14,7 +14,14 @@ function ReviewsListItem(props) {
   }
 
   function yesButtonClick() {
-    axios.put();
+    Requests.addHelpfull(props.review.review_id, (err, res) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(res);
+        alert('Thank you!');
+      }
+    });
   }
 
   return (
@@ -30,12 +37,12 @@ function ReviewsListItem(props) {
       </div>
       <h4>{title}</h4>
       <div>{props.review.body}</div>
-      <div>
+      <div className="helpfullAndReport">
         {'Helpfull? '}
-        <button type="submit" onClick={yesButtonClick}>yes</button>
+        <button type="submit" className="yesButton" onClick={yesButtonClick}>yes</button>
         <sup>{`(${props.review.helpfulness})`}</sup>
         {' | '}
-        <button type="submit" onClick={reportClickHandler}>report</button>
+        <button type="submit" className="reportButton" onClick={reportClickHandler}>report</button>
         <hr />
       </div>
     </div>

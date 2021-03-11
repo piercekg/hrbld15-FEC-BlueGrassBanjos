@@ -13,7 +13,12 @@ function ReviewsList(props) {
   return (
     <div>
       {resultsArr.map((review, key) => (
-        <ReviewsListItem review={review} key={key} report={propTypes.report} />
+        <ReviewsListItem
+          review={review}
+          key={key}
+          report={propTypes.report}
+          product={props.reviewsData.product}
+        />
       ))}
     </div>
   );

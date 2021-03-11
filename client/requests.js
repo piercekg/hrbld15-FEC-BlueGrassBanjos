@@ -48,6 +48,27 @@ const requests = {
       });
   },
 
+  addHelpfull(reviewId, callback) {
+    axios.put(`${server}/reviews/${reviewId}/helpful`)
+      .then((res) => {
+        callback(null, res);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  // postReview(reviewId, callback) {
+  //   callback('works');
+  //   // axios.post(`${server}/products/${productId}/reviews`)
+  //   //   .then((data) => {
+  //   //     callback(null, data);
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     callback(err, null);
+  //   //   });
+  // },
+
   // QUESTIONS AND ANSWERS REQUESTS
   getCurrentProductQuestions(currentProductId, callback) {
     axios.get(`${server}/qa/questions`, { params: { product_id: `${currentProductId}` } })

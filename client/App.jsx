@@ -11,11 +11,7 @@ import Overview from './productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
 import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
-<<<<<<< HEAD
-import Requests from './requests';
-=======
-import ReviewsComponent from './components/reviews/ReviewsComponent'
->>>>>>> 50a369861d50746a87262e88116db72d48131d39
+import ReviewsComponent from './components/reviews/ReviewsComponent';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,8 +23,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-<<<<<<< HEAD
-    Requests.getReviews(18201, (err, data) => {
+    Requests.getReviews(this.state.product, (err, data) => {
       if (err) {
         console.log(err);
       } else {
@@ -37,17 +32,6 @@ class App extends React.Component {
         });
       }
     });
-=======
-    // Requests.default.getReviews(18201, (err, data) => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     this.setState({
-    //       reviewsData: data.data,
-    //     });
-    //   }
-    // });
->>>>>>> 50a369861d50746a87262e88116db72d48131d39
   }
 
   render() {
@@ -56,9 +40,9 @@ class App extends React.Component {
       <Router>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        {<RelatedProducts />}
+        <RelatedProducts />
         <QandA />
-        {<ReviewsComponent reviewsData={this.state.reviewsData} />}
+        <ReviewsComponent reviewsData={this.state.reviewsData} />
       </Router>
     );
   }
