@@ -10,6 +10,30 @@ app.use(express.json());
 
 const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
+// ENTIRE PRODUCT LIST REQUEST
+// to read list with postman
+app.get('/products', (req, res) => {
+  retrieveAll((err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data.data);
+    }
+  })
+})
+
+const retrieveAll = (callback) => {
+  axios.get(`${server}/products`, {headers: {Authorization: `${config.TOKEN}`}})
+  .then((data) => {
+    callback(null, data);
+  })
+  .catch((err) => {
+    callback(err, null);
+  })
+};
+
+
 // PRODUCTS REQUESTS
 app.get('/products/:product_id', (req, res) => {
   retrieveProduct(req.params.product_id, (err, data) => {

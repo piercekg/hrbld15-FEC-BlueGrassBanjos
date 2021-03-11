@@ -22,7 +22,7 @@ class QandA extends React.Component {
       if (err) {
         console.log(err);
       } else {
-        console.log(response.data);
+        // console.log(response.data);
       }
     });
   }

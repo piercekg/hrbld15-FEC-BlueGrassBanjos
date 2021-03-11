@@ -18,6 +18,7 @@ const requests = {
   getProductStyles(productId, callback) {
     axios.get(`${server}/products/${productId}/styles`)
       .then((data) => {
+        console.log(data);
         callback(null, data);
       })
       .catch((err) => {

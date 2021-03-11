@@ -14,7 +14,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: 18201,
+      product: 18080,
     };
   }
 
@@ -22,9 +22,8 @@ class App extends React.Component {
     const prod = this.state;
     return (
       <Router>
-        <div className="hello">Hello World!!!!</div>
-        {/* <Overview product={prod.product} /> */}
-        {<RelatedProducts_Outfit/>}
+        <Overview product={prod.product} />
+        <RelatedProducts_Outfit />
         <QandA />
       </Router>
     );
