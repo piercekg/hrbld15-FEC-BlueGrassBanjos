@@ -1,0 +1,256 @@
+/*-----------------------Comparison Modal---------------------------------- */
+.compare-modal {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.comapare-table {
+  display: flex;
+  flex-flow: column;
+  font-size: .8rem;
+  margin: 0.5rem;
+  line-height: 1.5;
+  flex: 1 1 auto;
+  position:fixed;
+  background: white;
+  width: 50%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.compareAction {
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border-style: none;
+}
+
+.compare-header {
+  display: none;
+  font-weight: 700;
+  background-color: #f2f2f2;
+}
+
+.compare-header > .compare-data {
+  white-space: normal;
+}
+
+.compare-row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.compare-row:nth-of-type(even) {
+  background-color: #f2f2f2;
+}
+
+.compare-row:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+.compare-row:hover {
+  color: #00a07b;
+}
+
+.compare-data {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0.5em;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  white-space: nowrap;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.col-left {
+  justify-content: flex-start;
+}
+
+.col-center {
+  justify-content: center;
+}
+
+.col-right {
+  justify-content: flex-end;
+}
+
+/*---------------------Related Product Cards-------------------------*/
+/*--------Carousel-----*/
+.list-name {
+  margin: 0;
+  padding: 2rem 0 0 3rem;
+}
+
+.carousel-outer {
+  padding-left: 2rem;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: auto;
+}
+
+.carousel-item {
+  width: 100%;
+  flex-shrink: 0
+}
+
+.related-products-list {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: auto;
+}
+
+.product-card {
+  display: flex;
+  flex-flow: column nowrap;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  margin: 1rem;
+}
+
+.card-text {
+  margin-bottom: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card-img {
+  line-height: 16rem;
+  font-style: oblique;
+  font-size: large;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.add-to-outfit {
+  cursor: pointer;
+}
+
+.save-text {
+  padding-top: 50%
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 85%;
+  right: 0;
+  text-align: center;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 0;
+}
+/*
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+}
+.star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+
+}
+*/
+
+/*-----------------------Questions and Answers---------------------------------- */
+
+.search-box {
+  border: 2px solid black;
+  border-right: 0px;
+  margin-right: 0px;
+}
+
+.search-icon {
+  border: 2px solid black;
+  border-left: 0px;
+  margin-left: 0px;
+  height: 60px;
+  width: 60px;
+}
+
+.question-buttons {
+  font-size: smaller;
+  margin-left: 2px;
+  padding-left: 0px;
+}
+
+.question-body {
+  font-size: large;
+  font-weight: bold;
+}
+
+.Q {
+  font-size: large;
+  font-weight: bold;
+}
+
+.A {
+  font-size: large;
+  font-weight: bold;
+}
+
+.by-info {
+  font-size: x-small;
+  white-space: nowrap;
+}
+
+.answer-helpful {
+  font-size: x-small;
+  white-space: nowrap;
+}
+
+.answer-report {
+  font-size: x-small;
+  white-space: nowrap;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.question-container {
+  overflow: scroll;
+  height:min-content;
+  overflow: scroll;
+}
+
