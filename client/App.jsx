@@ -23,7 +23,6 @@ class App extends React.Component {
     };
   }
 
-  
   componentDidMount() {
     Requests.getReviews(this.state.product, (err, data) => {
       if (err) {
