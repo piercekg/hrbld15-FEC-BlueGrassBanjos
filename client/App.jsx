@@ -7,10 +7,8 @@ import React from 'react';
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
-import Overview from './productOverview/displayOverview';
-// import ReviewsComponent from './components/reviews/ReviewsComponent';
+import Overview from './components/productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
-import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
 import ReviewsComponent from './components/reviews/ReviewsComponent';
 
@@ -46,9 +44,9 @@ class App extends React.Component {
       <div>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        <RelatedProducts selectedProduct={this.state.product} />
+        <RelatedProducts selectedProduct={prod.product} />
         <QandA productId={prod.product} />
-        <ReviewsComponent reviewsData={this.state.reviewsData} />
+        <ReviewsComponent reviewsData={prod.reviewsData} />
       </div>
     );
   }
