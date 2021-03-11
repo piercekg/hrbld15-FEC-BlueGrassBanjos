@@ -34,7 +34,6 @@ class QandA extends React.Component {
       if (err) {
         console.log(`GetCurrentProductQuestions: ${err}`);
       } else {
-<<<<<<< HEAD
         helpers.sortQuestions(response.data.results, (questions) => {
           const firstTwo = questions.slice(0, 2);
           this.setState({
@@ -42,9 +41,6 @@ class QandA extends React.Component {
             visible: firstTwo,
           });
         });
-=======
-        // console.log(response.data);
->>>>>>> currentWork
       }
     });
   }
