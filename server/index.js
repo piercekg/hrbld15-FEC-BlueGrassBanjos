@@ -332,6 +332,11 @@ app.use(express.json());
 // INTERACTIONS REQUESTS
 
 // SERVER AND PORT
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/../client/dist/index.html'))
+})
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

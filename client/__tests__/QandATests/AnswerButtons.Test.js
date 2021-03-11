@@ -13,8 +13,17 @@ import AnswerButtons from '../../components/QandA/AnswerButtons';
 configure({ adapter: new Adapter() });
 
 describe('Check for Components', () => {
-  test('Find QandA component', () => {
-    const wrapper = shallow(<AnswerButtons />);
+  const answerInfo = {
+    answer_id: 1092602,
+    answerer_name: 'Jay.Pfeffer92',
+    body: 'Consequuntur illum at.',
+    date: '2021-01-06T00:00:00.000Z',
+    helpfulness: 14,
+    photos: [],
+  };
+
+  test('Find AnswerButtons component', () => {
+    const wrapper = shallow(<AnswerButtons answerInfo={answerInfo} />);
 
     expect(wrapper.exists()).toBe(true);
   });

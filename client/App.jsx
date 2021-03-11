@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
@@ -11,13 +12,13 @@ import Overview from './productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
 import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
-import ReviewsComponent from './components/reviews/ReviewsComponent'
+import ReviewsComponent from './components/reviews/ReviewsComponent';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: 18201,
+      product: this.props.match.params.id,
       reviewsData: {},
     };
   }
@@ -32,18 +33,23 @@ class App extends React.Component {
     //     });
     //   }
     // });
+
+    // this.setState({
+    //   product: this.props.match.params.id,
+    // });
+    // console.log(this.props.match.params);
   }
 
   render() {
     const prod = this.state;
     return (
-      <Router>
+      <div>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        {<RelatedProducts selectedProduct={this.state.product}/>}
-        <QandA />
-        {<ReviewsComponent reviewsData={this.state.reviewsData} />}
-      </Router>
+        <RelatedProducts selectedProduct={this.state.product} />
+        <QandA productId={prod.product} />
+        <ReviewsComponent reviewsData={this.state.reviewsData} />
+      </div>
     );
   }
 }

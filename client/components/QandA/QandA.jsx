@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable class-methods-use-this */
@@ -20,7 +21,7 @@ class QandA extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProduct: 18201,
+      currentProduct: this.props.productId,
       currentProductName: 'Toy',
       productQuestions: [],
       visible: [],

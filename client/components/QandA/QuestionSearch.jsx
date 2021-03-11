@@ -4,9 +4,6 @@ import React, { useState } from 'react';
 import $ from 'jquery';
 
 import searchIcon from '../IconsandImages/searchIcon.png';
-// const searchIcon = require('../IconsandImages/searchIcon.png');
-
-// import ball from '../IconsandImages/ball.jpg';
 
 function QuestionSearch({ searchQuestions }) {
   return (

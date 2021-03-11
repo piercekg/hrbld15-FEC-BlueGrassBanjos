@@ -212,6 +212,8 @@
 
 .question-buttons {
   font-size: smaller;
+  margin-left: 2px;
+  padding-left: 0px;
 }
 
 .question-body {
@@ -244,5 +246,11 @@
   white-space: nowrap;
   padding-left: 0;
   margin-left: 0;
+}
+
+.question-container {
+  overflow: scroll;
+  height:min-content;
+  overflow: scroll;
 }
 
