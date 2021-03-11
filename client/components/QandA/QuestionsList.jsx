@@ -7,7 +7,7 @@ import QuestionBox from './QuestionBox';
 
 function QuestionsList({ fullList, visible, productName }) {
   return (
-    <div className="mt-3">
+    <div className="mt-3 overflow-auto" style={{ maxWidth: '700px', maxHeight: '400px' }}>
       {visible.map((question) => (
         <QuestionBox key={question.question_id} question={question} productName={productName} />
       ))}
