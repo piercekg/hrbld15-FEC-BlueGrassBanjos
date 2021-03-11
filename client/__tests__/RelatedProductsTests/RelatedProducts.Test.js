@@ -45,7 +45,7 @@ describe('Check for modules', () => {
     expect(wrapper.exists()).toBe(true);
   });
 });
-
+/*
 describe('Initial Tests', () => {
 
   test('Each Related Product should contain a product name', () => {
@@ -58,3 +58,4 @@ describe('Initial Tests', () => {
     expect(wrapper.find('p.relatedProductPrice')).toBeDefined();
   });
 });
+*/
