@@ -23,6 +23,7 @@ class QuestionBox extends React.Component {
       visible: [],
       helpful: props.question.question_helpfulness,
       addAnswer: false,
+      moreAnswers: true,
     };
 
     // this.incrimentHelpful.bind(this);
@@ -50,12 +51,19 @@ class QuestionBox extends React.Component {
   }
 
   addMoreAnswers() {
-    const newLength = this.state.answers.length + 2;
+    const newLength = this.state.visible.length + 2;
     const newVisible = this.state.answers.slice(0, newLength);
 
-    this.setState({
-      visible: newVisible,
-    });
+    if (newVisible.length === this.state.answers.length) {
+      this.setState({
+        visible: newVisible,
+        moreAnswers: false,
+      });
+    } else {
+      this.setState({
+        visible: newVisible,
+      });
+    }
   }
 
   incrimentHelpful() {
@@ -70,13 +78,13 @@ class QuestionBox extends React.Component {
 
   render() {
     return (
-      <div className="b-2 question-container">
+      <div className="pb-2 pt-2 question-container">
         {this.state.addAnswer ? <AddAnswer productName={this.state.productName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
 
         <Question question={this.state.question} incrimentHelpful={this.incrimentHelpful.bind(this)} helpful={this.state.helpful} toggleAddAnswer={this.toggleAddAnswer.bind(this)} />
 
         <AnswerBox answers={this.state.visible} />
-        <button type="button" className="btn btn-sm pb-4" onClick={this.addMoreAnswers.bind(this)}>Add More Answers</button>
+        {this.state.moreAnswers ? <button type="button" className="btn btn-sm pb-4" onClick={this.addMoreAnswers.bind(this)}>Add More Answers</button> : null}
       </div>
     );
   }
