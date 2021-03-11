@@ -70,7 +70,7 @@ class QuestionBox extends React.Component {
 
   render() {
     return (
-      <div className="b-2">
+      <div className="b-2 question-container">
         {this.state.addAnswer ? <AddAnswer productName={this.state.productName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
 
         <Question question={this.state.question} incrimentHelpful={this.incrimentHelpful.bind(this)} helpful={this.state.helpful} toggleAddAnswer={this.toggleAddAnswer.bind(this)} />

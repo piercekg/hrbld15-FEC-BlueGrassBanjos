@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
@@ -17,7 +18,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: 18201,
+      product: this.props.match.params.id,
       reviewsData: {},
     };
   }
@@ -37,13 +38,13 @@ class App extends React.Component {
   render() {
     const prod = this.state;
     return (
-      <Router>
+      <div>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        <RelatedProducts selectedProduct={this.state.product}/>
-        <QandA />
+        <RelatedProducts selectedProduct={this.state.product} />
+        <QandA productId={prod.product} />
         <ReviewsComponent reviewsData={this.state.reviewsData} />
-      </Router>
+      </div>
     );
   }
 }

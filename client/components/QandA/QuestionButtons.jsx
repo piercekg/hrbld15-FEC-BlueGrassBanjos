@@ -40,7 +40,7 @@ function QuestionButtons({
           &nbsp;
           |
         </span>
-        <button type="button" className="btn btn-light px-1 question-buttons" onClick={toggleAddAnswer}>Add Answer</button>
+        <button type="button" className="btn question-buttons" onClick={toggleAddAnswer}>Add Answer</button>
       </div>
     </div>
   );
