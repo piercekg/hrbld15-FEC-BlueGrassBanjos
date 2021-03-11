@@ -1,9 +1,9 @@
 import React from 'react';
-import products from '../../exampleData.js';
 import RelatedProductsList from './RelatedProductsList';
 import OutfitItemsList from './OutfitItemsList'
 import SelectedProduct from './SelectedProduct'
 import requests from '../../requests.js';
+
 import {
   // eslint-disable-next-line no-unused-vars
   BrowserRouter as Router, Switch, Route, Link,
@@ -17,13 +17,16 @@ class RelatedProducts extends React.Component {
       relatedProducts: [],
       outfit: []
     };
+
     this.handleSaveItem = this.handleSaveItem.bind(this);
     this.removeOutfitItem = this.removeOutfitItem.bind(this);
     this.clearOutfit = this.clearOutfit.bind(this);
+
+    this.handleProductChange(props.selectedProduct);
   }
 
   componentDidMount() {
-    this.handleProductChange(18445);
+    this.handleProductChange(this.props.selectedProduct);
     this.retrieveOutfitItems();
   }
 
@@ -71,7 +74,6 @@ class RelatedProducts extends React.Component {
     return products;
   }
 
-
   handleSaveItem (product) {
     window.localStorage.setItem(product.id, JSON.stringify(product));
     this.retrieveOutfitItems();
@@ -97,12 +99,12 @@ class RelatedProducts extends React.Component {
 
   render() {
     return (
-      <Router>
-        <h2>Related Products:</h2>
+      <React.Fragment>
+        <p className="text-uppercase list-name">Related Products</p>
         {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem}/>}
-        <h2>Your Outfit:</h2>
+        <p className="text-uppercase list-name">Your Outfit</p>
         {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} clearOutfit={this.clearOutfit}/>}
-      </Router>
+      </React.Fragment>
     );
   }
 }

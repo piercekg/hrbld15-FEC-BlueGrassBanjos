@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import RelatedProduct from './RelatedProduct.jsx';
 
-const RelatedProductsList = (props) => {
 
+const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
     return (
       <React.Fragment>
