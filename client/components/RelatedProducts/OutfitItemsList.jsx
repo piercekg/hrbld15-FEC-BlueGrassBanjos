@@ -19,7 +19,6 @@ const OutfitItemsList = (props) => (
         })}
     </div>
   </div>
-
 );
 
 export default OutfitItemsList;

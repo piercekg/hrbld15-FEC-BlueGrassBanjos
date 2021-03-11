@@ -40,7 +40,7 @@ class App extends React.Component {
       <Router>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        {<RelatedProducts />}
+        {<RelatedProducts selectedProduct={this.state.product}/>}
         <QandA />
         {<ReviewsComponent reviewsData={this.state.reviewsData} />}
       </Router>
