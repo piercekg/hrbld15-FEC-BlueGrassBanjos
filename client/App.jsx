@@ -7,8 +7,13 @@ import React from 'react';
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
+<<<<<<< HEAD
 import Overview from './productOverview/displayOverview';
 // import ReviewsComponent from './components/reviews/ReviewsComponent';
+=======
+import RelatedProducts_Outfit from './components/RelatedProducts_Outfit/RelatedProducts_Outfit'
+import Overview from './components/productOverview/displayOverview';
+>>>>>>> currentWork
 import QandA from './components/QandA/QandA';
 import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
@@ -18,8 +23,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       product: this.props.match.params.id,
       reviewsData: {},
+=======
+      product: 18080,
+>>>>>>> currentWork
     };
   }
 
@@ -43,6 +52,7 @@ class App extends React.Component {
   render() {
     const prod = this.state;
     return (
+<<<<<<< HEAD
       <div>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
@@ -50,6 +60,13 @@ class App extends React.Component {
         <QandA productId={prod.product} />
         <ReviewsComponent reviewsData={this.state.reviewsData} />
       </div>
+=======
+      <Router>
+        <Overview product={prod.product} />
+        <RelatedProducts_Outfit />
+        <QandA />
+      </Router>
+>>>>>>> currentWork
     );
   }
 }
