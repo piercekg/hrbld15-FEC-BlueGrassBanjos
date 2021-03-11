@@ -8,7 +8,6 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import Overview from './productOverview/displayOverview';
-// import ReviewsComponent from './components/reviews/ReviewsComponent';
 import QandA from './components/QandA/QandA';
 import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
@@ -23,7 +22,26 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  render() {
+    const prod = this.state;
+    if (!prod.product) {
+      prod.product = 18078
+    }
+    return (
+      <div>
+        <div className="hello">Hello World!!!!</div>
+        <Overview product={prod.product} />
+        <RelatedProducts selectedProduct={prod.product} />
+        <QandA productId={prod.product} />
+        <ReviewsComponent reviewsData={prod.reviewsData} />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+  // componentDidMount() {
     // Requests.default.getReviews(18201, (err, data) => {
     //   if (err) {
     //     console.log(err);
@@ -38,20 +56,4 @@ class App extends React.Component {
     //   product: this.props.match.params.id,
     // });
     // console.log(this.props.match.params);
-  }
-
-  render() {
-    const prod = this.state;
-    return (
-      <div>
-        <div className="hello">Hello World!!!!</div>
-        <Overview product={prod.product} />
-        <RelatedProducts selectedProduct={this.state.product} />
-        <QandA productId={prod.product} />
-        <ReviewsComponent reviewsData={this.state.reviewsData} />
-      </div>
-    );
-  }
-}
-
-export default App;
+  // }
