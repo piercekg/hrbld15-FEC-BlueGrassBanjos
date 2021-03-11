@@ -24,7 +24,6 @@ class RelatedProducts extends React.Component {
   }
 
   componentDidMount() {
-    //console.log(JSON.parse(testData.selectedProduct));
     this.handleProductChange(18445);
     this.retrieveOutfitItems();
   }
@@ -72,7 +71,6 @@ class RelatedProducts extends React.Component {
     })
     return products;
   }
-
 
   handleSaveItem (product) {
     window.localStorage.setItem(product.id, JSON.stringify(product));

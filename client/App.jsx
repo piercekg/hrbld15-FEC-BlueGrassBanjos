@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import Overview from './productOverview/displayOverview';
 // import ReviewsComponent from './components/reviews/ReviewsComponent';
-import QandA from './components/QandA/QandA';
+//import QandA from './components/QandA/QandA';
 import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
 import ReviewsComponent from './components/reviews/ReviewsComponent'

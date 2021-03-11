@@ -3,7 +3,7 @@ import { Card, Carousel } from 'react-bootstrap';
 import StarRating from './StarRating';
 
 const defaultStyle = (product) => {
-  var defaultStyle = product.styles[0];;
+  var defaultStyle = product.styles[0];
   if (product.styles.length < 2) {
     defaultStyle = product.styles[0];
   } else {

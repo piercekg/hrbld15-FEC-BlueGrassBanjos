@@ -21,7 +21,7 @@ class RelatedProduct extends React.Component {
   }
 
   defaultStyle(product) {
-    var defaultStyle = this.product.styles[0];;
+    var defaultStyle = this.product.styles[0];
     if (this.product.styles.length < 2) {
       defaultStyle = this.product.styles[0];
     } else {
