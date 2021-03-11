@@ -13,8 +13,13 @@ import QuestionBox from '../../components/QandA/QuestionBox';
 configure({ adapter: new Adapter() });
 
 describe('Check for Components', () => {
-  test('Find QandA component', () => {
-    const wrapper = shallow(<QuestionBox />);
+  const question = {
+    question_helpfulness: 14,
+    question_id: 12345,
+  };
+
+  test('Find QuestionBox component', () => {
+    const wrapper = shallow(<QuestionBox question={question} />);
 
     expect(wrapper.exists()).toBe(true);
   });

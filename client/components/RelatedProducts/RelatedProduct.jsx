@@ -1,6 +1,7 @@
 import React from 'react';
 import ComparisonModal from './ComparisonModal.jsx';
-
+import { Card } from 'react-bootstrap';
+import StarRating from './StarRating'
 
 class RelatedProduct extends React.Component {
   constructor(props) {
@@ -12,8 +13,6 @@ class RelatedProduct extends React.Component {
     this.selectedProduct = props.selectedProduct
     this.handleClick = this.handleClick.bind(this);
   }
-
-
 
   handleClick() {
     this.setState({
@@ -37,31 +36,33 @@ class RelatedProduct extends React.Component {
 
   render () {
     var dfStyle = this.defaultStyle(this.product);
-
     return (
       <React.Fragment>
-      <div className="relatedProductCard">
-        <button type="button" className="relatedProductAction" onClick={() => this.handleClick()}>☆</button>
-        <img className="relatedProductImage" src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></img>
-        <div className="relatedProductInfo">
-          <p className="relatedProductCategory">{this.product.category}</p>
-          <p className="relatedProductName">{this.product.name}</p>
-          <p className="relatedProductPrice">${this.product.default_price}</p>
-          <div className="relatedProductRating">{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</div>
-          <div className="relatedProductReviews">{this.product.reviews.length ? `${this.product.reviews.length} reviews` : null}</div>
+        <Card style={{ width: '18rem', height: '29rem' }} className="product-card carousel-item">
+          <div className="img-overlay">
+            <button type="button" className="btn btn-default btn-xs" onClick={() => this.handleClick()}>⭐</button>
+          </div>
+          <Card.Img className="text-justify card-img" variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
+          <Card.Body>
+            <Card.Text className="text-uppercase"><small>{this.product.category}</small></Card.Text>
+            <Card.Text><strong>{this.product.name}</strong><br></br>{`${this.product.slogan}`}</Card.Text>
+            <Card.Text><small>${this.product.default_price}</small></Card.Text>
+            <StarRating rating={this.product.averageRating ? this.product.averageRating : null}/>
+            <Card.Text><small>{this.product.reviews.length ? `${this.product.reviews.length} reviews` : '0 reviews'}</small></Card.Text>
+          </Card.Body>
+        </Card>
+        <div>
+          {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
         </div>
-      </div>
-      <div>
-        {this.state.clicked ? <ComparisonModal selectedProduct={this.selectedProduct} product={this.product} onClick={this.handleClick}/> : null}
-      </div>
       </React.Fragment>
-    )
+    );
   }
-
 };
 
 export default RelatedProduct;
 
 /*
 this.product.styles[0].photos[0].thumbnail_url
+
+            <Card.Text>{this.product.averageRating ? `*# of stars*: ${this.product.averageRating}` : null}</Card.Text>
 */

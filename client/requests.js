@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const axios = require('axios');
 
 const server = 'http://localhost:3000';
@@ -37,6 +38,15 @@ const requests = {
   },
 
   // REVIEWS REQUESTS
+  getReviews(productId, callback) {
+    axios.get(`${server}/products/${productId}/reviews`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
 
   // QUESTIONS AND ANSWERS REQUESTS
   getCurrentProductQuestions(currentProductId, callback) {
@@ -46,6 +56,66 @@ const requests = {
       })
       .catch((err) => {
         callback(err, null);
+      });
+  },
+
+  getCurrentProductAnswers(questionId, callback) {
+    axios.get(`${server}/qa/questions/:question_id/answers`, { params: { question_id: `${questionId}` } })
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  postNewAnswer(answerData, callback) {
+    axios.post(`${server}/qa/questions/answers`, answerData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
+  postNewQuestion(questionData, callback) {
+    axios.post(`${server}/qa/questions`, questionData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
+  updateQuestionHelpful(updateData, callback) {
+    axios.put(`${server}/qa/questions/:question_id/helpful`, updateData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
+  updateAnswerHelpful(updateData, callback) {
+    axios.put(`${server}/qa/answers`, updateData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+
+  reportAnswer(updateData, callback) {
+    axios.put(`${server}/qa/answers/report`, updateData)
+      .then(() => {
+        callback();
+      })
+      .catch((err) => {
+        console.log(err);
       });
   },
 

@@ -1,9 +1,24 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import $ from 'jquery';
 
-function QuestionSearch() {
+import searchIcon from '../IconsandImages/searchIcon.png';
+
+function QuestionSearch({ searchQuestions }) {
   return (
-    <div>Questions Search</div>
+    <form className="row">
+      <input
+        type="text"
+        className="col-10 search-box"
+        id="search_bar"
+        placeholder="HAVE A QUESTION? SEARCH FOR AN ANSWER..."
+        onChange={() => {
+          searchQuestions($('#search_bar').val());
+        }}
+      />
+      <img src={searchIcon} alt="Icon" className="col-2 search-icon" />
+    </form>
   );
 }
 

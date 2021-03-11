@@ -13,8 +13,17 @@ import Answer from '../../components/QandA/Answer';
 configure({ adapter: new Adapter() });
 
 describe('Check for Component', () => {
-  test('Find QandA component', () => {
-    const wrapper = shallow(<Answer />);
+  const answer = {
+    answer_id: 1092602,
+    answerer_name: 'Jay.Pfeffer92',
+    body: 'Consequuntur illum at.',
+    date: '2021-01-06T00:00:00.000Z',
+    helpfulness: 14,
+    photos: [],
+  };
+
+  test('Find Answer component', () => {
+    const wrapper = shallow(<Answer answer={answer} />);
 
     expect(wrapper.exists()).toBe(true);
   });
