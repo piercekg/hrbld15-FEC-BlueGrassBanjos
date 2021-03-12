@@ -193,6 +193,7 @@ const retrieveProductQuestions = (productId, callback) => {
 };
 
 app.post('/qa/questions/', (req, res) => {
+  console.log(req.body);
   postNewQuestion(req.body, () => {
       res.sendStatus(201);
       console.log('Question Posted')

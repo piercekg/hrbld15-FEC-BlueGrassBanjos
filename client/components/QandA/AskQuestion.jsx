@@ -38,6 +38,7 @@ class AskQuestion extends React.Component {
   }
 
   onSubmit() {
+    console.log('works');
     const formData = {};
     formData.body = $('#question_text').val();
     formData.name = $('#question_username').val();

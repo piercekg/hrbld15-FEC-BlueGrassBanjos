@@ -33,11 +33,6 @@ class App extends React.Component {
     //     });
     //   }
     // });
-
-    // this.setState({
-    //   product: this.props.match.params.id,
-    // });
-    // console.log(this.props.match.params);
   }
 
   render() {

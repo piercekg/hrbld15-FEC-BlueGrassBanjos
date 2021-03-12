@@ -17,7 +17,8 @@ class QuestionBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productName: this.props.productName,
+      currentProduct: this.props.currentProduct,
+      productName: this.props.currentProductName,
       question: props.question,
       answers: [],
       visible: [],
@@ -42,6 +43,17 @@ class QuestionBox extends React.Component {
         });
       }
     });
+
+    // requests.getProductInfo(this.state.currentProduct, (err, data) => {
+    //   if (err) {
+    //     console.log(err);
+    //   } else {
+    //     console.log(data.data.name);
+    //     this.setState({
+    //       productName: data.data.name,
+    //     });
+    //   }
+    // });
   }
 
   toggleAddAnswer() {
