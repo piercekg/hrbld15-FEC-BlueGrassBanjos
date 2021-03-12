@@ -252,6 +252,44 @@
   margin-left: 0;
 }
 
+/*--------------------- Reviews -------------------------*/
+.rnrComponent {
+  margin-left: 19%;
+  margin-right: 19%
+}
+.rnrTitle {
+  margin-bottom: 3%;
+  margin-top: 6%;
+}
+.inline {
+  display: inline-flex;
+}
+.ratingsDiv {
+  width: 30%;
+  margin-right: 5%;
+}
+.reviewsDiv {
+  width: 70%;
+}
+.bigNumber {
+  font-size: 300%;
+  font-weight: bold;
+}
+.bigNumDiv {
+  display: inline-flex;
+}
+.helpfullAndReport {
+  font-size: x-small;
+}
+.yesButton {
+  font-size: x-small;
+}
+.reportButton {
+  font-size: x-small;
+}
+.listItemFirstLine {
+  display: inline-flex;
+}
 .question-container {
   overflow: scroll;
   height:min-content;

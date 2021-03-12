@@ -21,6 +21,26 @@ BRH:0
 end_of_record
 TN:
 SF:client/requests.js
+<<<<<<< HEAD
+FN:8,(anonymous_0)
+FN:10,(anonymous_1)
+FN:13,(anonymous_2)
+FN:18,(anonymous_3)
+FN:20,(anonymous_4)
+FN:23,(anonymous_5)
+FN:29,(anonymous_6)
+FN:31,(anonymous_7)
+FN:34,(anonymous_8)
+FN:40,(anonymous_9)
+FN:42,(anonymous_10)
+FN:45,(anonymous_11)
+FN:51,(anonymous_12)
+FN:53,(anonymous_13)
+FN:56,(anonymous_14)
+FNF:15
+FNH:1
+FNDA:0,(anonymous_0)
+=======
 FN:9,(anonymous_0)
 FN:11,(anonymous_1)
 FN:14,(anonymous_2)
@@ -57,6 +77,7 @@ FN:117,(anonymous_32)
 FNF:33
 FNH:3
 FNDA:2,(anonymous_0)
+>>>>>>> 7c463b431c048d33783b0435b950bd57de849fcc
 FNDA:0,(anonymous_1)
 FNDA:0,(anonymous_2)
 FNDA:0,(anonymous_3)
@@ -68,6 +89,25 @@ FNDA:0,(anonymous_8)
 FNDA:0,(anonymous_9)
 FNDA:0,(anonymous_10)
 FNDA:0,(anonymous_11)
+<<<<<<< HEAD
+FNDA:2,(anonymous_12)
+FNDA:0,(anonymous_13)
+FNDA:0,(anonymous_14)
+DA:1,2
+DA:3,2
+DA:5,2
+DA:9,0
+DA:11,0
+DA:14,0
+DA:19,0
+DA:21,0
+DA:24,0
+DA:30,0
+DA:32,0
+DA:35,0
+DA:41,0
+DA:43,0
+=======
 FNDA:1,(anonymous_12)
 FNDA:0,(anonymous_13)
 FNDA:0,(anonymous_14)
@@ -149,7 +189,9 @@ DA:24,5
 DA:36,1
 DA:37,1
 DA:45,0
+>>>>>>> 7c463b431c048d33783b0435b950bd57de849fcc
 DA:46,0
+<<<<<<< HEAD
 DA:47,0
 DA:48,0
 DA:49,0
@@ -163,16 +205,23 @@ DA:63,0
 DA:67,1
 LF:17
 LH:5
+=======
+DA:52,2
+DA:54,0
+DA:57,0
+LF:18
+LH:4
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 BRF:0
 BRH:0
 end_of_record
 TN:
 SF:client/components/QandA/Answer.jsx
-FN:8,Answer
+FN:5,Answer
 FNF:1
 FNH:1
 FNDA:1,Answer
-DA:9,1
+DA:6,1
 LF:1
 LH:1
 BRF:0
@@ -180,6 +229,7 @@ BRH:0
 end_of_record
 TN:
 SF:client/components/QandA/AnswerBox.jsx
+<<<<<<< HEAD
 FN:7,AnswersBox
 FN:10,(anonymous_1)
 FNF:2
@@ -190,20 +240,25 @@ DA:8,1
 DA:11,2
 LF:2
 LH:2
+=======
+FN:5,AnswersBox
+FNF:1
+FNH:1
+FNDA:1,AnswersBox
+DA:6,1
+LF:1
+LH:1
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 BRF:0
 BRH:0
 end_of_record
 TN:
 SF:client/components/QandA/AnswerButtons.jsx
-FN:10,AnswerButtons
-FN:14,incrementHelpful
-FN:16,(anonymous_2)
-FN:20,(anonymous_3)
-FN:26,onReport
-FN:28,(anonymous_5)
-FNF:6
+FN:4,AnswerButtons
+FNF:1
 FNH:1
 FNDA:1,AnswerButtons
+<<<<<<< HEAD
 FNDA:0,incrementHelpful
 FNDA:0,(anonymous_2)
 FNDA:0,(anonymous_3)
@@ -226,6 +281,12 @@ LH:3
 BRDA:15,0,0,0
 BRDA:15,0,1,0
 BRF:2
+=======
+DA:5,1
+LF:1
+LH:1
+BRF:0
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 BRH:0
 end_of_record
 TN:
@@ -265,11 +326,11 @@ BRH:0
 end_of_record
 TN:
 SF:client/components/QandA/ButtonBox.jsx
-FN:6,ButtonBox
+FN:4,ButtonBox
 FNF:1
 FNH:1
 FNDA:1,ButtonBox
-DA:7,1
+DA:5,1
 LF:1
 LH:1
 BRF:0
@@ -277,6 +338,7 @@ BRH:0
 end_of_record
 TN:
 SF:client/components/QandA/QandA.jsx
+<<<<<<< HEAD
 FN:21,(anonymous_0)
 FN:32,(anonymous_1)
 FN:33,(anonymous_2)
@@ -288,6 +350,44 @@ FN:68,(anonymous_7)
 FN:70,(anonymous_8)
 FN:77,(anonymous_9)
 FN:86,(anonymous_10)
+=======
+<<<<<<< HEAD
+FN:13,(anonymous_0)
+FN:20,(anonymous_1)
+FN:21,(anonymous_2)
+FN:30,(anonymous_3)
+FNF:4
+FNH:3
+FNDA:2,(anonymous_0)
+FNDA:2,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:2,(anonymous_3)
+DA:14,2
+DA:15,2
+DA:21,2
+DA:22,0
+DA:23,0
+DA:25,0
+DA:31,2
+LF:7
+LH:4
+BRDA:22,0,0,0
+BRDA:22,0,1,0
+BRF:2
+BRH:0
+=======
+FN:20,(anonymous_0)
+FN:31,(anonymous_1)
+FN:32,(anonymous_2)
+FN:36,(anonymous_3)
+FN:47,(anonymous_4)
+FN:53,(anonymous_5)
+FN:62,(anonymous_6)
+FN:67,(anonymous_7)
+FN:69,(anonymous_8)
+FN:76,(anonymous_9)
+FN:85,(anonymous_10)
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 FNF:11
 FNH:3
 FNDA:1,(anonymous_0)
@@ -337,14 +437,15 @@ BRDA:91,3,0,0
 BRDA:91,3,1,1
 BRF:8
 BRH:1
+>>>>>>> 7c463b431c048d33783b0435b950bd57de849fcc
 end_of_record
 TN:
 SF:client/components/QandA/Question.jsx
-FN:8,Question
+FN:5,Question
 FNF:1
 FNH:1
 FNDA:1,Question
-DA:11,1
+DA:6,1
 LF:1
 LH:1
 BRF:0
@@ -352,6 +453,7 @@ BRH:0
 end_of_record
 TN:
 SF:client/components/QandA/QuestionBox.jsx
+<<<<<<< HEAD
 FN:17,(anonymous_0)
 FN:31,(anonymous_1)
 FN:33,(anonymous_2)
@@ -396,16 +498,29 @@ BRDA:74,1,0,0
 BRDA:74,1,1,1
 BRF:4
 BRH:1
+=======
+FN:6,QuestionBox
+FNF:1
+FNH:1
+FNDA:1,QuestionBox
+DA:7,1
+LF:1
+LH:1
+BRF:0
+BRH:0
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 end_of_record
 TN:
 SF:client/components/QandA/QuestionButtons.jsx
-FN:14,QuestionButtons
-FN:17,(anonymous_1)
-FN:28,(anonymous_2)
-FN:36,(anonymous_3)
-FNF:4
+FN:4,QuestionButtons
+FNF:1
 FNH:1
 FNDA:1,QuestionButtons
+<<<<<<< HEAD
+DA:5,1
+LF:1
+LH:1
+=======
 FNDA:0,(anonymous_1)
 FNDA:0,(anonymous_2)
 FNDA:0,(anonymous_3)
@@ -424,13 +539,23 @@ DA:33,1
 DA:36,0
 LF:13
 LH:2
+>>>>>>> 96707e8da642a35c79d493b85afc9360a8b38eae
 BRF:0
 BRH:0
 end_of_record
 TN:
 SF:client/components/QandA/QuestionSearch.jsx
+<<<<<<< HEAD
 FN:8,QuestionSearch
 FN:16,(anonymous_1)
+=======
+<<<<<<< HEAD
+FN:4,QuestionSearch
+FNF:1
+=======
+FN:11,QuestionSearch
+FN:19,(anonymous_1)
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 FNF:2
 FNH:1
 FNDA:1,QuestionSearch
@@ -447,6 +572,7 @@ SF:client/components/QandA/QuestionsList.jsx
 FN:8,QuestionsList
 FN:11,(anonymous_1)
 FNF:2
+<<<<<<< HEAD
 FNH:2
 FNDA:1,QuestionsList
 FNDA:2,(anonymous_1)
@@ -454,10 +580,27 @@ DA:9,1
 DA:12,2
 LF:2
 LH:2
+=======
+>>>>>>> 7c463b431c048d33783b0435b950bd57de849fcc
+FNH:1
+FNDA:1,QuestionSearch
+DA:5,1
+LF:1
+LH:1
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
+SF:client/components/QandA/QuestionsList.jsx
+FN:5,QuestionsList
+FNF:1
+FNH:1
+FNDA:1,QuestionsList
+DA:6,1
+LF:1
+=======
 SF:client/components/QandA/helpers.js
 FN:3,(anonymous_0)
 FN:4,(anonymous_1)
@@ -1199,3 +1342,49 @@ BRDA:23,5,1,0
 BRF:12
 BRH:0
 end_of_record
+<<<<<<< HEAD
+=======
+TN:
+SF:client/productOverview/displayOverview.jsx
+FN:7,(anonymous_0)
+FN:17,(anonymous_1)
+FN:18,(anonymous_2)
+FN:29,(anonymous_3)
+FN:30,(anonymous_4)
+FN:41,(anonymous_5)
+FNF:6
+FNH:0
+FNDA:0,(anonymous_0)
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+FNDA:0,(anonymous_4)
+FNDA:0,(anonymous_5)
+DA:4,1
+DA:8,0
+DA:9,0
+DA:13,0
+DA:14,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:22,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:34,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+LF:17
+>>>>>>> 7c463b431c048d33783b0435b950bd57de849fcc
+LH:1
+BRDA:19,0,0,0
+BRDA:19,0,1,0
+BRDA:31,1,0,0
+BRDA:31,1,1,0
+BRF:4
+BRH:0
+end_of_record
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884

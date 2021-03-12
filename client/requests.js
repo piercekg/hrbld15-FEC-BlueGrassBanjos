@@ -1,7 +1,12 @@
 /* eslint-disable no-console */
 const axios = require('axios');
 
+<<<<<<< HEAD
 const server = 'http://localhost:3000';
+=======
+const server = 'http://13.59.149.180';
+// const server = 'http://localhost:3000';
+>>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
 
 const requests = {
 
@@ -39,6 +44,7 @@ const requests = {
 
   // REVIEWS REQUESTS
   getReviews(productId, callback) {
+    console.log(productId);
     axios.get(`${server}/products/${productId}/reviews`)
       .then((data) => {
         callback(null, data);
@@ -47,6 +53,27 @@ const requests = {
         callback(err, null);
       });
   },
+
+  addHelpfull(reviewId, callback) {
+    axios.put(`${server}/reviews/${reviewId}/helpful`)
+      .then((res) => {
+        callback(null, res);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  // postReview(reviewId, callback) {
+  //   callback('works');
+  //   // axios.post(`${server}/products/${productId}/reviews`)
+  //   //   .then((data) => {
+  //   //     callback(null, data);
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     callback(err, null);
+  //   //   });
+  // },
 
   // QUESTIONS AND ANSWERS REQUESTS
   getCurrentProductQuestions(currentProductId, callback) {

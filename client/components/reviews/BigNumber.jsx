@@ -15,9 +15,9 @@ function BigNumber({ reviewsData }) {
     bigNumber = (bigNumber / reviewsData.results.length);
   }
   return (
-    <div>
-      <h1>{bigNumber}</h1>
-      <FiveStars bigNumber={bigNumber} />
+    <div className="bigNumDiv">
+      <div className="bigNumber">{bigNumber}</div>
+      <FiveStars bigNumber={bigNumber} className="bigNumStars" />
     </div>
   );
 }
