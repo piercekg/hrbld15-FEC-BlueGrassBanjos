@@ -4,9 +4,6 @@
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import {
-  BrowserRouter as Router, Switch, Route, Link,
-} from 'react-router-dom';
 import Overview from './components/productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
@@ -17,25 +14,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       product: this.props.match.params.id,
-      reviewsData: {},
     };
-  }
-
-  componentDidMount() {
-    // Requests.default.getReviews(18201, (err, data) => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     this.setState({
-    //       reviewsData: data.data,
-    //     });
-    //   }
-    // });
-
-    // this.setState({
-    //   product: this.props.match.params.id,
-    // });
-    // console.log(this.props.match.params);
   }
 
   render() {
@@ -49,7 +28,7 @@ class App extends React.Component {
         <Overview product={prod.product} />
         <RelatedProducts selectedProduct={prod.product} />
         <QandA productId={prod.product} />
-        <ReviewsComponent reviewsData={prod.reviewsData} />
+        <ReviewsComponent product={prod.product} />
       </div>
     );
   }

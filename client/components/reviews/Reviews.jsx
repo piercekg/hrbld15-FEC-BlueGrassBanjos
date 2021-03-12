@@ -9,7 +9,7 @@ function Reviews(props) {
   return (
     <div>
       <SortBy reviewsData={props.reviewsData} />
-      <ReviewsList reviewsData={props.reviewsData} />
+      <ReviewsList reviewsData={props.reviewsData} report={props.report} />
       <ReviewsButtons />
     </div>
   );

@@ -36,6 +36,7 @@
     "react-bootstrap": "^1.5.1",
     "react-dom": "^16.4",
     "react-router-dom": "^5.2.0",
+    "react-star-rating-component": "^1.4.1",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
