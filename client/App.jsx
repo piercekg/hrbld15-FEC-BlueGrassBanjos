@@ -19,8 +19,8 @@ class App extends React.Component {
 
   render() {
     const prod = this.state;
-    if (prod.product === undefined) {
-      prod.product = 18080;
+    if (!prod.product) {
+      prod.product = 18078;
     }
     return (
       <div>
