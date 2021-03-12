@@ -101,9 +101,9 @@ class RelatedProducts extends React.Component {
     return (
       <React.Fragment>
         <p className="text-uppercase list-name">Related Products</p>
-        {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem}/>}
+        {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem} productClick={this.props.productClick}/>}
         <p className="text-uppercase list-name">Your Outfit</p>
-        {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} clearOutfit={this.clearOutfit}/>}
+        {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} productClick={this.props.productClick} clearOutfit={this.clearOutfit}/>}
       </React.Fragment>
     );
   }

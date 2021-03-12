@@ -9,7 +9,7 @@ const RelatedProductsList = (props) => {
           <div className="d-flex flex-row carousel">
             {props.relatedProducts.map(product => {
               return (
-                <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick}/>
+                <RelatedProduct product={product} key={product.id} selectedProduct={props.selectedProduct} onClick={props.onClick} productClick={props.productClick}/>
               );
             })}
           </div>
