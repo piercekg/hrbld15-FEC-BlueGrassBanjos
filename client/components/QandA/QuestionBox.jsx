@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-update-set-state */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
 /* eslint-disable react/no-access-state-in-setstate */
@@ -26,8 +27,6 @@ class QuestionBox extends React.Component {
       addAnswer: false,
       moreAnswers: true,
     };
-
-    // this.incrimentHelpful.bind(this);
   }
 
   componentDidMount() {
@@ -43,17 +42,6 @@ class QuestionBox extends React.Component {
         });
       }
     });
-
-    // requests.getProductInfo(this.state.currentProduct, (err, data) => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     console.log(data.data.name);
-    //     this.setState({
-    //       productName: data.data.name,
-    //     });
-    //   }
-    // });
   }
 
   toggleAddAnswer() {
@@ -91,7 +79,7 @@ class QuestionBox extends React.Component {
   render() {
     return (
       <div className="pb-2 pt-2 question-container">
-        {this.state.addAnswer ? <AddAnswer productName={this.state.productName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
+        {this.state.addAnswer ? <AddAnswer productName={this.props.currentProductName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
 
         <Question question={this.state.question} incrimentHelpful={this.incrimentHelpful.bind(this)} helpful={this.state.helpful} toggleAddAnswer={this.toggleAddAnswer.bind(this)} />
 
@@ -103,12 +91,3 @@ class QuestionBox extends React.Component {
 }
 
 export default QuestionBox;
-
-// function QuestionBox({ question }) {
-//   return (
-//     <div>
-//       <Question question={question} />
-//       <AnswerBox />
-//     </div>
-//   );
-// }
