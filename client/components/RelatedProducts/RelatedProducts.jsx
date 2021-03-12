@@ -30,6 +30,12 @@ class RelatedProducts extends React.Component {
     this.retrieveOutfitItems();
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedProduct !== prevProps.selectedProduct) {
+      this.handleProductChange(this.props.selectedProduct);
+    }
+  }
+
   updateSelectedProduct(product) {
     this.setState({
       selectedProduct: product
@@ -100,6 +106,7 @@ class RelatedProducts extends React.Component {
   }
 
   render() {
+    //console.log(this.state.selectedProduct.id);
     return (
       <React.Fragment>
         <p className="text-uppercase list-name">Related Products</p>
