@@ -31,9 +31,8 @@ class App extends React.Component {
   render() {
     const prod = this.state;
     if (!prod.product) {
-      prod.product = 18078
+      prod.product = 18078;
     }
-
     return (
       <div>
         <div className="hello">Hello World!!!!</div>
