@@ -18,15 +18,12 @@ class App extends React.Component {
     this.handleProductClick = this.handleProductClick.bind(this);
   }
 
-<<<<<<< HEAD
   handleProductClick (product_id) {
     this.setState({
       product: product_id
     });
   }
 
-=======
->>>>>>> 8507d4c8a918289ee3e6d8bcb9046c36cd0b2884
   render() {
     const prod = this.state;
     if (!prod.product) {
