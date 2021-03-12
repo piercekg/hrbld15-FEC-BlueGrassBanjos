@@ -89,6 +89,10 @@
 
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
+.related-product-list {
+  margin: 1rem;
+}
+
 .list-name {
   margin: 0;
   padding: 2rem 0 0 3rem;
