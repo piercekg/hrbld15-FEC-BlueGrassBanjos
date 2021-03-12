@@ -132,6 +132,10 @@
   white-space: nowrap;
 }
 
+.product-name {
+  cursor: pointer;
+}
+
 .card-img {
   line-height: 16rem;
   font-style: oblique;

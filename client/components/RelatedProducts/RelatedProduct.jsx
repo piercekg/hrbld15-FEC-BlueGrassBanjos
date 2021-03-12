@@ -45,7 +45,7 @@ class RelatedProduct extends React.Component {
           <Card.Img className="text-justify card-img" variant="top" style={{ width: 'auto', height: '18rem' }} src={`${dfStyle.photos[0].thumbnail_url}`} alt={`${dfStyle.name}`}></Card.Img>
           <Card.Body>
             <Card.Text className="text-uppercase"><small>{this.product.category}</small></Card.Text>
-            <Card.Text><strong>{this.product.name}</strong><br></br>{`${this.product.slogan}`}</Card.Text>
+            <Card.Text className="product-name" onClick={() => this.props.productClick(this.product.id)}><strong>{this.product.name}</strong><br></br>{`${this.product.slogan}`}</Card.Text>
             <Card.Text><small>${this.product.default_price}</small></Card.Text>
             <StarRating rating={this.product.averageRating ? this.product.averageRating : null}/>
             <Card.Text><small>{this.product.reviews.length ? `${this.product.reviews.length} reviews` : '0 reviews'}</small></Card.Text>

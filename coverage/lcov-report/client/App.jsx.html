@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,8 +108,14 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,6 +139,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,8 +156,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,7 +168,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-console */
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable react/prop-types */
+/* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
@@ -167,23 +182,40 @@ import React from 'react';
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
-import Overview from './productOverview/displayOverview';
-// import ReviewsComponent from './components/reviews/ReviewsComponent';
+import Overview from './components/productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
-import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
-import ReviewsComponent from './components/reviews/ReviewsComponent'
+import ReviewsComponent from './components/reviews/ReviewsComponent';
 &nbsp;
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: 18201,
+      product: this.props.match.params.id,
       reviewsData: {},
     };
   }
 &nbsp;
-  componentDidMount() {
+<span class="fstat-no" title="function not covered" >  re</span>nder() {
+    const prod = <span class="cstat-no" title="statement not covered" >this.state;</span>
+<span class="cstat-no" title="statement not covered" >    if (!prod.product) {</span>
+<span class="cstat-no" title="statement not covered" >      prod.product = 18078</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return (</span>
+      &lt;div&gt;
+        &lt;div className="hello"&gt;Hello World!!!!&lt;/div&gt;
+        &lt;Overview product={prod.product} /&gt;
+        &lt;RelatedProducts selectedProduct={prod.product} /&gt;
+        &lt;QandA productId={prod.product} /&gt;
+        &lt;ReviewsComponent reviewsData={prod.reviewsData} /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+&nbsp;
+export default App;
+&nbsp;
+  // componentDidMount() {
     // Requests.default.getReviews(18201, (err, data) =&gt; {
     //   if (err) {
     //     console.log(err);
@@ -193,23 +225,12 @@ class App extends React.Component {
     //     });
     //   }
     // });
-  }
 &nbsp;
-  render() {
-    const prod = this.state;
-    return (
-      &lt;Router&gt;
-        &lt;div className="hello"&gt;Hello World!!!!&lt;/div&gt;
-        &lt;Overview product={prod.product} /&gt;
-        {&lt;RelatedProducts selectedProduct={this.state.product}/&gt;}
-        &lt;QandA /&gt;
-        {&lt;ReviewsComponent reviewsData={this.state.reviewsData} /&gt;}
-      &lt;/Router&gt;
-    );
-  }
-}
-&nbsp;
-export default App;
+    // this.setState({
+    //   product: this.props.match.params.id,
+    // });
+    // console.log(this.props.match.params);
+  // }
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -217,7 +238,7 @@ export default App;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Mar 10 2021 19:55:51 GMT-0700 (Mountain Standard Time)
+                at Thu Mar 11 2021 16:08:31 GMT-0700 (Mountain Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

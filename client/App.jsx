@@ -15,6 +15,13 @@ class App extends React.Component {
     this.state = {
       product: this.props.match.params.id,
     };
+    this.handleProductClick = this.handleProductClick.bind(this);
+  }
+
+  handleProductClick (product_id) {
+    this.setState({
+      product: product_id
+    });
   }
 
   render() {
@@ -26,7 +33,7 @@ class App extends React.Component {
       <div>
         <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
-        <RelatedProducts selectedProduct={prod.product} />
+        <RelatedProducts selectedProduct={prod.product} productClick={this.handleProductClick}/>
         <QandA productId={prod.product} />
         <ReviewsComponent product={prod.product} />
       </div>
