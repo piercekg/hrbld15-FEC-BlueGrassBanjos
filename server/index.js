@@ -193,8 +193,16 @@ const retrieveProductQuestions = (productId, callback) => {
 };
 
 app.post('/qa/questions/', (req, res) => {
-  console.log(req.body);
-  postNewQuestion(req.body, () => {
+
+  const questionData = {}
+  questionData.body = req.body.body;
+  questionData.name = req.body.name;
+  questionData.email = req.body.email;
+  questionData.product_id = parseInt(req.body.product_id);
+
+  console.log(questionData);
+
+  postNewQuestion(questionData, () => {
       res.sendStatus(201);
       console.log('Question Posted')
       res.end()
@@ -268,6 +276,7 @@ app.post('/qa/questions/answers', (req, res) => {
   postNewAnswer(questionId, answerData, () => {
     res.sendStatus(201);
     console.log('Answer Posted');
+    console.log(answerData);
     res.end();
   })
 })
