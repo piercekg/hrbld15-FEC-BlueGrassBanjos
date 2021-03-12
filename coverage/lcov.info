@@ -1,4 +1,5 @@
 TN:
+<<<<<<< HEAD
 SF:client/App.jsx
 FN:17,(anonymous_0)
 FN:25,(anonymous_1)
@@ -242,6 +243,23 @@ FN:56,(anonymous_3)
 FN:60,(anonymous_4)
 FNF:5
 FNH:0
+=======
+SF:client/requests.js
+FN:8,(anonymous_0)
+FN:10,(anonymous_1)
+FN:13,(anonymous_2)
+FN:18,(anonymous_3)
+FN:20,(anonymous_4)
+FN:24,(anonymous_5)
+FN:30,(anonymous_6)
+FN:32,(anonymous_7)
+FN:35,(anonymous_8)
+FN:43,(anonymous_9)
+FN:45,(anonymous_10)
+FN:48,(anonymous_11)
+FNF:12
+FNH:1
+>>>>>>> currentWork
 FNDA:0,(anonymous_0)
 FNDA:0,(anonymous_1)
 FNDA:0,(anonymous_2)
@@ -329,6 +347,7 @@ FNDA:0,(anonymous_5)
 FNDA:0,(anonymous_6)
 FNDA:0,(anonymous_7)
 FNDA:0,(anonymous_8)
+<<<<<<< HEAD
 FNDA:0,(anonymous_9)
 FNDA:1,(anonymous_10)
 DA:21,1
@@ -399,9 +418,43 @@ FN:4,QuestionButtons
 FNF:1
 FNH:1
 FNDA:1,QuestionButtons
+<<<<<<< HEAD
 DA:5,1
 LF:1
 LH:1
+=======
+FNDA:0,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:0,(anonymous_3)
+DA:17,1
+DA:18,0
+DA:19,0
+DA:20,0
+=======
+FNDA:1,(anonymous_9)
+FNDA:0,(anonymous_10)
+FNDA:0,(anonymous_11)
+DA:1,1
+DA:3,1
+DA:5,1
+DA:9,0
+DA:11,0
+DA:14,0
+DA:19,0
+>>>>>>> currentWork
+DA:21,0
+DA:22,0
+DA:24,0
+DA:25,0
+<<<<<<< HEAD
+DA:26,0
+DA:28,0
+DA:29,0
+DA:33,1
+DA:36,0
+LF:13
+LH:2
+>>>>>>> 96707e8da642a35c79d493b85afc9360a8b38eae
 BRF:0
 BRH:0
 end_of_record
@@ -421,10 +474,21 @@ DA:12,1
 DA:20,0
 LF:2
 LH:1
+=======
+DA:31,0
+DA:33,0
+DA:36,0
+DA:44,1
+DA:46,0
+DA:49,0
+LF:16
+LH:4
+>>>>>>> currentWork
 BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:client/components/QandA/QuestionsList.jsx
 FN:8,QuestionsList
 FN:11,(anonymous_1)
@@ -462,6 +526,15 @@ DA:6,0
 DA:8,0
 DA:10,0
 LF:6
+=======
+SF:client/components/QandA/Answer.jsx
+FN:5,Answer
+FNF:1
+FNH:1
+FNDA:1,Answer
+DA:6,1
+LF:1
+>>>>>>> currentWork
 LH:1
 BRDA:5,0,0,0
 BRDA:5,0,1,0
@@ -469,6 +542,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:client/components/RelatedProducts/CompareFeature.jsx
 FN:3,(anonymous_0)
 FNF:1
@@ -516,11 +590,21 @@ DA:16,0
 DA:21,0
 DA:29,0
 LF:12
+=======
+SF:client/components/QandA/AnswerBox.jsx
+FN:5,AnswersBox
+FNF:1
+FNH:1
+FNDA:1,AnswersBox
+DA:6,1
+LF:1
+>>>>>>> currentWork
 LH:1
 BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:client/components/RelatedProducts/OutfitItem.jsx
 FN:5,(anonymous_0)
 FN:10,(anonymous_1)
@@ -728,6 +812,15 @@ FNDA:0,(anonymous_0)
 DA:3,2
 DA:4,0
 LF:2
+=======
+SF:client/components/QandA/AnswerButtons.jsx
+FN:4,AnswerButtons
+FNF:1
+FNH:1
+FNDA:1,AnswerButtons
+DA:5,1
+LF:1
+>>>>>>> currentWork
 LH:1
 BRDA:8,0,0,0
 BRDA:8,0,1,0
@@ -737,6 +830,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:client/components/RelatedProducts/StarRating.jsx
 FN:3,(anonymous_0)
 FNF:1
@@ -777,12 +871,21 @@ SF:client/components/RelatedProducts/testData.js
 FNF:0
 FNH:0
 DA:1,1
+=======
+SF:client/components/QandA/ButtonBox.jsx
+FN:4,ButtonBox
+FNF:1
+FNH:1
+FNDA:1,ButtonBox
+DA:5,1
+>>>>>>> currentWork
 LF:1
 LH:1
 BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:client/components/reviews/BigNumber.jsx
 FN:9,BigNumber
 FNF:1
@@ -798,10 +901,34 @@ LF:6
 LH:0
 BRDA:11,0,0,0
 BRDA:11,0,1,0
+=======
+SF:client/components/QandA/QandA.jsx
+FN:13,(anonymous_0)
+FN:20,(anonymous_1)
+FN:21,(anonymous_2)
+FN:30,(anonymous_3)
+FNF:4
+FNH:3
+FNDA:1,(anonymous_0)
+FNDA:1,(anonymous_1)
+FNDA:0,(anonymous_2)
+FNDA:1,(anonymous_3)
+DA:14,1
+DA:15,1
+DA:21,1
+DA:22,0
+DA:23,0
+DA:31,1
+LF:6
+LH:4
+BRDA:22,0,0,0
+BRDA:22,0,1,0
+>>>>>>> currentWork
 BRF:2
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:client/components/reviews/FiveStars.jsx
 FN:3,FiveStars
 FNF:1
@@ -874,10 +1001,21 @@ DA:10,0
 DA:15,0
 LF:3
 LH:0
+=======
+SF:client/components/QandA/Question.jsx
+FN:5,Question
+FNF:1
+FNH:1
+FNDA:1,Question
+DA:6,1
+LF:1
+LH:1
+>>>>>>> currentWork
 BRF:0
 BRH:0
 end_of_record
 TN:
+<<<<<<< HEAD
 SF:client/components/reviews/ReviewsList.jsx
 FN:6,ReviewsList
 FN:13,(anonymous_1)
@@ -908,6 +1046,52 @@ DA:7,0
 DA:8,0
 LF:3
 LH:0
+=======
+SF:client/components/QandA/QuestionBox.jsx
+FN:6,QuestionBox
+FNF:1
+FNH:1
+FNDA:1,QuestionBox
+DA:7,1
+LF:1
+LH:1
+BRF:0
+BRH:0
+end_of_record
+TN:
+SF:client/components/QandA/QuestionButtons.jsx
+FN:4,QuestionButtons
+FNF:1
+FNH:1
+FNDA:1,QuestionButtons
+DA:5,1
+LF:1
+LH:1
+BRF:0
+BRH:0
+end_of_record
+TN:
+SF:client/components/QandA/QuestionSearch.jsx
+FN:4,QuestionSearch
+FNF:1
+FNH:1
+FNDA:1,QuestionSearch
+DA:5,1
+LF:1
+LH:1
+BRF:0
+BRH:0
+end_of_record
+TN:
+SF:client/components/QandA/QuestionsList.jsx
+FN:5,QuestionsList
+FNF:1
+FNH:1
+FNDA:1,QuestionsList
+DA:6,1
+LF:1
+LH:1
+>>>>>>> currentWork
 BRF:0
 BRH:0
 end_of_record

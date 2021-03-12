@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <coverage generated="1615254421730" clover="3.2.0">
   <project timestamp="1615254421730" name="All files">
     <metrics statements="34" coveredstatements="17" conditionals="2" coveredconditionals="0" methods="28" coveredmethods="13" elements="64" coveredelements="30" complexity="0" loc="34" ncloc="34" packages="2" files="11" classes="11"/>
@@ -35,6 +36,8 @@
       </file>
       <file name="AnswerBox.jsx" path="/Users/benkennedy/Documents/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/AnswerBox.jsx">
 =======
+=======
+>>>>>>> 96707e8da642a35c79d493b85afc9360a8b38eae
 <coverage generated="1615431351447" clover="3.2.0">
   <project timestamp="1615431351447" name="All files">
     <metrics statements="320" coveredstatements="79" conditionals="78" coveredconditionals="12" methods="147" coveredmethods="34" elements="545" coveredelements="125" complexity="0" loc="320" ncloc="320" packages="5" files="38" classes="38"/>
@@ -230,12 +233,37 @@
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
+=======
+<coverage generated="1615396237599" clover="3.2.0">
+  <project timestamp="1615396237599" name="All files">
+    <metrics statements="31" coveredstatements="17" conditionals="2" coveredconditionals="0" methods="25" coveredmethods="13" elements="58" coveredelements="30" complexity="0" loc="31" ncloc="31" packages="2" files="11" classes="11"/>
+    <package name="client">
+      <metrics statements="16" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="1"/>
+      <file name="requests.js" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/requests.js">
+        <metrics statements="16" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+>>>>>>> currentWork
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
 >>>>>>> 7c463b431c048d33783b0435b950bd57de849fcc
         <line num="25" count="0" type="stmt"/>
+<<<<<<< HEAD
         <line num="31" count="2" type="stmt"/>
+=======
+<<<<<<< HEAD
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+>>>>>>> 96707e8da642a35c79d493b85afc9360a8b38eae
       </file>
 <<<<<<< HEAD
       <file name="Question.jsx" path="/Users/benkennedy/Documents/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/Question.jsx">
@@ -496,7 +524,66 @@
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
+<<<<<<< HEAD
 >>>>>>> 7c463b431c048d33783b0435b950bd57de849fcc
+=======
+=======
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="client.components.QandA">
+      <metrics statements="15" coveredstatements="13" conditionals="2" coveredconditionals="0" methods="13" coveredmethods="12"/>
+      <file name="Answer.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/Answer.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="AnswerBox.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/AnswerBox.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="AnswerButtons.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/AnswerButtons.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="ButtonBox.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/ButtonBox.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="QandA.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/QandA.jsx">
+        <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+      <file name="Question.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/Question.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="QuestionBox.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/QuestionBox.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="QuestionButtons.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/QuestionButtons.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="QuestionSearch.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/QuestionSearch.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="QuestionsList.jsx" path="/Users/davidgoelitz/work/hrbld15-FEC-BlueGrassBanjos/client/components/QandA/QuestionsList.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+>>>>>>> currentWork
+>>>>>>> 96707e8da642a35c79d493b85afc9360a8b38eae
       </file>
     </package>
   </project>
