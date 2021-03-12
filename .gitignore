@@ -3,4 +3,4 @@ config.js
 config_example.js
 coverage
 /dist/app.js
-DS_Store
+.DS_Store
