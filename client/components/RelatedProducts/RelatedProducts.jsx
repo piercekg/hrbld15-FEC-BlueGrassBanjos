@@ -75,20 +75,22 @@ class RelatedProducts extends React.Component {
   }
 
   handleSaveItem (product) {
-    window.localStorage.setItem(product.id, JSON.stringify(product));
+    window.localStorage.setItem('outfit' + product.id, JSON.stringify(product));
     this.retrieveOutfitItems();
   }
 
   retrieveOutfitItems () {
-    var products = [];
+    var outfit = [];
     for (var i = 0; i < localStorage.length; i ++) {
-      products.push(JSON.parse(window.localStorage.getItem(window.localStorage.key(i))));
+      if (window.localStorage.key(i).includes('outfit')) {
+        outfit.push(JSON.parse(window.localStorage.getItem(window.localStorage.key(i))));
+      }
     }
-    this.updateOutfit(products);
+    this.updateOutfit(outfit);
   }
 
   removeOutfitItem (productId) {
-    window.localStorage.removeItem(productId);
+    window.localStorage.removeItem('outfit' + productId);
     this.retrieveOutfitItems();
   }
 

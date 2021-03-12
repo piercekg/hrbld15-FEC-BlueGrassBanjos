@@ -33,7 +33,7 @@ class App extends React.Component {
     if (!prod.product) {
       prod.product = 18078
     }
-    console.log(prod.product);
+
     return (
       <div>
         <div className="hello">Hello World!!!!</div>
