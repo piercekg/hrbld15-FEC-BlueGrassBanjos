@@ -515,7 +515,7 @@ a:hover {
 
 .parent {
   display: inline-block;
-  height: 35rem;
+  height: fit-content;
 }
 
 .right-parent {
