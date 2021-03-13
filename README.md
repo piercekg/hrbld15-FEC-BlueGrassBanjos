@@ -19,9 +19,9 @@ This section of the app displays users' questions about the product in the produ
 This section of the app displays user ratings and reviews for the product in the product overview. This includes the average rating and a breakdown of how many reviews gave the product which rating. Users can tag reviews as helpful and report reviews that violate the sites usage guidelines.
 
 **Navigation**\
-Users are able to **search products by id** with the *search* field in the *nav-bar*, with the result of navigating to the searched product. For example, searching `18112` navigates to the "Citlalli Shorts".
+Users are able to **search products by id** with the ***search*** field in the ***nav-bar***, with the result of navigating to the searched product. For example, searching `18112` navigates to the "Citlalli Shorts".
 
-Alternatively, a user click on the *product name* of a *related product* or *outfit item* will navigate to that product.
+Alternatively, a user click on the ***product name*** of a ***related product*** or ***outfit item*** will navigate to that product.
 
 Users may also navigate to different products by entering a product id in the url bar:
 `http://localhost:3000/:product_id` or `http://EC2_public_ip/:product_id`\
