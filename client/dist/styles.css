@@ -355,7 +355,7 @@ a:hover {
   margin-top: 20px;
 }
 .section-name{
-  margin: 2rem 0 1rem 1.5rem
+  margin: 2rem 0 1rem 5rem
 }
 
 /*--------------------- Reviews -------------------------*/
@@ -549,7 +549,7 @@ a:hover {
 
 .parent {
   display: inline-block;
-  height: 35rem;
+  height: fit-content;
 }
 
 .right-parent {
