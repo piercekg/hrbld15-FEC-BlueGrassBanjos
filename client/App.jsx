@@ -49,7 +49,7 @@ class App extends React.Component {
             <Overview product={prod.product} />
           </a>
           <a id="RelatedProducts">
-            <RelatedProducts selectedProduct={this.state.product} />
+            <RelatedProducts selectedProduct={this.state.product} productClick={this.handleProductClick}/>
           </a>
           <a id="QandA">
             <QandA productId={prod.product} />
