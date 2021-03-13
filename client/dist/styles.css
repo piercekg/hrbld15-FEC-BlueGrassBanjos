@@ -1,7 +1,3 @@
-.app-container {
-  overflow-x: hidden;
-}
-
 /*-----------------------Color Scheme---------------------------------- */
 
 .logo-border {
@@ -30,6 +26,7 @@ a:hover {
 
 .component-body {
   background-color: whitesmoke;
+  overflow-x: auto;
 }
 
 .footer {
@@ -235,35 +232,6 @@ a:hover {
   /* adjust 'height' to position overlay content vertically */
   height: 0;
 }
-/*
-.star-ratings-css {
-  unicode-bidi: bidi-override;
-  color: #c5c5c5;
-  font-size: 25px;
-  height: 25px;
-  width: 100px;
-  margin: 0 auto;
-  position: relative;
-  padding: 0;
-  text-shadow: 0px 1px 0 #a2a2a2;
-}
-.star-ratings-css-top {
-    color: #e7711b;
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-.star-ratings-css-bottom {
-    padding: 0;
-    display: block;
-    z-index: 0;
-
-}
-*/
 
 /*-----------------------Questions and Answers---------------------------------- */
 
