@@ -36,14 +36,15 @@ class App extends React.Component {
     }
     return (
       <div>
-        <div className="container-fluid fixed-top logo-border">
+        <div className="container-fluid logo-border">
           <img src={logo} alt="logo" className="col logo" />
           <a href="#Overview" className="col-1 pt-5 Overview-link">Overview</a>
           <a href="#RelatedProducts" className="col-2 pt-5 Related-Products-link">Related Products</a>
           <a href="#QandA" className="col-2 pt-5 QandA-link">Question and Answers</a>
           <a href="#ReviewsComponent" className="col-2 pt-5 Reviews-link">Ratings and Reviews</a>
         </div>
-        <div className="component-body">
+
+        <div className="container-fluid component-body">
           <a id="Overview">
             <Overview product={prod.product} />
           </a>

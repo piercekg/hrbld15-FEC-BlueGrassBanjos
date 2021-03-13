@@ -1,8 +1,15 @@
+
+
 /*-----------------------Color Scheme---------------------------------- */
 
 .logo-border {
   background-color: #215C05;
   border-bottom: 5px solid #01B512;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin-bottom: 1rem;
 }
 
 .logo {
@@ -262,6 +269,7 @@ a:hover {
   border: 2px solid black;
   border-right: 0px;
   margin-right: 0px;
+  margin-left: 2.5rem;
 }
 
 .search-icon {
@@ -271,6 +279,10 @@ a:hover {
   height: auto;
   width: auto;
   max-width: 100px;
+}
+
+.question-list {
+  padding-left: 2rem;
 }
 
 .question-buttons {
@@ -311,9 +323,13 @@ a:hover {
   margin-left: 0;
 }
 
+.section-name{
+  margin: 2rem 0 1rem 1.5rem
+}
+
 /*--------------------- Reviews -------------------------*/
 .rnrComponent {
-  margin-left: 19%;
+  margin-left: 4.3rem;
   margin-right: 19%
 }
 .rnrTitle {
@@ -350,9 +366,9 @@ a:hover {
   display: inline-flex;
 }
 .question-container {
-  overflow: scroll;
-  height:min-content;
-  overflow: scroll;
+  height: min-content;
+  width: 48rem;
+  height: fit-content;
 }
 
 /*-----------------------Overview---------------------------------- */

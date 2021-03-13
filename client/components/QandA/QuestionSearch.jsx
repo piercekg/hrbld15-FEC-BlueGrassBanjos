@@ -11,7 +11,7 @@ function QuestionSearch({ searchQuestions }) {
     <form className="row">
       <input
         type="text"
-        className="col-6 search-box"
+        className="col-10 search-box"
         id="search_bar"
         placeholder="HAVE A QUESTION? SEARCH FOR AN ANSWER..."
         onChange={() => {

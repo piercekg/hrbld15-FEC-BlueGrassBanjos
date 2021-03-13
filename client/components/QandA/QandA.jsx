@@ -96,8 +96,8 @@ class QandA extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid col-11">
-        <p className="text-uppercase">Questions and Answers</p>
+      <div className="container-fluid  col-11">
+        <p className="text-uppercase section-name">Questions and Answers</p>
         <QuestionSearch searchQuestions={this.searchQuestions.bind(this)} />
         {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.productName} toggleAskQuestion={this.toggleAskQuestion.bind(this)} /> : null}
         <div id="modal" />
