@@ -13,21 +13,3 @@ function ButtonBox({ toggleAskQuestion, addMoreQuestions }) {
 }
 
 export default ButtonBox;
-
-// class ButtonBox extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <div>More Questions</div>
-//         <button type="button">Add A Question</button>
-//       </div>
-//     );
-//   }
-// }
