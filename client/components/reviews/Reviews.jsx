@@ -7,9 +7,9 @@ import SortBy from './SortBy';
 
 function Reviews(props) {
   return (
-    <div>
+    <div className="container-fluid">
       <SortBy reviewsData={props.reviewsData} />
-      <ReviewsList reviewsData={props.reviewsData} />
+      <ReviewsList reviewsData={props.reviewsData} report={props.report} />
       <ReviewsButtons />
     </div>
   );

@@ -37,6 +37,15 @@ class Overview extends React.Component {
     window.removeEventListener('resize', this.resize);
   }
 
+  componentDidUpdate(prevProps) {
+    //console.log('prevProps ' + prevProps.product);
+    //console.log('currentProps ' + this.props.product);
+    if (this.props.product !== prevProps.product) {
+      this.getProduct(this.props);
+      this.getStyles(this.props);
+    }
+  }
+
   getProduct(props) {
     requests.getProductInfo(props.product, (err, data) => {
       if (err) {

@@ -182,7 +182,7 @@ app.get('/products/:product_id/reviews', (req, res) => {
 });
 
 const retrieveReviews = (productId, callback) => {
-axios.get(' https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product_id=18201', {headers: {'Authorization': `${config.TOKEN}`}})
+axios.get(`${server}/reviews/?product_id=${productId}`, {headers: {'Authorization': `${config.TOKEN}`}})
 .then ((res) => {
   callback(null, res.data);
 })
@@ -190,6 +190,27 @@ axios.get(' https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product
   callback(res, null)
 })
 };
+
+//`${server}/products/${ids[0]}/reviews/${ids[1]}/helpful`
+app.put('/reviews/:review_id/helpful', (req, res) => {
+  addHelpful(req.params.review_id, (err, data) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.status(201).send(data);
+    }
+  })
+});
+
+const addHelpful = (review_id, callback) => {
+axios.put(`${server}/reviews/${review_id}/helpful`, 'addHelpful', {headers: {Authorization: `${config.TOKEN}`}})
+.then(() => {
+  callback();
+})
+.catch((err) => {
+  console.log(err);
+})
+}
 
 // QUESTIONS AND ANSWERS REQUESTS
 
@@ -217,7 +238,16 @@ const retrieveProductQuestions = (productId, callback) => {
 };
 
 app.post('/qa/questions/', (req, res) => {
-  postNewQuestion(req.body, () => {
+
+  const questionData = {}
+  questionData.body = req.body.body;
+  questionData.name = req.body.name;
+  questionData.email = req.body.email;
+  questionData.product_id = parseInt(req.body.product_id);
+
+  console.log(questionData);
+
+  postNewQuestion(questionData, () => {
       res.sendStatus(201);
       console.log('Question Posted')
       res.end()
@@ -291,6 +321,7 @@ app.post('/qa/questions/answers', (req, res) => {
   postNewAnswer(questionId, answerData, () => {
     res.sendStatus(201);
     console.log('Answer Posted');
+    console.log(answerData);
     res.end();
   })
 })

@@ -1,12 +1,14 @@
+/* eslint-disable no-alert */
+/* eslint-disable camelcase */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
+
 import React from 'react';
-import {
-  BrowserRouter as Router, Switch, Route, Link,
-} from 'react-router-dom';
+import Header from './components/Header/Header';
 import Overview from './components/productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
@@ -17,35 +19,50 @@ class App extends React.Component {
     super(props);
     this.state = {
       product: this.props.match.params.id,
-      reviewsData: {},
     };
+    this.handleProductClick = this.handleProductClick.bind(this);
   }
 
-  componentDidMount() {
-    // Requests.default.getReviews(18201, (err, data) => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     this.setState({
-    //       reviewsData: data.data,
-    //     });
-    //   }
-    // });
-
-    // this.setState({
-    //   product: this.props.match.params.id,
-    // });
-    // console.log(this.props.match.params);
+  handleProductClick(product_id) {
+    if (product_id.toString().length !== 5) {
+      alert('Please Enter A Valid Product Id');
+    } else {
+      this.setState({
+        product: product_id,
+      });
+    }
   }
 
   render() {
     const prod = this.state;
+    if (!prod.product) {
+      prod.product = 18078;
+    }
     return (
-      <div>
-        <Overview product={prod.product} />
-        <RelatedProducts selectedProduct={prod.product} />
-        <QandA productId={prod.product} />
-        <ReviewsComponent reviewsData={prod.reviewsData} />
+      <div className="container-fluid app-container">
+        <div className="container-fluid logo-border">
+          <Header searchProduct={this.handleProductClick} />
+        </div>
+
+        <div className="container-fluid component-body">
+          <a id="Overview">
+            <Overview product={prod.product} />
+          </a>
+          <a id="RelatedProducts">
+            <RelatedProducts selectedProduct={this.state.product} productClick={this.handleProductClick}/>
+          </a>
+          <a id="QandA">
+            <QandA productId={prod.product} />
+          </a>
+          <a id="ReviewsComponent">
+            <ReviewsComponent reviewsData={this.state.reviewsData} />
+          </a>
+          <div className="container-fluid footer">
+            <div className="footer-text">
+              Copywrite: BLUEGRASS BANJOS!!!!! @2021
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

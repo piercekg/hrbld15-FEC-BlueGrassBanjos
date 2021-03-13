@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
+
 const axios = require('axios');
 
-const server = 'http://localhost:3000';
+const server = 'http://13.59.149.180';
+// const server = 'http://localhost:3000';
 
 const requests = {
 
@@ -19,7 +21,6 @@ const requests = {
   getProductStyles(productId, callback) {
     axios.get(`${server}/products/${productId}/styles`)
       .then((data) => {
-        console.log(data);
         callback(null, data);
       })
       .catch((err) => {
@@ -48,6 +49,27 @@ const requests = {
         callback(err, null);
       });
   },
+
+  addHelpfull(reviewId, callback) {
+    axios.put(`${server}/reviews/${reviewId}/helpful`)
+      .then((res) => {
+        callback(null, res);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  // postReview(reviewId, callback) {
+  //   callback('works');
+  //   // axios.post(`${server}/products/${productId}/reviews`)
+  //   //   .then((data) => {
+  //   //     callback(null, data);
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     callback(err, null);
+  //   //   });
+  // },
 
   // QUESTIONS AND ANSWERS REQUESTS
   getCurrentProductQuestions(currentProductId, callback) {

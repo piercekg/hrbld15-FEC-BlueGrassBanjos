@@ -30,6 +30,12 @@ class RelatedProducts extends React.Component {
     this.retrieveOutfitItems();
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedProduct !== prevProps.selectedProduct) {
+      this.handleProductChange(this.props.selectedProduct);
+    }
+  }
+
   updateSelectedProduct(product) {
     this.setState({
       selectedProduct: product
@@ -75,20 +81,22 @@ class RelatedProducts extends React.Component {
   }
 
   handleSaveItem (product) {
-    window.localStorage.setItem(product.id, JSON.stringify(product));
+    window.localStorage.setItem('outfit' + product.id, JSON.stringify(product));
     this.retrieveOutfitItems();
   }
 
   retrieveOutfitItems () {
-    var products = [];
+    var outfit = [];
     for (var i = 0; i < localStorage.length; i ++) {
-      products.push(JSON.parse(window.localStorage.getItem(window.localStorage.key(i))));
+      if (window.localStorage.key(i).includes('outfit')) {
+        outfit.push(JSON.parse(window.localStorage.getItem(window.localStorage.key(i))));
+      }
     }
-    this.updateOutfit(products);
+    this.updateOutfit(outfit);
   }
 
   removeOutfitItem (productId) {
-    window.localStorage.removeItem(productId);
+    window.localStorage.removeItem('outfit' + productId);
     this.retrieveOutfitItems();
   }
 
@@ -99,12 +107,10 @@ class RelatedProducts extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <p className="text-uppercase list-name">Related Products</p>
-        {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem}/>}
-        <p className="text-uppercase list-name">Your Outfit</p>
-        {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} clearOutfit={this.clearOutfit}/>}
-      </React.Fragment>
+      <div className="container-fluid related-product-list">
+        {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem} productClick={this.props.productClick}/>}
+        {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} productClick={this.props.productClick} clearOutfit={this.clearOutfit}/>}
+      </div>
     );
   }
 }

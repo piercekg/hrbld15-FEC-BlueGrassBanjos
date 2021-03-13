@@ -1,17 +1,24 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
 import ReviewsListItem from './ReviewsListItem';
 
-function ReviewsList({ reviewsData }) {
+function ReviewsList(props) {
   let resultsArr = [];
-  if (reviewsData.results !== undefined) {
-    resultsArr = reviewsData.results;
+  if (props.reviewsData.results !== undefined) {
+    resultsArr = props.reviewsData.results;
   }
   return (
     <div>
       {resultsArr.map((review, key) => (
-        <ReviewsListItem review={review} key={key} />
+        <ReviewsListItem
+          review={review}
+          key={key}
+          report={propTypes.report}
+          product={props.reviewsData.product}
+        />
       ))}
     </div>
   );
