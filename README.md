@@ -3,8 +3,7 @@
 ### Overview
 Rainforest.com is the front-end of an imaginary e-commerce clothing website. It was built with React, Express, and Bootstrap.  The web-app consists of 4 interactive components that provide product information and user feedback. For more information on the guidelines and specs for the project, see the [business requirements document](https://docs.google.com/document/d/1NyZdWDHPqQ7xEqzfy3nYlUV90UO0maN1UvdUe6CwG3k/edit#heading=h.b4f9vfzdtmsk).
 
-### Description
-### Add Screen Captures
+### Description (Add Screen Captures)
 **Product Overview**\
 This section of the app highlights the current product being viewed. It features a highly interactive image gallery, product details, and shopping functionality. Users are able to navigate through the image gallery and zoom in on the selected image. Users may select from available sizes and sizes and add items to their cart.
 
@@ -22,7 +21,7 @@ This section of the app displays user ratings and reviews for the product in the
 **Navigation**\
 Users can navigate to different products by entering a product id in the url bar:
 `http://localhost:3000/:product_id` or `http://EC2_public_ip/:product_id`\
-For example `http://localhost:3000/18078` navigates to the Camo Onesie.
+For example `http://localhost:3000/18082` navigates to the Heir Force Ones.
 
 Alternatively, a user click on the product name of a related product or outfit item will navigate to that product.
 
@@ -31,7 +30,7 @@ Alternatively, a user click on the product name of a related product or outfit i
 nodejs v14.x
 
 **Setup**\
-Fork this [Github repository](https://github.com/BlueGrass-Banjos/hrbld15-FEC-BlueGrassBanjos), and in your chosen local directory clone your repo:
+Fork this [Github repository](https://github.com/BlueGrass-Banjos/hrbld15-FEC-BlueGrassBanjos), and in your chosen local directory clone your repo:\
 `$ git clone https://github.com/YOUR_USERNAME/hrbld15-FEC-BlueGrassBanjos.git`
 
 Navigate to the root project directory - `/hrbld15-FEC-BlueGrassBanjos/` - and follow these instructions:
@@ -40,9 +39,9 @@ Navigate to the root project directory - `/hrbld15-FEC-BlueGrassBanjos/` - and f
 Run `$ npm install` to install dependencies locally.
 
 The express server setup is located in `/server/index.js`. The default port is `3000`. You may need to update the reference to the express server in `/client/requests.js` if it is not `localhost:3000`.
-In order to interact with the HackReactor API, you will need to generate a [gitHub personal authorization token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and create `config.js` in the root directory of the project. `config.js` should look like this:
-`module.exports = {`
-  `TOKEN: 'YOUR_PERSONAL_AUTH_TOKEN_HERE'`
+In order to interact with the HackReactor API, you will need to generate a [gitHub personal authorization token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and create `config.js` in the root directory of the project. `config.js` should look like this:\
+`module.exports = {`\
+  `TOKEN: 'YOUR_PERSONAL_AUTH_TOKEN_HERE'`\
 `};`
 
 *Run app in development-mode*\
