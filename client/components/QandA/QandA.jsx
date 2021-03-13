@@ -30,6 +30,22 @@ class QandA extends React.Component {
   }
 
   componentDidMount() {
+    this.getQuestions();
+    this.getAnswers();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.productId !== prevProps.productId) {
+      this.setState({
+        currentProduct: this.props.productId,
+      }, () => {
+        this.getQuestions();
+        this.getAnswers();
+      });
+    }
+  }
+
+  getQuestions() {
     requests.getCurrentProductQuestions(this.props.productId, (err, response) => {
       if (err) {
         console.log(`GetCurrentProductQuestions: ${err}`);
@@ -43,12 +59,13 @@ class QandA extends React.Component {
         });
       }
     });
+  }
 
+  getAnswers() {
     requests.getProductInfo(this.state.currentProduct, (err, data) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(data.data.name);
         this.setState({
           productName: data.data.name,
         });
