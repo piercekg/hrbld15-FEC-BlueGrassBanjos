@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   handleProductClick(product_id) {
-    if (product_id.length !== 5) {
+    if (product_id.toString().length !== 5) {
       alert('Please Enter A Valid Product Id');
     } else {
       this.setState({
@@ -38,7 +38,6 @@ class App extends React.Component {
     if (!prod.product) {
       prod.product = 18078;
     }
-
     return (
       <div className="container-fluid app-container">
         <div className="container-fluid logo-border">
