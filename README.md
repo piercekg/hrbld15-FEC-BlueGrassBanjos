@@ -23,6 +23,8 @@ Users can navigate to different products by entering a product id in the url bar
 `http://localhost:3000/:product_id` or `http://EC2_public_ip/:product_id`\
 For example `http://localhost:3000/18082` navigates to the Heir Force Ones.
 
+Users may also search products by id with the search field in the nav bar, with the result of navigating to that product.
+
 Alternatively, a user click on the product name of a related product or outfit item will navigate to that product.
 
 ### Getting Started
