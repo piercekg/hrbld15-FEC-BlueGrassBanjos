@@ -3,3 +3,7 @@ config.js
 config_example.js
 coverage
 /dist/app.js
+.DS_Store
+client/.DS_Store
+client/components/.DS_Store
+client/components/IconsandImages/.DS_Store
