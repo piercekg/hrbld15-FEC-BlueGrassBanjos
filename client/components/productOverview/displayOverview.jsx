@@ -154,7 +154,6 @@ class Overview extends React.Component {
           </h1>
         </div>
         <div key={-2} id="right-parent" className="right-parent parent">
-          <h3>Stars go here</h3>
           <h3>{this.product.category}</h3>
           <h1>{this.product.name}</h1>
           <h5>{this.product.default_price}</h5>
