@@ -59,7 +59,7 @@ Ben Kennedy - Ratings & Reviews\
 Kevin Pierce - Related Products\
 Hayden West - Questions & Answers
 
--------- Optional additional sections and notes --------
+-------- *Optional additional sections and notes* --------
 ### For the Capstones
 When creating a README for your capstone projects, consider the different objectives of the work you did on each. Think about how to best reflect where your effort went for each, and how to best represent that work. Due to the differences between the two capstone projects, it is likely that their READMEs will be very different.
 ### Table of Contents - You can link to the different sections below
