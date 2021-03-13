@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/prop-types */
@@ -7,12 +8,11 @@
 /* eslint-disable no-unused-vars */
 
 import React from 'react';
+import Header from './components/Header/Header';
 import Overview from './components/productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
 import ReviewsComponent from './components/reviews/ReviewsComponent';
-
-import logo from './components/IconsandImages/FEClogo.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,9 +24,13 @@ class App extends React.Component {
   }
 
   handleProductClick(product_id) {
-    this.setState({
-      product: product_id,
-    });
+    if (product_id.length !== 5) {
+      alert('Please Enter A Valid Product Id');
+    } else {
+      this.setState({
+        product: product_id,
+      });
+    }
   }
 
   render() {
@@ -34,14 +38,11 @@ class App extends React.Component {
     if (!prod.product) {
       prod.product = 18078;
     }
+
     return (
       <div className="container-fluid app-container">
         <div className="container-fluid logo-border">
-          <img src={logo} alt="logo" className="col logo" />
-          <a href="#Overview" className="col-1 pt-5 Overview-link">Overview</a>
-          <a href="#RelatedProducts" className="col-2 pt-5 Related-Products-link">Related Products</a>
-          <a href="#QandA" className="col-2 pt-5 QandA-link">Question and Answers</a>
-          <a href="#ReviewsComponent" className="col-2 pt-5 Reviews-link">Ratings and Reviews</a>
+          <Header searchProduct={this.handleProductClick} />
         </div>
 
         <div className="container-fluid component-body">
