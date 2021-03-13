@@ -3,7 +3,9 @@ import { Card, CardDeck, Carousel } from 'react-bootstrap';
 import OutfitItem from './OutfitItem.jsx';
 
 const OutfitItemsList = (props) => (
-  <div className="d-flex flex-nowrap carousel-outer">
+  <React.Fragment>
+    <p className="text-uppercase list-name">Your Outfit</p>
+    <div className="d-flex flex-nowrap carousel-outer">
       <Card style={{ width: '18rem', height: '29rem' }} className="product-card carousel-item add-to-outfit" onClick={() => props.addItem(props.selectedProduct)}>
         <Card.Body>
           <h2>
@@ -17,8 +19,10 @@ const OutfitItemsList = (props) => (
             <OutfitItem product={product} key={product.id} removeItem={props.removeItem} productClick={props.productClick}/>
           );
         })}
+      </div>
     </div>
-  </div>
+  </React.Fragment>
+
 );
 
 export default OutfitItemsList;

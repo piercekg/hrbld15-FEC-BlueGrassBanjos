@@ -5,6 +5,7 @@ const RelatedProductsList = (props) => {
   if (props.relatedProducts.length > 0) {
     return (
       <React.Fragment>
+        <p className="text-uppercase list-name">Related Products</p>
         <div className="d-flex flex-nowrap carousel-outer">
           <div className="d-flex flex-row carousel">
             {props.relatedProducts.map(product => {

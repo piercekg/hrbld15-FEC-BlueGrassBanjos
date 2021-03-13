@@ -40,16 +40,17 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className="container-fluid app-container">
         <div className="container-fluid logo-border">
           <Header searchProduct={this.handleProductClick} />
         </div>
-        <div className="component-body">
+
+        <div className="container-fluid component-body">
           <a id="Overview">
             <Overview product={prod.product} />
           </a>
           <a id="RelatedProducts">
-            <RelatedProducts selectedProduct={this.state.product} />
+            <RelatedProducts selectedProduct={this.state.product} productClick={this.handleProductClick}/>
           </a>
           <a id="QandA">
             <QandA productId={prod.product} />

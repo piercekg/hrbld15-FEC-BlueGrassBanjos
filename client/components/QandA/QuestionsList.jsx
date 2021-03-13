@@ -10,7 +10,7 @@ function QuestionsList({
   fullList, visible, currentProduct, currentProductName,
 }) {
   return (
-    <div className="mt-3 overflow-auto" style={{ maxWidth: '700px', maxHeight: '400px' }}>
+    <div className="mt-3 overflow-auto question-list" style={{ maxWidth: '54rem', maxHeight: '400px' }}>
       {visible.map((question) => (
         <QuestionBox key={question.question_id} question={question} currentProduct={currentProduct} currentProductName={currentProductName} />
       ))}
