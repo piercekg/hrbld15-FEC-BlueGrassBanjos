@@ -24,7 +24,6 @@ class App extends React.Component {
   }
 
   handleProductClick(product_id) {
-    console.log(product_id);
     if (product_id.toString().length !== 5) {
       alert('Please Enter A Valid Product Id');
     } else {
