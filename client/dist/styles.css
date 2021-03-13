@@ -512,6 +512,8 @@ a:hover {
 
 .parent {
   display: inline-block;
+  height: 32rem;
+  overflow-y: auto;
 }
 
 .right-parent {
