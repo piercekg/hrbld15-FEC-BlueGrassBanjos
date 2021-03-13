@@ -3,7 +3,7 @@
 ### Overview
 Rainforest.com is the front-end of an imaginary e-commerce clothing website. It was built with React, Express, and Bootstrap.  The web-app consists of 4 interactive components that provide product information and user feedback. For more information on the guidelines and specs for the project, see the [business requirements document](https://docs.google.com/document/d/1NyZdWDHPqQ7xEqzfy3nYlUV90UO0maN1UvdUe6CwG3k/edit#heading=h.b4f9vfzdtmsk).
 
-### Description (Add Screen Captures)
+### Description
 **Product Overview**\
 This section of the app highlights the current product being viewed. It features a highly interactive image gallery, product details, and shopping functionality. Users are able to navigate through the image gallery and zoom in on the selected image. Users may select from available styles and sizes and add items to their cart.
 
@@ -58,10 +58,3 @@ David Goelitz - Product Overview\
 Ben Kennedy - Ratings & Reviews\
 Kevin Pierce - Related Products\
 Hayden West - Questions & Answers
-
---------------- *Optional additional sections and notes* ---------------
-### For the Capstones
-When creating a README for your capstone projects, consider the different objectives of the work you did on each. Think about how to best reflect where your effort went for each, and how to best represent that work. Due to the differences between the two capstone projects, it is likely that their READMEs will be very different.
-### Table of Contents - You can link to the different sections below
-### Usage - Further details on how the project is meant to be used may be helpful.
-### Roadmap - What future enhancements are planned? What is the current status of the project? Is it being actively maintained?
