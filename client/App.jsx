@@ -42,20 +42,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-  // componentDidMount() {
-    // Requests.default.getReviews(18201, (err, data) => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     this.setState({
-    //       reviewsData: data.data,
-    //     });
-    //   }
-    // });
-
-    // this.setState({
-    //   product: this.props.match.params.id,
-    // });
-    // console.log(this.props.match.params);
-  // }
