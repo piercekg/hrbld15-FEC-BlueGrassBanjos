@@ -21,8 +21,8 @@ class QandA extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      productName: '',
       currentProduct: this.props.productId,
-      currentProductName: 'Toy',
       productQuestions: [],
       visible: [],
       addQuestion: false,
@@ -30,7 +30,7 @@ class QandA extends React.Component {
   }
 
   componentDidMount() {
-    requests.getCurrentProductQuestions(this.state.currentProduct, (err, response) => {
+    requests.getCurrentProductQuestions(this.props.productId, (err, response) => {
       if (err) {
         console.log(`GetCurrentProductQuestions: ${err}`);
       } else {
@@ -40,6 +40,17 @@ class QandA extends React.Component {
             productQuestions: questions,
             visible: firstTwo,
           });
+        });
+      }
+    });
+
+    requests.getProductInfo(this.state.currentProduct, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(data.data.name);
+        this.setState({
+          productName: data.data.name,
         });
       }
     });
@@ -86,11 +97,11 @@ class QandA extends React.Component {
   render() {
     return (
       <div className="container">
-        <h3>Questions and Answers</h3>
+        <h3 className="pt-2">Questions and Answers</h3>
         <QuestionSearch searchQuestions={this.searchQuestions.bind(this)} />
-        {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} toggleAskQuestion={this.toggleAskQuestion.bind(this)} /> : null}
+        {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.productName} toggleAskQuestion={this.toggleAskQuestion.bind(this)} /> : null}
         <div id="modal" />
-        <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
+        <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} currentProduct={this.state.currentProduct} currentProductName={this.state.productName} />
         <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} addMoreQuestions={this.addMoreQuestions.bind(this)} />
       </div>
     );

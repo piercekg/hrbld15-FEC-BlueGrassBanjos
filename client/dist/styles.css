@@ -1,3 +1,57 @@
+/*-----------------------Color Scheme---------------------------------- */
+
+.logo-border {
+  background-color: #215C05;
+  border-bottom: 5px solid #01B512;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 400px;
+}
+
+a.link {
+  color:rgb(172, 211, 30);
+}
+
+a:hover {
+  color:#01B512
+}
+
+.component-body {
+  background-color: whitesmoke;
+}
+
+.footer {
+  background-color:#215C05;
+  border-top: 5px solid #01B512;
+}
+
+.footer-text {
+  padding: 30px;
+  text-align: center;
+  color:rgb(172, 211, 30);
+}
+
+.Overview-link {
+  margin-right: 30px;
+  color: rgb(172, 211, 30);
+}
+.QandA-link {
+  margin-right: 20px;
+  color: rgb(172, 211, 30);
+}
+
+.Related-Products-link {
+  margin-right: 20px;
+  color: rgb(172, 211, 30);
+}
+
+.Reviews-link {
+  color:rgb(172, 211, 30);
+}
+
 /*-----------------------Comparison Modal---------------------------------- */
 .compare-modal {
   z-index: 3;
@@ -214,8 +268,9 @@
   border: 2px solid black;
   border-left: 0px;
   margin-left: 0px;
-  height: 60px;
-  width: 60px;
+  height: auto;
+  width: auto;
+  max-width: 100px;
 }
 
 .question-buttons {

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-update-set-state */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
 /* eslint-disable react/no-access-state-in-setstate */
@@ -17,15 +18,15 @@ class QuestionBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productName: this.props.productName,
+      currentProduct: this.props.currentProduct,
+      productName: this.props.currentProductName,
       question: props.question,
       answers: [],
       visible: [],
       helpful: props.question.question_helpfulness,
       addAnswer: false,
+      moreAnswers: true,
     };
-
-    // this.incrimentHelpful.bind(this);
   }
 
   componentDidMount() {
@@ -50,12 +51,19 @@ class QuestionBox extends React.Component {
   }
 
   addMoreAnswers() {
-    const newLength = this.state.answers.length + 2;
+    const newLength = this.state.visible.length + 2;
     const newVisible = this.state.answers.slice(0, newLength);
 
-    this.setState({
-      visible: newVisible,
-    });
+    if (newVisible.length === this.state.answers.length) {
+      this.setState({
+        visible: newVisible,
+        moreAnswers: false,
+      });
+    } else {
+      this.setState({
+        visible: newVisible,
+      });
+    }
   }
 
   incrimentHelpful() {
@@ -70,25 +78,16 @@ class QuestionBox extends React.Component {
 
   render() {
     return (
-      <div className="b-2 question-container">
-        {this.state.addAnswer ? <AddAnswer productName={this.state.productName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
+      <div className="pb-2 pt-2 question-container">
+        {this.state.addAnswer ? <AddAnswer productName={this.props.currentProductName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
 
         <Question question={this.state.question} incrimentHelpful={this.incrimentHelpful.bind(this)} helpful={this.state.helpful} toggleAddAnswer={this.toggleAddAnswer.bind(this)} />
 
         <AnswerBox answers={this.state.visible} />
-        <button type="button" className="btn btn-sm pb-4" onClick={this.addMoreAnswers.bind(this)}>Add More Answers</button>
+        {this.state.moreAnswers ? <button type="button" className="btn btn-sm pb-4" onClick={this.addMoreAnswers.bind(this)}>Add More Answers</button> : null}
       </div>
     );
   }
 }
 
 export default QuestionBox;
-
-// function QuestionBox({ question }) {
-//   return (
-//     <div>
-//       <Question question={question} />
-//       <AnswerBox />
-//     </div>
-//   );
-// }

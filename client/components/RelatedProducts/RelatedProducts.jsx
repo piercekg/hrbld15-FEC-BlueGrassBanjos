@@ -106,7 +106,6 @@ class RelatedProducts extends React.Component {
   }
 
   render() {
-    //console.log(this.state.selectedProduct.id);
     return (
       <div className="related-product-list">
         <p className="text-uppercase list-name">Related Products</p>
