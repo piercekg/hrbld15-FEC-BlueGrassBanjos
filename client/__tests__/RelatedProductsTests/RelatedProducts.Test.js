@@ -30,9 +30,6 @@ afterEach(() => {
   container = null;
 });
 
-it('renders')
-
-
 describe('Check for modules', () => {
   test('RelatedProducts div shoule exist', () => {
     const wrapper = shallow(<RelatedProducts />);
