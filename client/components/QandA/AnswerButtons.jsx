@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-console */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -5,6 +6,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState } from 'react';
+import $ from 'jquery';
 import requests from '../../requests';
 
 function AnswerButtons({ answerInfo }) {
@@ -23,11 +25,13 @@ function AnswerButtons({ answerInfo }) {
     }
   }
 
-  function onReport() {
+  function onReport(event) {
     const updateData = { answer_id: answerInfo.answer_id, reported: true };
     requests.reportAnswer(updateData, () => {
       console.log('Answer Reported');
     });
+    event.target.textContent = 'Reported';
+    event.target.className += (' reported');
   }
 
   return (
@@ -46,7 +50,14 @@ function AnswerButtons({ answerInfo }) {
         &nbsp;&nbsp;
         |
       </span>
-      <span className="col answer-report" onClick={onReport}>Report</span>
+      <span
+        className="col answer-report"
+        onClick={(event) => {
+          onReport(event);
+        }}
+      >
+        Report
+      </span>
     </div>
   );
 }

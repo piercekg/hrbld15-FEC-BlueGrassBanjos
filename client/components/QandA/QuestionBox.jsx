@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-did-update-set-state */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
@@ -27,6 +28,8 @@ class QuestionBox extends React.Component {
       addAnswer: false,
       moreAnswers: true,
     };
+
+    this.updateAnswers = this.updateAnswers.bind(this);
   }
 
   componentDidMount() {
@@ -76,10 +79,22 @@ class QuestionBox extends React.Component {
     });
   }
 
+  updateAnswers(answer) {
+    const answerObj = {};
+    answerObj.answerer_name = answer.username;
+    answerObj.body = answer.answer;
+    answerObj.date = new Date();
+    answerObj.helpfulness = 0;
+
+    this.setState({
+      answers: [...this.state.answers, answerObj],
+    });
+  }
+
   render() {
     return (
       <div className="pb-2 pt-2 question-container">
-        {this.state.addAnswer ? <AddAnswer productName={this.props.currentProductName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} /> : null}
+        {this.state.addAnswer ? <AddAnswer productName={this.props.currentProductName} question={this.state.question} toggleAddAnswer={this.toggleAddAnswer.bind(this)} updateAnswers={this.updateAnswers} /> : null}
 
         <Question question={this.state.question} incrimentHelpful={this.incrimentHelpful.bind(this)} helpful={this.state.helpful} toggleAddAnswer={this.toggleAddAnswer.bind(this)} />
 
