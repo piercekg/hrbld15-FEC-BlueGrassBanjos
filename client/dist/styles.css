@@ -519,12 +519,12 @@ a:hover {
 .parent {
   display: inline-block;
   height: 32rem;
-  overflow-y: auto;
 }
 
 .right-parent {
   float: right;
   width: 45%;
+  overflow-y: auto;
 }
 
 .left-parent {
