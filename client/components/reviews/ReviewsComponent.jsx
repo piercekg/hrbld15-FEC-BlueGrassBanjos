@@ -34,7 +34,7 @@ class ReviewsComponent extends React.Component {
 
   render() {
     return (
-      <div className="rnrComponent">
+      <div className="container-fluid rnrComponent">
         <div className="rnrTitle">RATINGS & REVIEWS</div>
         <div className="inline">
           <div className="ratingsDiv">

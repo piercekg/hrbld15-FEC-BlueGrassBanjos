@@ -107,10 +107,8 @@ class RelatedProducts extends React.Component {
 
   render() {
     return (
-      <div className="related-product-list">
-        <p className="text-uppercase list-name">Related Products</p>
+      <div className="container-fluid related-product-list">
         {<RelatedProductsList selectedProduct={this.state.selectedProduct} relatedProducts={this.state.relatedProducts} onClick={this.handleSaveItem} productClick={this.props.productClick}/>}
-        <p className="text-uppercase list-name">Your Outfit</p>
         {<OutfitItemsList products={this.state.outfit} selectedProduct={this.state.selectedProduct} addItem={this.handleSaveItem} removeItem={this.removeOutfitItem} productClick={this.props.productClick} clearOutfit={this.clearOutfit}/>}
       </div>
     );
