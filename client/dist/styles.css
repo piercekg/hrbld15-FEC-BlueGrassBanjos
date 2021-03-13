@@ -3,6 +3,11 @@
 .logo-border {
   background-color: #215C05;
   border-bottom: 5px solid #01B512;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin-bottom: 1rem;
 }
 
 .logo {
@@ -21,6 +26,7 @@ a:hover {
 
 .component-body {
   background-color: whitesmoke;
+  overflow-x: auto;
 }
 
 .footer {
@@ -226,35 +232,6 @@ a:hover {
   /* adjust 'height' to position overlay content vertically */
   height: 0;
 }
-/*
-.star-ratings-css {
-  unicode-bidi: bidi-override;
-  color: #c5c5c5;
-  font-size: 25px;
-  height: 25px;
-  width: 100px;
-  margin: 0 auto;
-  position: relative;
-  padding: 0;
-  text-shadow: 0px 1px 0 #a2a2a2;
-}
-.star-ratings-css-top {
-    color: #e7711b;
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-.star-ratings-css-bottom {
-    padding: 0;
-    display: block;
-    z-index: 0;
-
-}
-*/
 
 /*-----------------------Questions and Answers---------------------------------- */
 
@@ -262,6 +239,7 @@ a:hover {
   border: 2px solid black;
   border-right: 0px;
   margin-right: 0px;
+  margin-left: 2.5rem;
 }
 
 .search-icon {
@@ -271,6 +249,10 @@ a:hover {
   height: auto;
   width: auto;
   max-width: 100px;
+}
+
+.question-list {
+  padding-left: 2rem;
 }
 
 .question-buttons {
@@ -311,9 +293,13 @@ a:hover {
   margin-left: 0;
 }
 
+.section-name{
+  margin: 2rem 0 1rem 1.5rem
+}
+
 /*--------------------- Reviews -------------------------*/
 .rnrComponent {
-  margin-left: 19%;
+  margin-left: 4.3rem;
   margin-right: 19%
 }
 .rnrTitle {
@@ -350,9 +336,9 @@ a:hover {
   display: inline-flex;
 }
 .question-container {
-  overflow: scroll;
-  height:min-content;
-  overflow: scroll;
+  height: min-content;
+  width: 48rem;
+  height: fit-content;
 }
 
 /*-----------------------Overview---------------------------------- */
@@ -378,6 +364,11 @@ a:hover {
   bottom: 0;
   max-width: 100%;
   max-height: 100%;
+  color: #00b300;
+  line-height: 22rem;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: xx-large;
 }
 
 .inner-backdrop {
@@ -401,6 +392,7 @@ a:hover {
   bottom: 0;
   max-width: 100%;
   max-height: 100%;
+  color: transparent;
 }
 
 .thumbnail1 {
@@ -496,11 +488,13 @@ a:hover {
 
 .parent {
   display: inline-block;
+  height: 35rem;
 }
 
 .right-parent {
   float: right;
   width: 45%;
+  overflow-y: auto;
 }
 
 .left-parent {

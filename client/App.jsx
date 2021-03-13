@@ -35,7 +35,7 @@ class App extends React.Component {
       prod.product = 18078;
     }
     return (
-      <div>
+      <div className="container-fluid app-container">
         <div className="container-fluid logo-border">
           <img src={logo} alt="logo" className="col logo" />
           <a href="#Overview" className="col-1 pt-5 Overview-link">Overview</a>
@@ -43,12 +43,13 @@ class App extends React.Component {
           <a href="#QandA" className="col-2 pt-5 QandA-link">Question and Answers</a>
           <a href="#ReviewsComponent" className="col-2 pt-5 Reviews-link">Ratings and Reviews</a>
         </div>
-        <div className="component-body">
+
+        <div className="container-fluid component-body">
           <a id="Overview">
             <Overview product={prod.product} />
           </a>
           <a id="RelatedProducts">
-            <RelatedProducts selectedProduct={this.state.product} />
+            <RelatedProducts selectedProduct={this.state.product} productClick={this.handleProductClick}/>
           </a>
           <a id="QandA">
             <QandA productId={prod.product} />

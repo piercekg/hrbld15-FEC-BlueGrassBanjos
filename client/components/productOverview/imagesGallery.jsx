@@ -76,7 +76,7 @@ class Gallery extends React.Component {
         <img
           src={this.style.photos[this.sel].url}
           alt={this.style.name}
-          className="highlight"
+          className="highlight text-justify"
         />
         {arrows}
         {this.style.photos.map((data, index) => {
