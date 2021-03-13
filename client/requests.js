@@ -41,7 +41,6 @@ const requests = {
 
   // REVIEWS REQUESTS
   getReviews(productId, callback) {
-    console.log(productId);
     axios.get(`${server}/products/${productId}/reviews`)
       .then((data) => {
         callback(null, data);
