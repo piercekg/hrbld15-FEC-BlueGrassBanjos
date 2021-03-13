@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 const axios = require('axios');
 
-const server = 'http://13.59.149.180';
-// const server = 'http://localhost:3000';
+//const server = 'http://13.59.149.180';
+ const server = 'http://localhost:3000';
 
 const requests = {
 
@@ -40,7 +40,6 @@ const requests = {
 
   // REVIEWS REQUESTS
   getReviews(productId, callback) {
-    console.log(productId);
     axios.get(`${server}/products/${productId}/reviews`)
       .then((data) => {
         callback(null, data);
