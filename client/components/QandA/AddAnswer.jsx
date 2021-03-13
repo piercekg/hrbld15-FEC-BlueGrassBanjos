@@ -94,23 +94,3 @@ class AddAnswer extends React.Component {
 }
 
 export default AddAnswer;
-
-// function Answer() {
-//   const lard = 'biggum';
-
-//   return (
-//     <form action="http://localhost:3000/qa/questions/:question_id/answers">
-//       <input type="hidden" id="addAnswerQuestionId" name="questionId" value="" />
-//       <div>
-//         <textarea name="answer" placeholder="Your Answer Here" required />
-//       </div>
-//       <div>
-//         <input type="text" name="userName" placeholder="Enter Username" required />
-//       </div>
-//       <div>
-//         <input type="email" name="email" placeholder="Enter Email" required />
-//       </div>
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// }

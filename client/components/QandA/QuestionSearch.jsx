@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+
 import React, { useState } from 'react';
 import $ from 'jquery';
 
@@ -10,7 +11,7 @@ function QuestionSearch({ searchQuestions }) {
     <form className="row">
       <input
         type="text"
-        className="col-10 search-box"
+        className="col-6 search-box"
         id="search_bar"
         placeholder="HAVE A QUESTION? SEARCH FOR AN ANSWER..."
         onChange={() => {
