@@ -5,7 +5,7 @@ Rainforest.com is the front-end of an imaginary e-commerce clothing website. It 
 
 ### Description (Add Screen Captures)
 **Product Overview**\
-This section of the app highlights the current product being viewed. It features a highly interactive image gallery, product details, and shopping functionality. Users are able to navigate through the image gallery and zoom in on the selected image. Users may select from available sizes and sizes and add items to their cart.
+This section of the app highlights the current product being viewed. It features a highly interactive image gallery, product details, and shopping functionality. Users are able to navigate through the image gallery and zoom in on the selected image. Users may select from available styles and sizes and add items to their cart.
 
 **Related Products**\
 The first carousel in this section of the app is made up of cards representing products that have been tagged as related to the product in the product overview. The cards feature a default product image and product details. The 'star' action button opens a comparison modal displaying the features of the related product and main product side-by-side.
