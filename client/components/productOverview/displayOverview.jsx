@@ -2,6 +2,7 @@
 import React from 'react';
 import Gallery from './imagesGallery';
 import Cart from './cart';
+import GiantPopup from './giantPopup';
 // import { $, jQuery } from 'jquery';
 
 import requests from '../../requests';
@@ -14,11 +15,26 @@ class Overview extends React.Component {
       product: null,
       style: null,
       selected: 0,
+      popup: false,
+      image: 0,
     };
+    this.sizedWide = true;
     this.getProduct(props);
     this.getStyles(props);
 
+    this.popupClickHandler = this.popupClickHandler.bind(this);
     this.changeStyle = this.changeStyle.bind(this);
+    this.resize = this.resize.bind(this);
+    this.widthHigh = this.widthHigh.bind(this);
+    this.widthLow = this.widthLow.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.resize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize);
   }
 
   getProduct(props) {
@@ -29,6 +45,10 @@ class Overview extends React.Component {
         this.setState({
           product: data.data,
         });
+
+        if (window.innerWidth <= 750) {
+          this.widthLow();
+        }
       }
     });
   }
@@ -45,10 +65,50 @@ class Overview extends React.Component {
     });
   }
 
+  resize() { this.forceUpdate(); }
+
+  popupClickHandler(bool, imageIndex) {
+    this.setState({
+      popup: bool,
+      image: imageIndex,
+    });
+  }
+
   changeStyle(index) {
     this.setState({
       selected: index,
     });
+  }
+
+  widthHigh() {
+    const rightParent = document.getElementById('right-parent');
+    const leftParent = document.getElementById('left-parent');
+    const backDrop = document.getElementById('back-drop');
+    rightParent.style.float = 'right';
+    rightParent.style.display = 'inline-block';
+    rightParent.style.marginLeft = '0';
+    rightParent.style.marginRight = '50px';
+    rightParent.style.width = '35%';
+    rightParent.style.width = '35%';
+    leftParent.style.marginLeft = '50px';
+    backDrop.style.width = '50vw';
+    backDrop.style.height = '50vw';
+    this.sizedWide = true;
+  }
+
+  widthLow() {
+    const rightParent = document.getElementById('right-parent');
+    const leftParent = document.getElementById('left-parent');
+    const backDrop = document.getElementById('back-drop');
+    rightParent.style.float = 'none';
+    rightParent.style.display = 'block';
+    rightParent.style.marginLeft = '10%';
+    rightParent.style.marginRight = '0';
+    rightParent.style.width = '80%';
+    leftParent.style.marginLeft = '10%';
+    backDrop.style.width = '80vw';
+    backDrop.style.height = '80vw';
+    this.sizedWide = false;
   }
 
   render() {
@@ -59,17 +119,41 @@ class Overview extends React.Component {
     this.style = this.sel.style;
     this.product = this.sel.product;
     this.selected = this.sel.selected;
+    let popup = [];
+
+    if (this.sel.popup) {
+      popup = [<GiantPopup
+        product={this.product.name}
+        style={this.style[this.selected]}
+        image={this.sel.image}
+        key={-4}
+        clickHandler={this.popupClickHandler}
+      />];
+    } else {
+      popup = [];
+    }
+
+    if (document.getElementById('back-drop') !== null) {
+      if (this.sizedWide === false && window.innerWidth > 750) {
+        this.widthHigh();
+      } else if (this.sizedWide === true && window.innerWidth <= 750) {
+        this.widthLow();
+      }
+    }
+
     return (
       <div>
-        <div className="left-parent parent">
+        <div key={-1} id="left-parent" className="left-parent parent">
           <h1>
             <Gallery
               product={this.product.name}
               style={this.style[this.selected]}
+              image={this.sel.image}
+              clickHandler={this.popupClickHandler}
             />
           </h1>
         </div>
-        <div className="right-parent parent">
+        <div key={-2} id="right-parent" className="right-parent parent">
           <h3>Stars go here</h3>
           <h3>{this.product.category}</h3>
           <h1>{this.product.name}</h1>
@@ -86,6 +170,9 @@ class Overview extends React.Component {
           </div>
           <h5>{this.product.slogan}</h5>
           <p>{this.product.description}</p>
+        </div>
+        <div key={-3}>
+          {popup}
         </div>
       </div>
     );

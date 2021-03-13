@@ -11,6 +11,7 @@ class Cart extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -31,6 +32,12 @@ class Cart extends React.Component {
         quantity: targ.value,
       });
     }
+  }
+
+  handleSubmit(event) {
+    this.okeydokie = 'ok then';
+    console.log(window.innerWidth);
+    event.preventDefault();
   }
 
   render() {
@@ -58,23 +65,26 @@ class Cart extends React.Component {
 
     return (
       <div>
-        <select name="size" value={this.size} onChange={this.handleChange}>
-          <option value={-1}>Select Size</option>
-          {this.skuArray.map((data, index) => {
-            keyMaker += 1;
-            if (this.sku[data].quantity > 0) {
-              return (
-                <option key={keyMaker} value={index}>
-                  {this.sku[data].size}
-                </option>
-              );
-            }
-            return null;
-          })}
-        </select>
-        <select name="quantity" value={this.quantity} onChange={this.handleChange} disabled={this.size === -1}>
-          {cartNum}
-        </select>
+        <form onSubmit={this.handleSubmit} className="cart">
+          <select name="size" value={this.size} onChange={this.handleChange}>
+            <option value={-1}>Select Size</option>
+            {this.skuArray.map((data, index) => {
+              keyMaker += 1;
+              if (this.sku[data].quantity > 0) {
+                return (
+                  <option key={keyMaker} value={index}>
+                    {this.sku[data].size}
+                  </option>
+                );
+              }
+              return null;
+            })}
+          </select>
+          <select name="quantity" value={this.quantity} onChange={this.handleChange} disabled={this.size === -1}>
+            {cartNum}
+          </select>
+          <input type="submit" value="Add to Cart" />
+        </form>
       </div>
     );
   }

@@ -42,7 +42,6 @@ class App extends React.Component {
     const prod = this.state;
     return (
       <div>
-        <div className="hello">Hello World!!!!</div>
         <Overview product={prod.product} />
         <RelatedProducts selectedProduct={prod.product} />
         <QandA productId={prod.product} />
