@@ -12,12 +12,16 @@ function Header({ searchProduct }) {
           <input type="text" id="product-search" className="form-control-lg product-search-bar" placeholder="Search For Product ID!" />
           <button type="button" className="btn btn-lg search-submit" onClick={() => { searchProduct($('#product-search').val()); }}>Search</button>
         </form>
+        <div className="dropdown col">
+          <button type="button" className="dropbtn">Navigation</button>
+          <div className="dropdown-content">
+            <a href="#Overview" className="Overview-link dropdown-item">Overview</a>
+            <a href="#RelatedProducts" className="Related-Products-link dropdown-item">Related Products</a>
+            <a href="#QandA" className="QandA-link dropdown-item">Question and Answers</a>
+            <a href="#ReviewsComponent" className="Reviews-link dropdown-item">Ratings and Reviews</a>
+          </div>
+        </div>
       </div>
-
-      <a href="#Overview" className="col-1 pt-5 Overview-link">Overview</a>
-      <a href="#RelatedProducts" className="col-2 pt-5 Related-Products-link">Related Products</a>
-      <a href="#QandA" className="col-2 pt-5 QandA-link">Question and Answers</a>
-      <a href="#ReviewsComponent" className="col-2 pt-5 Reviews-link">Ratings and Reviews</a>
     </div>
   );
 }
