@@ -41,7 +41,8 @@ function AnswerButtons({ answerInfo }) {
         {' '}
         {answerInfo.answerer_name}
         {' '}
-        {answerInfo.date.slice(0, 10)}
+        {/* {answerInfo.date.slice(0, 10)} */}
+        {answerInfo.date}
       </span>
       <span className="col answer-helpful" onClick={incrementHelpful}>
         Helpful? (
