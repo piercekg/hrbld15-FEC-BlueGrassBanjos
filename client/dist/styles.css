@@ -1,4 +1,6 @@
-
+.app-container {
+  overflow-x: hidden;
+}
 
 /*-----------------------Color Scheme---------------------------------- */
 

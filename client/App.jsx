@@ -35,7 +35,7 @@ class App extends React.Component {
       prod.product = 18078;
     }
     return (
-      <div>
+      <div className="container-fluid app-container">
         <div className="container-fluid logo-border">
           <img src={logo} alt="logo" className="col logo" />
           <a href="#Overview" className="col-1 pt-5 Overview-link">Overview</a>
