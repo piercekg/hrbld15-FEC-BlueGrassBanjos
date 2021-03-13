@@ -143,6 +143,10 @@ a:hover {
 
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
+.related-product-list {
+  margin: 1rem;
+}
+
 .list-name {
   margin: 0;
   padding: 2rem 0 0 3rem;
@@ -184,6 +188,10 @@ a:hover {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.product-name {
+  cursor: pointer;
 }
 
 .card-img {
@@ -303,9 +311,204 @@ a:hover {
   margin-left: 0;
 }
 
+/*--------------------- Reviews -------------------------*/
+.rnrComponent {
+  margin-left: 19%;
+  margin-right: 19%
+}
+.rnrTitle {
+  margin-bottom: 3%;
+  margin-top: 6%;
+}
+.inline {
+  display: inline-flex;
+}
+.ratingsDiv {
+  width: 30%;
+  margin-right: 5%;
+}
+.reviewsDiv {
+  width: 70%;
+}
+.bigNumber {
+  font-size: 300%;
+  font-weight: bold;
+}
+.bigNumDiv {
+  display: inline-flex;
+}
+.helpfullAndReport {
+  font-size: x-small;
+}
+.yesButton {
+  font-size: x-small;
+}
+.reportButton {
+  font-size: x-small;
+}
+.listItemFirstLine {
+  display: inline-flex;
+}
 .question-container {
   overflow: scroll;
   height:min-content;
   overflow: scroll;
 }
 
+/*-----------------------Overview---------------------------------- */
+
+.gallery-parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.back-drop {
+  width: 50vw;
+  height: 50vw;
+  background-color: black;
+}
+
+.highlight {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.inner-backdrop {
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  height: 10%;
+  width: 10%;
+  /* background-color: black; */
+  /* border-style: solid;
+  border-width: -2px;
+  border-color: gray; */
+}
+
+.inner-image {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.thumbnail1 {
+  top: 25%;
+}
+
+.thumbnail2 {
+  top: 35%;
+}
+
+.thumbnail3 {
+  top: 45%;
+}
+
+.thumbnail4 {
+  top: 55%;
+}
+
+.thumbnail5 {
+  top: 65%;
+}
+
+.thumbnail6 {
+  top: 75%;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 15%;
+  top: 46%;
+  height: 8%;
+  width: 8%;
+}
+
+.right-arrow {
+  position: absolute;
+  left: 92%;
+  top: 46%;
+  height: 8%;
+  width: 8%;
+}
+
+.click-component {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+  outline: 0;
+}
+
+.style-button {
+  position: relative;
+  border-radius: 50%;
+  height: 8vw;
+  width: 8vw;
+  border-style: solid;
+  border-width: -2px;
+  border-color: black;
+  margin: 2px;
+}
+
+.style-container {
+  position: relative;
+  display: inline-block;
+}
+
+.style-click-component {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.image-click-component {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+  outline: 0;
+}
+
+.check-mark {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+}
+
+.parent {
+  display: inline-block;
+}
+
+.right-parent {
+  float: right;
+  width: 45%;
+}
+
+.left-parent {
+  width: 50%;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  margin-top: 1%;
+  margin-bottom: 1%;
+} */

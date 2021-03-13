@@ -10,6 +10,30 @@ app.use(express.json());
 
 const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
 
+// ENTIRE PRODUCT LIST REQUEST
+// to read list with postman
+app.get('/products', (req, res) => {
+  retrieveAll((err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data.data);
+    }
+  })
+})
+
+const retrieveAll = (callback) => {
+  axios.get(`${server}/products`, {headers: {Authorization: `${config.TOKEN}`}})
+  .then((data) => {
+    callback(null, data);
+  })
+  .catch((err) => {
+    callback(err, null);
+  })
+};
+
+
 // PRODUCTS REQUESTS
 app.get('/products/:product_id', (req, res) => {
   retrieveProduct(req.params.product_id, (err, data) => {
@@ -158,7 +182,7 @@ app.get('/products/:product_id/reviews', (req, res) => {
 });
 
 const retrieveReviews = (productId, callback) => {
-axios.get(' https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product_id=18201', {headers: {'Authorization': `${config.TOKEN}`}})
+axios.get(`${server}/reviews/?product_id=${productId}`, {headers: {'Authorization': `${config.TOKEN}`}})
 .then ((res) => {
   callback(null, res.data);
 })
@@ -166,6 +190,27 @@ axios.get(' https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld/reviews/?product
   callback(res, null)
 })
 };
+
+//`${server}/products/${ids[0]}/reviews/${ids[1]}/helpful`
+app.put('/reviews/:review_id/helpful', (req, res) => {
+  addHelpful(req.params.review_id, (err, data) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.status(201).send(data);
+    }
+  })
+});
+
+const addHelpful = (review_id, callback) => {
+axios.put(`${server}/reviews/${review_id}/helpful`, 'addHelpful', {headers: {Authorization: `${config.TOKEN}`}})
+.then(() => {
+  callback();
+})
+.catch((err) => {
+  console.log(err);
+})
+}
 
 // QUESTIONS AND ANSWERS REQUESTS
 

@@ -33,7 +33,7 @@ function StarList({ reviewsData }) {
     ['1 stars', one],
   ];
   const chart = anychart.bar(chartData);
-  const ticksArray = [0, 1, 2];
+  const ticksArray = [0, 1, 2, 3];
   chart.yScale().ticks().set(ticksArray);
   chart.container('barChart');
   chart.draw();

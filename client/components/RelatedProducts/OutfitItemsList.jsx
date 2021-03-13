@@ -14,7 +14,7 @@ const OutfitItemsList = (props) => (
       <div className="d-flex flex-row carousel">
         {props.products.map(product => {
           return (
-            <OutfitItem product={product} key={product.id} removeItem={props.removeItem}/>
+            <OutfitItem product={product} key={product.id} removeItem={props.removeItem} productClick={props.productClick}/>
           );
         })}
     </div>

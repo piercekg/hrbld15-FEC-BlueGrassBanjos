@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
@@ -6,13 +7,8 @@
 /* eslint-disable no-unused-vars */
 
 import React from 'react';
-import {
-  BrowserRouter as Router, Switch, Route, Link,
-} from 'react-router-dom';
-import Overview from './productOverview/displayOverview';
-// import ReviewsComponent from './components/reviews/ReviewsComponent';
+import Overview from './components/productOverview/displayOverview';
 import QandA from './components/QandA/QandA';
-import Requests from './requests';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts';
 import ReviewsComponent from './components/reviews/ReviewsComponent';
 
@@ -23,24 +19,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       product: this.props.match.params.id,
-      reviewsData: {},
     };
+    this.handleProductClick = this.handleProductClick.bind(this);
   }
 
-  componentDidMount() {
-    // Requests.default.getReviews(18201, (err, data) => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     this.setState({
-    //       reviewsData: data.data,
-    //     });
-    //   }
-    // });
+  handleProductClick(product_id) {
+    this.setState({
+      product: product_id,
+    });
   }
 
   render() {
     const prod = this.state;
+    if (!prod.product) {
+      prod.product = 18078;
+    }
     return (
       <div>
         <div className="container-fluid logo-border">
