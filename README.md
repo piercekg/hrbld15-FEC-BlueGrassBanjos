@@ -40,7 +40,9 @@ Run `$ npm install` to install dependencies locally.
 
 The express server setup is located in `/server/index.js`. The default port is `3000`. You may need to update the reference to the express server in `/client/requests.js` if it is not `localhost:3000`.
 In order to interact with the HackReactor API, you will need to generate a [gitHub personal authorization token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and create `config.js` in the root directory of the project. `config.js` should look like this:\
-`module.exports = {`\ `  TOKEN: 'YOUR_PERSONAL_AUTH_TOKEN_HERE'`\ `};`
+`module.exports = {`
+`  TOKEN: 'YOUR_PERSONAL_AUTH_TOKEN_HERE'`
+`};`
 
 **Run app in development-mode**\
 run `$ npm run react-dev` to start webpack in watch mode.\
