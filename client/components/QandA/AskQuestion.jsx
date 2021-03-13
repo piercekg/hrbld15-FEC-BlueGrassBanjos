@@ -52,6 +52,7 @@ class AskQuestion extends React.Component {
     requests.postNewQuestion(formData, () => {
       console.log(formData);
     });
+    this.props.toggleAskQuestion();
   }
 
   onClose() {
@@ -63,9 +64,11 @@ class AskQuestion extends React.Component {
       <div style={OVERLAY_STYLES}>
         <div style={MODAL_STYLES} className="col-6">
           <form>
-            <h3>{this.state.productName}</h3>
+            <div className="container-fluid pop-up">
+              <h3>{this.state.productName}</h3>
+            </div>
             <div>
-              <textarea name="answer" id="question_text" className="col" placeholder="Your Question Here" required />
+              <textarea name="answer" id="question_text" className="col text-area" placeholder="Your Question Here" required />
             </div>
             <div>
               <input type="text" name="userName" className=" col" id="question_username" placeholder="Enter Username" required />

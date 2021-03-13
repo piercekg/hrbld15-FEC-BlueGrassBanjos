@@ -56,6 +56,7 @@ class AddAnswer extends React.Component {
       console.log(formData);
     });
 
+    this.props.updateAnswers(formData);
     this.props.toggleAddAnswer();
   }
 
@@ -68,12 +69,12 @@ class AddAnswer extends React.Component {
       <div style={OVERLAY_STYLES}>
         <div style={MODAL_STYLES} className="col-6">
           <form>
-            <h3>
-              {this.state.productName}
-            </h3>
-            <div>{this.state.questionBody}</div>
+            <div className="container-fluid pop-up">
+              <h3>{this.state.productName}</h3>
+            </div>
+            <h5 className="pt-1">{this.state.questionBody}</h5>
             <div>
-              <textarea name="answer" className="col" id="answer_text" placeholder="Your Answer Here" required />
+              <textarea name="answer" className="col text-area" id="answer_text" placeholder="Your Answer Here" required />
             </div>
             <div>
               <input type="text" name="userName" className="col" id="answer_username" placeholder="Enter Username" required />
