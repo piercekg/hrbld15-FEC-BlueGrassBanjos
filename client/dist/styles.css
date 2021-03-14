@@ -440,15 +440,12 @@ a:hover {
   bottom: 0;
   max-width: 100%;
   max-height: 100%;
-<<<<<<< HEAD
   opacity: 1;
-=======
   color: #00b300;
   line-height: 22rem;
   font-style: oblique;
   font-weight: bold;
   font-size: xx-large;
->>>>>>> currentWork
 }
 
 .inner-backdrop {
@@ -472,15 +469,12 @@ a:hover {
   bottom: 0;
   max-width: 100%;
   max-height: 100%;
-<<<<<<< HEAD
   opacity: 1;
 }
 
 #thumbnail0 {
   opacity: 0.6;
-=======
   color: transparent;
->>>>>>> currentWork
 }
 
 #thumbnail1 {
@@ -627,28 +621,21 @@ a:hover {
   width: 50%;
 }
 
-<<<<<<< HEAD
 .right-parent {
   float: right;
   width: 35%;
   margin-right: 50px;
   display: inline-block;
-=======
+
+}
+
 .parent {
-  display: inline-block;
   height: fit-content;
 }
 
-.right-parent {
-  float: right;
-  width: 45%;
-  overflow-y: auto;
->>>>>>> currentWork
-}
-
 .left-parent {
-  width: 50%;
-  margin-left: 50px;
+  width: 35%;
+  margin-left: 25px;
   display: inline-block;
 }
 

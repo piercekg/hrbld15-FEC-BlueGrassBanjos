@@ -105,14 +105,10 @@ class Gallery extends React.Component {
           type="button"
           src={this.style.photos[this.sel].url}
           alt={this.style.name}
-<<<<<<< HEAD
-          className="highlight"
+          className="highlight text-justify"
           style={{ cursor: 'zoom-in' }}
           onClick={() => this.prod.clickHandler(true, this.sel)}
           onKeyDown={() => this.prod.clickHandler(true, this.sel)}
-=======
-          className="highlight text-justify"
->>>>>>> currentWork
         />
         {arrows}
         {this.style.photos.map((data, index) => {

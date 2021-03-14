@@ -55,7 +55,7 @@ class Overview extends React.Component {
           product: data.data,
         });
 
-        if (window.innerWidth <= 750) {
+        if (window.innerWidth <= 1100) {
           this.widthLow();
         }
       }
@@ -143,9 +143,9 @@ class Overview extends React.Component {
     }
 
     if (document.getElementById('back-drop') !== null) {
-      if (this.sizedWide === false && window.innerWidth > 750) {
+      if (this.sizedWide === false && window.innerWidth > 1100) {
         this.widthHigh();
-      } else if (this.sizedWide === true && window.innerWidth <= 750) {
+      } else if (this.sizedWide === true && window.innerWidth <= 1100) {
         this.widthLow();
       }
     }
