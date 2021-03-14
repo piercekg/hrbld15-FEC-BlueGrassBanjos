@@ -2,7 +2,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import tickMark from './tick-mark.png';
+import tickMark from '../IconsandImages/tick-mark.png';
 
 class StyleSelector extends React.Component {
   constructor(props) {

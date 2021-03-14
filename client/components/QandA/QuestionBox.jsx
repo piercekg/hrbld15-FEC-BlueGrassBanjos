@@ -81,13 +81,17 @@ class QuestionBox extends React.Component {
 
   updateAnswers(answer) {
     const answerObj = {};
+    const date = JSON.stringify(new Date()).slice(0, 11);
+    console.log(date);
+
+    answerObj.answer_id = 10001;
     answerObj.answerer_name = answer.username;
     answerObj.body = answer.answer;
-    answerObj.date = new Date();
+    answerObj.date = date;
     answerObj.helpfulness = 0;
 
     this.setState({
-      answers: [...this.state.answers, answerObj],
+      visible: [...this.state.visible, answerObj],
     });
   }
 

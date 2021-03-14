@@ -40,8 +40,18 @@ const requests = {
   },
 
   // REVIEWS REQUESTS
-  getReviews(productId, callback) {
-    axios.get(`${server}/products/${productId}/reviews`)
+  getRelevantReviews(productId, callback) {
+    axios.get(`/products/${productId}/reviews`)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
+  getMostRecentReviews(productId, callback) {
+    axios.get(`/${productId}/reviews/mostRecent`)
       .then((data) => {
         callback(null, data);
       })
@@ -60,16 +70,16 @@ const requests = {
       });
   },
 
-  // postReview(reviewId, callback) {
-  //   callback('works');
-  //   // axios.post(`${server}/products/${productId}/reviews`)
-  //   //   .then((data) => {
-  //   //     callback(null, data);
-  //   //   })
-  //   //   .catch((err) => {
-  //   //     callback(err, null);
-  //   //   });
-  // },
+  postReview(reviewData, callback) {
+    axios.post('/reviews/post', reviewData)
+      .then((data) => {
+        callback(null, data);
+      })
+      .catch((err) => {
+        callback(err, null);
+      });
+  },
+
 
   // QUESTIONS AND ANSWERS REQUESTS
   getCurrentProductQuestions(currentProductId, callback) {

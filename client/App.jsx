@@ -55,7 +55,7 @@ class App extends React.Component {
             <QandA productId={prod.product} />
           </a>
           <a id="ReviewsComponent">
-            <ReviewsComponent reviewsData={this.state.reviewsData} />
+            <ReviewsComponent product={prod.product} />
           </a>
           <div className="container-fluid footer">
             <div className="footer-text">

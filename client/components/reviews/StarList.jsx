@@ -3,6 +3,8 @@
 /* eslint-disable no-plusplus */
 import React from 'react';
 import anychart from 'anychart';
+import AnyChart from 'anychart-react';
+import { cssNumber } from 'jquery';
 
 function StarList({ reviewsData }) {
   let five = 0;
@@ -32,13 +34,12 @@ function StarList({ reviewsData }) {
     ['2 stars', two],
     ['1 stars', one],
   ];
-  const chart = anychart.bar(chartData);
-  const ticksArray = [0, 1, 2, 3];
-  chart.yScale().ticks().set(ticksArray);
-  chart.container('barChart');
-  chart.draw();
+
   return (
-    <div id="barChart" />
+    <div>
+      <div id="barChart" />
+      <AnyChart type="bar" data={chartData} />
+    </div>
   );
 }
 
