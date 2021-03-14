@@ -21,8 +21,8 @@ class QandA extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      productName: '',
       currentProduct: this.props.productId,
-      currentProductName: 'Toy',
       productQuestions: [],
       visible: [],
       addQuestion: false,
@@ -30,7 +30,23 @@ class QandA extends React.Component {
   }
 
   componentDidMount() {
-    requests.getCurrentProductQuestions(this.state.currentProduct, (err, response) => {
+    this.getQuestions();
+    this.getAnswers();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.productId !== prevProps.productId) {
+      this.setState({
+        currentProduct: this.props.productId,
+      }, () => {
+        this.getQuestions();
+        this.getAnswers();
+      });
+    }
+  }
+
+  getQuestions() {
+    requests.getCurrentProductQuestions(this.props.productId, (err, response) => {
       if (err) {
         console.log(`GetCurrentProductQuestions: ${err}`);
       } else {
@@ -40,6 +56,18 @@ class QandA extends React.Component {
             productQuestions: questions,
             visible: firstTwo,
           });
+        });
+      }
+    });
+  }
+
+  getAnswers() {
+    requests.getProductInfo(this.state.currentProduct, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        this.setState({
+          productName: data.data.name,
         });
       }
     });
@@ -85,14 +113,16 @@ class QandA extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <h3>Questions and Answers</h3>
-        <QuestionSearch searchQuestions={this.searchQuestions.bind(this)} />
-        {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.currentProductName} toggleAskQuestion={this.toggleAskQuestion.bind(this)} /> : null}
-        <div id="modal" />
-        <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} productName={this.state.currentProductName} />
-        <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} addMoreQuestions={this.addMoreQuestions.bind(this)} />
-      </div>
+      <React.Fragment>
+        <p className="text-uppercase section-name">Questions and Answers</p>
+        <div className="container-fluid  col-11">
+          <QuestionSearch searchQuestions={this.searchQuestions.bind(this)} />
+          {this.state.addQuestion ? <AskQuestion currentProduct={this.state.currentProduct} currentProductName={this.state.productName} toggleAskQuestion={this.toggleAskQuestion.bind(this)} /> : null}
+          <div id="modal" />
+          <QuestionsList fullList={this.state.productQuestions} visible={this.state.visible} currentProduct={this.state.currentProduct} currentProductName={this.state.productName} />
+          <ButtonBox toggleAskQuestion={this.toggleAskQuestion.bind(this)} addMoreQuestions=  {this.addMoreQuestions.bind(this)} />
+        </div>
+      </React.Fragment>
     );
   }
 }

@@ -28,6 +28,7 @@ class ReviewsComponent extends React.Component {
   }
 
   getRelevantReviews() {
+    console.log(this.props.product);
     Requests.getRelevantReviews(this.props.product, (err, data) => {
       if (err) {
         console.log(err);
@@ -81,7 +82,7 @@ class ReviewsComponent extends React.Component {
 
   render() {
     return (
-      <div className="rnrComponent">
+      <div className="container-fluid rnrComponent">
         <div className="rnrTitle">RATINGS & REVIEWS</div>
         <div className="inline">
           <div className="ratingsDiv">

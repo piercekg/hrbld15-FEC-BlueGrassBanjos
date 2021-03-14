@@ -1,3 +1,110 @@
+/*-----------------------Color Scheme---------------------------------- */
+
+.logo-border {
+  background-color: #215C05;
+  border-bottom: 5px solid #01B512;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 400px;
+}
+
+a.link {
+  color:rgb(172, 211, 30);
+}
+
+a:hover {
+  color:#01B512
+}
+
+.component-body {
+  background-color: whitesmoke;
+  overflow-x: auto;
+}
+
+.footer {
+  background-color:#215C05;
+  border-top: 5px solid #01B512;
+}
+
+.footer-text {
+  padding: 30px;
+  text-align: center;
+  color:rgb(172, 211, 30);
+}
+
+.Overview-link {
+  margin-right: 30px;
+  color: rgb(172, 211, 30);
+}
+.QandA-link {
+  margin-right: 20px;
+  color: rgb(172, 211, 30);
+}
+
+.Related-Products-link {
+  margin-right: 20px;
+  color: rgb(172, 211, 30);
+}
+
+.Reviews-link {
+  color:rgb(172, 211, 30);
+}
+
+.search-submit{
+  background-color: rgb(172, 211, 30)
+}
+
+.product-search-form {
+  padding-top: 35px;
+}
+
+.product-search-bar {
+  padding-top: 5px;
+  height: 50px
+}
+
+.dropbtn {
+  background-color: rgb(172, 211, 30);
+  padding: 16px;
+  font-size: 16px;
+  border: none
+}
+
+.dropdown {
+  padding-top: 40px;
+  padding-left: 300px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 /*-----------------------Comparison Modal---------------------------------- */
 .compare-modal {
   z-index: 3;
@@ -89,6 +196,10 @@
 
 /*---------------------Related Product Cards-------------------------*/
 /*--------Carousel-----*/
+.related-product-list {
+  margin: 1rem;
+}
+
 .list-name {
   margin: 0;
   padding: 2rem 0 0 3rem;
@@ -132,6 +243,10 @@
   white-space: nowrap;
 }
 
+.product-name {
+  cursor: pointer;
+}
+
 .card-img {
   line-height: 16rem;
   font-style: oblique;
@@ -164,35 +279,6 @@
   /* adjust 'height' to position overlay content vertically */
   height: 0;
 }
-/*
-.star-ratings-css {
-  unicode-bidi: bidi-override;
-  color: #c5c5c5;
-  font-size: 25px;
-  height: 25px;
-  width: 100px;
-  margin: 0 auto;
-  position: relative;
-  padding: 0;
-  text-shadow: 0px 1px 0 #a2a2a2;
-}
-.star-ratings-css-top {
-    color: #e7711b;
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-.star-ratings-css-bottom {
-    padding: 0;
-    display: block;
-    z-index: 0;
-
-}
-*/
 
 /*-----------------------Questions and Answers---------------------------------- */
 
@@ -200,14 +286,21 @@
   border: 2px solid black;
   border-right: 0px;
   margin-right: 0px;
+  margin-left: 2.5rem;
 }
 
 .search-icon {
   border: 2px solid black;
+  background-color: white;
   border-left: 0px;
   margin-left: 0px;
-  height: 60px;
-  width: 60px;
+  height: auto;
+  width: auto;
+  max-width: 100px;
+}
+
+.question-list {
+  padding-left: 2rem;
 }
 
 .question-buttons {
@@ -248,9 +341,26 @@
   margin-left: 0;
 }
 
+.reported {
+  color: #215C05
+}
+
+.pop-up {
+  padding: 10px;
+  background-color: #215C05;
+  color: white;
+}
+
+.text-area {
+  margin-top: 20px;
+}
+.section-name{
+  margin: 2rem 0 1rem 5rem
+}
+
 /*--------------------- Reviews -------------------------*/
 .rnrComponent {
-  margin-left: 19%;
+  margin-left: 4.3rem;
   margin-right: 19%
 }
 .rnrTitle {
@@ -287,9 +397,9 @@
   display: inline-flex;
 }
 .question-container {
-  overflow: scroll;
-  height:min-content;
-  overflow: scroll;
+  height: min-content;
+  width: 48rem;
+  height: fit-content;
 }
 
 /*-----------------------Overview---------------------------------- */
@@ -315,6 +425,11 @@
   bottom: 0;
   max-width: 100%;
   max-height: 100%;
+  color: #00b300;
+  line-height: 22rem;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: xx-large;
 }
 
 .inner-backdrop {
@@ -338,6 +453,7 @@
   bottom: 0;
   max-width: 100%;
   max-height: 100%;
+  color: transparent;
 }
 
 .thumbnail1 {
@@ -433,11 +549,13 @@
 
 .parent {
   display: inline-block;
+  height: fit-content;
 }
 
 .right-parent {
   float: right;
   width: 45%;
+  overflow-y: auto;
 }
 
 .left-parent {

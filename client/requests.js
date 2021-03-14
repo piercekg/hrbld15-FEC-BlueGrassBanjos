@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+
 const axios = require('axios');
 
 // const server = 'http://13.59.149.180';
@@ -20,7 +21,6 @@ const requests = {
   getProductStyles(productId, callback) {
     axios.get(`${server}/products/${productId}/styles`)
       .then((data) => {
-        console.log(data);
         callback(null, data);
       })
       .catch((err) => {
@@ -41,8 +41,7 @@ const requests = {
 
   // REVIEWS REQUESTS
   getRelevantReviews(productId, callback) {
-    console.log(productId);
-    axios.get(`${server}/products/${productId}/reviews`)
+    axios.get(`/products/${productId}/reviews`)
       .then((data) => {
         callback(null, data);
       })

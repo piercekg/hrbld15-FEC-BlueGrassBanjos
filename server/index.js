@@ -184,13 +184,15 @@ app.get('/products/:product_id/reviews', (req, res) => {
 });
 
 const retrieveReviews = (productId, callback) => {
-axios.get(`${server}/reviews/?product_id=${productId}`, {headers: {'Authorization': `${config.TOKEN}`}})
-.then ((res) => {
-  callback(null, res.data);
-})
-.catch ((res) => {
-  callback(res, null)
-})
+  console.log(productId)
+  axios.get(`${server}/reviews?product_id=${productId}`, {headers: {'Authorization': `${config.TOKEN}`}})
+  .then ((res) => {
+    callback(null, res.data);
+  })
+  .catch ((err) => {
+    console.log('error');
+    callback(err)
+  })
 };
 
 app.get('/:product_id/reviews/mostRecent', (req, res) => {
@@ -287,7 +289,16 @@ const retrieveProductQuestions = (productId, callback) => {
 };
 
 app.post('/qa/questions/', (req, res) => {
-  postNewQuestion(req.body, () => {
+
+  const questionData = {}
+  questionData.body = req.body.body;
+  questionData.name = req.body.name;
+  questionData.email = req.body.email;
+  questionData.product_id = parseInt(req.body.product_id);
+
+  console.log(questionData);
+
+  postNewQuestion(questionData, () => {
       res.sendStatus(201);
       console.log('Question Posted')
       res.end()
@@ -362,6 +373,7 @@ app.post('/qa/questions/answers', (req, res) => {
   postNewAnswer(questionId, answerData, () => {
     res.sendStatus(201);
     console.log('Answer Posted');
+    console.log(answerData);
     res.end();
   })
 })
