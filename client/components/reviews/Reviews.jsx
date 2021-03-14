@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
@@ -7,10 +8,10 @@ import SortBy from './SortBy';
 
 function Reviews(props) {
   return (
-    <div className="container-fluid">
-      <SortBy reviewsData={props.reviewsData} />
+    <div>
+      <SortBy reviewsData={props.reviewsData} getRelevantReviews={props.getRelevantReviews} getMostRecentReviews={props.getMostRecentReviews} />
       <ReviewsList reviewsData={props.reviewsData} report={props.report} />
-      <ReviewsButtons />
+      <ReviewsButtons showModel={props.showModel} />
     </div>
   );
 }

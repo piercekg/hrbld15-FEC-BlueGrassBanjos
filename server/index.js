@@ -1,14 +1,16 @@
 const path = require('path');
 const express = require('express');
 const axios = require('axios');
-const config = require('../config.js')
+const config = require('../config.js');
+const { call } = require('file-loader');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 app.use(express.json());
 
-const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld'
+const server = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld';
+const auth = {headers: {Authorization: `${config.TOKEN}`}};
 
 // ENTIRE PRODUCT LIST REQUEST
 // to read list with postman
@@ -182,16 +184,37 @@ app.get('/products/:product_id/reviews', (req, res) => {
 });
 
 const retrieveReviews = (productId, callback) => {
-axios.get(`${server}/reviews/?product_id=${productId}`, {headers: {'Authorization': `${config.TOKEN}`}})
-.then ((res) => {
-  callback(null, res.data);
-})
-.catch ((res) => {
-  callback(res, null)
-})
+  console.log(productId)
+  axios.get(`${server}/reviews?product_id=${productId}`, {headers: {'Authorization': `${config.TOKEN}`}})
+  .then ((res) => {
+    callback(null, res.data);
+  })
+  .catch ((err) => {
+    console.log('error');
+    callback(err)
+  })
 };
 
-//`${server}/products/${ids[0]}/reviews/${ids[1]}/helpful`
+app.get('/:product_id/reviews/mostRecent', (req, res) => {
+  getMostRecentReviews(req.params.product_id, (err, data) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.status(200).send(data);
+    }
+  })
+});
+
+const getMostRecentReviews = (product_id, callback) => {
+  axios.get(`${server}/reviews?sort=newest&product_id=${product_id}`, {headers: {'Authorization': `${config.TOKEN}`}})
+  .then ((res) => {
+    callback(null, res.data);
+  })
+  .catch ((res) => {
+    callback(res, null)
+  })
+};
+
 app.put('/reviews/:review_id/helpful', (req, res) => {
   addHelpful(req.params.review_id, (err, data) => {
     if (err) {
@@ -212,6 +235,34 @@ axios.put(`${server}/reviews/${review_id}/helpful`, 'addHelpful', {headers: {Aut
 })
 }
 
+app.post ('/reviews/post', (req, res) => {
+  postNewReview(req.body, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  })
+})
+
+const postNewReview = (reviewData, callback) => {
+  const options = {
+    url: `${server}/reviews`,
+    method: 'post',
+    headers: {
+      Authorization: `${config.TOKEN}`,
+      'Content-Type': 'application/json'
+    },
+    data: reviewData,
+  }
+  axios(options)
+  .then((data) => {
+   callback(null, data.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+}
 // QUESTIONS AND ANSWERS REQUESTS
 
 app.use(express.urlencoded({ extended: true}));
@@ -255,6 +306,7 @@ app.post('/qa/questions/', (req, res) => {
 })
 
 const postNewQuestion = (questionData, callback) => {
+  console.log(questionData)
   axios.post(`${server}/qa/questions/`, questionData, {headers: {Authorization: `${config.TOKEN}`}})
   .then(() => {
     callback();
